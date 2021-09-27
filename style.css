@@ -1,0 +1,16 @@
+.grid {
+  grid-gap: 20px;
+  -ms-grid-columns: (1fr)[5];
+      grid-template-columns: repeat(5, 1fr);
+}
+
+.grid .grid-item .card {
+  cursor: pointer;
+  height: 200px;
+  width: 100%;
+}
+
+.transparent {
+  opacity: 0;
+}
+/*# sourceMappingURL=style.css.map */

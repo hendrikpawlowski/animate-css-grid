@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.15/tailwind.min.css"
+      integrity="sha512-braXHF1tCeb8MzPktmUHhrjZBSZknHvjmkUdkAbeqtIrWwCchhcpUeAf2Sq3yIq1Q1x5PlroafjceOUbIE3Q5g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Animate CSS Grid</title>
+  </head>
+  <body class="bg-gray-100">
+    <div class="px-24 py-12">
+      <h1 class="text-xl color-white">Topic Gallery</h1>
+      <ul js-grid class="pt-12 grid">
+        <li js-card js-deck-card class="grid-item z-10">
+          <div
+            class="
+              h-full
+              flex
+              justify-center
+              items-center
+              card
+              bg-
+              shadow
+              p-4
+              rounded
+              w-full
+              bg-gradient-to-r
+              from-green-400
+              to-blue-500
+              text-white
+            "
+          >
+            <h3>Kategorie 1</h3>
+          </div>
+        </li>
+        <li js-card class="grid-item">
+          <div class="card bg-white shadow p-4 rounded w-full">
+            <h3>Snackauswahl</h3>
+            <div>Item body</div>
+          </div>
+        </li>
+        <li js-card class="grid-item">
+          <div class="card bg-white shadow p-4 rounded">
+            <h3>Schreibtischstuhlhöhe</h3>
+            <div>Item body</div>
+          </div>
+        </li>
+        <li js-card js-deck-card class="grid-item z-10">
+          <div
+            class="
+              h-full
+              flex
+              justify-center
+              items-center
+              card
+              bg-
+              shadow
+              p-4
+              rounded
+              w-full
+              bg-gradient-to-r
+              from-green-400
+              to-blue-500
+              text-white
+            "
+          >
+            <h3>Kategorie 2</h3>
+          </div>
+        </li>
+        <li js-card class="grid-item">
+          <div class="card bg-white shadow p-4 rounded">
+            <h3>Aussichtsentfernung</h3>
+            <div>Item body</div>
+          </div>
+        </li>
+        <li js-card class="grid-item">
+          <div class="card bg-white shadow p-4 rounded">
+            <h3>Arbeitszeit</h3>
+            <div>Item body</div>
+          </div>
+        </li>
+        <li js-card js-deck-card class="grid-item z-10">
+          <div
+            class="
+              h-full
+              flex
+              justify-center
+              items-center
+              card
+              bg-
+              shadow
+              p-4
+              rounded
+              w-full
+              bg-gradient-to-r
+              from-green-400
+              to-blue-500
+              text-white
+            "
+          >
+            <h3>Kategorie 3</h3>
+          </div>
+        </li>
+        <li js-card class="grid-item">
+          <div class="card bg-white shadow p-4 rounded">
+            <h3>Schreibtischkantenanzahl</h3>
+            <div>Item body</div>
+          </div>
+        </li>
+        <li js-card class="grid-item">
+          <div class="card bg-white shadow p-4 rounded">
+            <h3>Heizungsgröße</h3>
+            <div>Item body</div>
+          </div>
+        </li>
+        <li js-card class="grid-item">
+          <div class="card bg-white shadow p-4 rounded">
+            <h3>Fenstersauberkeit</h3>
+            <div>Item body</div>
+          </div>
+        </li>
+        <li js-card class="grid-item">
+          <div class="card bg-white shadow p-4 rounded">
+            <h3>Ventilatorlautstärke</h3>
+            <div>Item body</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <script src="https://unpkg.com/animate-css-grid@latest"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>

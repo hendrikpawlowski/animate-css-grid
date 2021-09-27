@@ -1,0 +1,19 @@
+.grid {
+  grid-gap: 20px;
+
+  // width: 200px;
+  grid-template-columns: repeat(5, 1fr);
+
+  .grid-item {
+    .card {
+      cursor: pointer;
+      height: 200px;
+      // padding: 20px;
+      width: 100%;
+    }
+  }
+}
+
+.transparent {
+  opacity: 0;
+}
