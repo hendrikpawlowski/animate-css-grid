@@ -7,7 +7,7 @@ let gridLib = animateCSSGrid.wrapGrid(grid, {
   // int: default is 250 ms
   duration: 300,
   // string: default is 'easeInOut'
-  easing: 'easeInOut',
+  easing: 'easeOut',
   // function: called with list of elements about to animate
   onStart: (animatingElementList) => { },
   // function: called with list of elements that just finished animating
