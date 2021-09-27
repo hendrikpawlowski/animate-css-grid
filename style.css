@@ -1,7 +1,7 @@
 .grid {
   grid-gap: 20px;
-  -ms-grid-columns: (1fr)[5];
-      grid-template-columns: repeat(5, 1fr);
+  -ms-grid-columns: (18%)[5];
+      grid-template-columns: repeat(5, 18%);
 }
 
 .grid .grid-item .card {
