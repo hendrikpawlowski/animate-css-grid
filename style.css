@@ -1,7 +1,7 @@
 .grid {
-  grid-gap: 30px;
-  -ms-grid-columns: (18%)[5];
-      grid-template-columns: repeat(5, 18%);
+  grid-gap: 10px;
+  -ms-grid-columns: (minmax(10rem, 1fr))[auto-fill];
+      grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
 }
 
 .grid .deck-card {
@@ -39,6 +39,11 @@
           box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
 }
 
+.grid .card .content h3 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .turn-left {
   z-index: 5;
 }
@@ -51,14 +56,5 @@
 .turn-right .content {
   -webkit-transform: rotate(-8deg);
           transform: rotate(-8deg);
-}
-
-.animate-in-process {
-  -webkit-box-shadow: none;
-          box-shadow: none;
-}
-
-.transparent {
-  opacity: 0;
 }
 /*# sourceMappingURL=style.css.map */

@@ -1,7 +1,7 @@
 .grid {
-  grid-gap: 30px;
+  grid-gap: 10px;
 
-  grid-template-columns: repeat(5, 18%);
+  grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
 
   .deck-card {
     cursor: pointer;
@@ -18,8 +18,6 @@
 
   .card {
     cursor: pointer;
-    // height: 200px;
-    // width: 100%;
 
     .content {
       transition: 300ms;
@@ -29,16 +27,14 @@
       padding: 20px;
       box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1),
         0 1px 2px 0 rgba(0, 0, 0, 0.06);
+
+      h3 {
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
     }
   }
 }
-
-// .stacked {
-//   .content {
-//     // transform: translateY(8%) scale(0.9, 0.9);
-//     transform: rotate(-5deg);
-//   }
-// }
 
 .turn-left {
   z-index: 5;
@@ -54,15 +50,10 @@
   }
 }
 
-.animate-in-process {
-  box-shadow: none;
-}
+// .animate-in-process {
+//   box-shadow: none;
+// }
 
-.transparent {
-  opacity: 0;
-}
-
-// .turned {
-//   transform: translateY(-10%) scale(0.9, 0.9);
-//   transform-origin: top right;
+// .transparent {
+//   opacity: 0;
 // }
