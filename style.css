@@ -1,13 +1,61 @@
 .grid {
-  grid-gap: 20px;
+  grid-gap: 30px;
   -ms-grid-columns: (18%)[5];
       grid-template-columns: repeat(5, 18%);
 }
 
-.grid .grid-item .card {
+.grid .deck-card {
   cursor: pointer;
+  z-index: 10;
+  color: white;
+}
+
+.grid .deck-card .content {
+  background: -webkit-gradient(linear, left top, right top, from(#34d399), to(#3b82f6)) !important;
+  background: linear-gradient(to right, #34d399, #3b82f6) !important;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.grid .card {
+  cursor: pointer;
+}
+
+.grid .card .content {
+  -webkit-transition: 300ms;
+  transition: 300ms;
+  border-radius: 0.25rem;
   height: 200px;
-  width: 100%;
+  background: white;
+  padding: 20px;
+  -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+          box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+
+.turn-left {
+  z-index: 5;
+}
+
+.turn-left .content {
+  -webkit-transform: rotate(-4deg);
+          transform: rotate(-4deg);
+}
+
+.turn-right .content {
+  -webkit-transform: rotate(-8deg);
+          transform: rotate(-8deg);
+}
+
+.animate-in-process {
+  -webkit-box-shadow: none;
+          box-shadow: none;
 }
 
 .transparent {

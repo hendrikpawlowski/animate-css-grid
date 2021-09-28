@@ -9,18 +9,17 @@ let gridLib = animateCSSGrid.wrapGrid(grid, {
   // string: default is 'easeInOut'
   easing: 'easeOut',
   // function: called with list of elements about to animate
-  onStart: (animatingElementList) => { },
+  onStart: (animatingElementList) => {
+    animatingElementList.forEach((card) => {
+      // card.classList.add("animate-in-process");
+    });
+  },
   // function: called with list of elements that just finished animating
   // cancelled animations will not trigger onEnd
   onEnd: (animatingElementList) => {
-    // console.log(animatingElementList);
 
-    animatingElementList.forEach(element => {
-      if (element.hasAttribute("js-stacked") && !element.hasAttribute("js-deck-card")) {
-        // console.log(element);
-        // element.style.opacity = "0";
-        element.classList.add("transparent");
-
+    animatingElementList.forEach(card => {
+      if (card.hasAttribute("js-stacked") && !card.hasAttribute("js-deck-card")) {
       }
     });
   }
@@ -41,14 +40,6 @@ const getChilds = function (deckCard) {
     return cards.slice(cards.indexOf(deckCard) + 1, indexOfNextDeckCard);
   }
 }
-
-// const getTail = function (deckCard) {
-
-//   let index = cards.indexOf(deckCard);
-//   let countChilds = getChilds(deckCard).length;
-
-//   return cards.slice(index + countChilds + 1, cards.length);
-// }
 
 const animateCards = function () {
 
@@ -93,11 +84,16 @@ cards.forEach((deckCard) => {
 
         deckCard.removeAttribute("js-stacked");
 
-        getChilds(deckCard).forEach((card) => {
+        getChilds(deckCard).forEach((card, index) => {
           card.classList.remove("transparent");
-
           card.removeAttribute("js-stacked");
           card.classList.remove("stacked");
+
+          if (index === 0) {
+            card.classList.remove("turn-left");
+          } else if (index === 1) {
+            card.classList.remove("turn-right");
+          }
         });
 
         animateCards();
@@ -105,9 +101,15 @@ cards.forEach((deckCard) => {
       } else {
         deckCard.setAttribute("js-stacked", "");
 
-        getChilds(deckCard).forEach((card) => {
+        getChilds(deckCard).forEach((card, index) => {
           card.setAttribute("js-stacked", "");
           card.classList.add("stacked");
+
+          if (index === 0) {
+            card.classList.add("turn-left");
+          } else if (index === 1) {
+            card.classList.add("turn-right");
+          }
         });
 
         animateCards();

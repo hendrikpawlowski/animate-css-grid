@@ -1,19 +1,68 @@
 .grid {
-  grid-gap: 20px;
+  grid-gap: 30px;
 
-  // width: 200px;
   grid-template-columns: repeat(5, 18%);
 
-  .grid-item {
-    .card {
-      cursor: pointer;
-      height: 200px;
-      // padding: 20px;
-      width: 100%;
+  .deck-card {
+    cursor: pointer;
+    z-index: 10;
+    color: white;
+
+    .content {
+      background: linear-gradient(to right, #34d399, #3b82f6) !important;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
   }
+
+  .card {
+    cursor: pointer;
+    // height: 200px;
+    // width: 100%;
+
+    .content {
+      transition: 300ms;
+      border-radius: 0.25rem;
+      height: 200px;
+      background: white;
+      padding: 20px;
+      box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1),
+        0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    }
+  }
+}
+
+// .stacked {
+//   .content {
+//     // transform: translateY(8%) scale(0.9, 0.9);
+//     transform: rotate(-5deg);
+//   }
+// }
+
+.turn-left {
+  z-index: 5;
+
+  .content {
+    transform: rotate(-4deg);
+  }
+}
+
+.turn-right {
+  .content {
+    transform: rotate(-8deg);
+  }
+}
+
+.animate-in-process {
+  box-shadow: none;
 }
 
 .transparent {
   opacity: 0;
 }
+
+// .turned {
+//   transform: translateY(-10%) scale(0.9, 0.9);
+//   transform-origin: top right;
+// }
