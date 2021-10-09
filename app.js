@@ -3,7 +3,7 @@ let cards = Array.from(document.querySelectorAll("[js-card]"));
 let deckCards = Array.from(document.querySelectorAll("[js-deck-card]"));
 let gridLib = animateCSSGrid.wrapGrid(grid, {
   // int: default is 0 ms
-  stagger: 20,
+  stagger: 0,
   // int: default is 250 ms
   duration: 300,
   // string: default is 'easeInOut'
@@ -74,9 +74,28 @@ const getPosition = function (card) {
   return position;
 }
 
+const init = function (deckCard) {
+  deckCard.setAttribute("js-stacked", "");
+
+  getChilds(deckCard).forEach((card, index) => {
+    card.setAttribute("js-stacked", "");
+    card.classList.add("stacked");
+
+    if (index === 0) {
+      card.classList.add("turn-left");
+    } else if (index === 1) {
+      card.classList.add("turn-right");
+    }
+  });
+
+  animateCards();
+}
+
 cards.forEach((deckCard) => {
 
   if (deckCard.hasAttribute("js-deck-card")) {
+
+    init(deckCard);
 
     deckCard.addEventListener("click", () => {
 
