@@ -40,11 +40,27 @@
       .title {
         overflow: hidden;
         text-overflow: ellipsis;
-        padding: 20px;
+        padding: 20px 20px 8px 20px;
+        font-size: 1rem;
+        font-weight: 500;
       }
 
       .body {
+        color: #6b7280;
+        font-weight: 300;
+        font-size: 1rem;
         padding: 0 20px;
+
+        li:before {
+          display: inline-block;
+          content: "";
+          width: 5px;
+          height: 5px;
+          border-radius: 50%;
+          margin-bottom: 3px;
+          background: #6b7280;
+          margin-right: 8px;
+        }
       }
 
       .card-action {
@@ -56,7 +72,6 @@
         padding: 2px;
 
         .button {
-          // background: #f1f1f1;
           height: 3rem;
           width: 100%;
           display: flex;
@@ -66,7 +81,6 @@
           background: #f3f4f6;
           border-radius: 0.25rem;
           margin: 2px;
-          // padding: 20px;
 
           .fire-icon {
             background-color: transparent;

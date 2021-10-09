@@ -47,11 +47,27 @@
 .grid .card .content .title {
   overflow: hidden;
   text-overflow: ellipsis;
-  padding: 20px;
+  padding: 20px 20px 8px 20px;
+  font-size: 1rem;
+  font-weight: 500;
 }
 
 .grid .card .content .body {
+  color: #6b7280;
+  font-weight: 300;
+  font-size: 1rem;
   padding: 0 20px;
+}
+
+.grid .card .content .body li:before {
+  display: inline-block;
+  content: "";
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  margin-bottom: 3px;
+  background: #6b7280;
+  margin-right: 8px;
 }
 
 .grid .card .content .card-action {

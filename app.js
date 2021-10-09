@@ -95,7 +95,7 @@ cards.forEach((deckCard) => {
 
   if (deckCard.hasAttribute("js-deck-card")) {
 
-    init(deckCard);
+    // init(deckCard);
 
     deckCard.addEventListener("click", () => {
 
