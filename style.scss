@@ -121,13 +121,15 @@
   z-index: 5;
 
   .content {
-    transform: rotate(-4deg);
+    transform: rotate(-3deg);
+    // transform: translateY(2%) scaleX(0.95);
   }
 }
 
 .turn-right {
   .content {
-    transform: rotate(-8deg);
+    transform: rotate(-6deg);
+    // transform: translateY(4%) scaleX(0.9);
   }
 }
 

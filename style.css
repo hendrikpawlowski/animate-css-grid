@@ -136,12 +136,12 @@
 }
 
 .turn-left .content {
-  -webkit-transform: rotate(-4deg);
-          transform: rotate(-4deg);
+  -webkit-transform: rotate(-3deg);
+          transform: rotate(-3deg);
 }
 
 .turn-right .content {
-  -webkit-transform: rotate(-8deg);
-          transform: rotate(-8deg);
+  -webkit-transform: rotate(-6deg);
+          transform: rotate(-6deg);
 }
 /*# sourceMappingURL=style.css.map */
