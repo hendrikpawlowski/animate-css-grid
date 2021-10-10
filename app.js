@@ -45,7 +45,6 @@ const animateCards = function () {
 
   cards.forEach((card) => {
 
-
     let position = getPosition(card);
     let newRow = Math.ceil(position / (columnCount));
 
@@ -88,22 +87,45 @@ const init = function (deckCard) {
     }
   });
 
-  animateCards();
+  // animateCards();
 }
 
-cards.forEach((deckCard) => {
+const initButtons = function (card) {
 
-  if (deckCard.hasAttribute("js-deck-card")) {
+  let shieldButton = card.querySelector("[js-button-shield]");
+  let fireButton = card.querySelector("[js-button-fire]");
 
-    init(deckCard);
+  // console.log(card);
 
-    deckCard.addEventListener("click", () => {
+  // console.log(shieldButton);
 
-      if (deckCard.hasAttribute("js-stacked")) {
+  shieldButton.addEventListener("click", () => {
+    shieldButton.classList.toggle("pressed");
+  });
 
-        deckCard.removeAttribute("js-stacked");
+  fireButton.addEventListener("click", () => {
+    fireButton.classList.toggle("pressed");
+  });
+}
 
-        getChilds(deckCard).forEach((card, index) => {
+cards.forEach((card) => {
+
+  if (!card.hasAttribute("js-deck-card")) {
+    initButtons(card);
+  }
+
+
+  if (card.hasAttribute("js-deck-card")) {
+
+    init(card);
+
+    card.addEventListener("click", () => {
+
+      if (card.hasAttribute("js-stacked")) {
+
+        card.removeAttribute("js-stacked");
+
+        getChilds(card).forEach((card, index) => {
           card.classList.remove("transparent");
           card.removeAttribute("js-stacked");
           card.classList.remove("stacked");
@@ -118,9 +140,9 @@ cards.forEach((deckCard) => {
         animateCards();
 
       } else {
-        deckCard.setAttribute("js-stacked", "");
+        card.setAttribute("js-stacked", "");
 
-        getChilds(deckCard).forEach((card, index) => {
+        getChilds(card).forEach((card, index) => {
           card.setAttribute("js-stacked", "");
           card.classList.add("stacked");
 
@@ -134,5 +156,11 @@ cards.forEach((deckCard) => {
         animateCards();
       }
     });
+  } else {
+
+    // initButtons(card);
+
   }
 });
+
+animateCards();

@@ -14,20 +14,23 @@
     <link rel="stylesheet" href="./style.css" />
     <title>Animate CSS Grid</title>
   </head>
-  <body class="bg-gray-800">
+  <body class="bg-gray-200">
     <div class="px-2 py-12 sm:px-6 md:px-12 lg:px-32">
       <h1 class="text-xl color-white">Topic Gallery</h1>
       <ul js-grid class="pt-12 grid gap-4 sm:gap-8">
-        <li js-card js-deck-card js-stacked class="grid-item deck-card">
+        <li js-card js-deck-card class="grid-item deck-card">
           <div>
             <div class="content bg-red-400">
-              <h3>Teamspirit</h3>
+              <div>
+                <h3 class="title">Teamspirit</h3>
+                <p class="text">#engagement #initiative #wirgefuehl #erfolge</p>
+              </div>
             </div>
           </div>
         </li>
         <li js-card class="grid-item card">
           <div>
-            <div class="content">
+            <div class="content border-t-4 border-red-400">
               <h3 class="title">Kollektives Engagement</h3>
               <ul class="body">
                 <li>Lorem, ipsum dolor.</li>
@@ -35,10 +38,9 @@
                 <li>Consectetur adipisicing.</li>
               </ul>
               <div class="card-action">
-                <button class="button">
-                  <div class="fire-icon"></div>
-                </button>
-                <button class="button">
+                <button js-button-fire class="button fire">
+                  <div class="fire-icon"></div></button
+                ><button js-button-shield class="button shield">
                   <div class="shield-icon"></div>
                 </button>
               </div>
@@ -47,7 +49,7 @@
         </li>
         <li js-card class="grid-item card">
           <div>
-            <div class="content">
+            <div class="content border-t-4 border-red-400">
               <h3 class="title">Initiative</h3>
               <ul class="body">
                 <li>Lorem, ipsum dolor.</li>
@@ -55,10 +57,9 @@
                 <li>Consectetur adipisicing.</li>
               </ul>
               <div class="card-action">
-                <button class="button">
-                  <div class="fire-icon"></div>
-                </button>
-                <button class="button">
+                <button js-button-fire class="button fire">
+                  <div class="fire-icon"></div></button
+                ><button js-button-shield class="button shield">
                   <div class="shield-icon"></div>
                 </button>
               </div>
@@ -67,7 +68,7 @@
         </li>
         <li js-card class="grid-item card">
           <div>
-            <div class="content">
+            <div class="content border-t-4 border-red-400">
               <h3 class="title">Wir-Gefühl</h3>
               <ul class="body">
                 <li>Lorem, ipsum dolor.</li>
@@ -75,10 +76,9 @@
                 <li>Consectetur adipisicing.</li>
               </ul>
               <div class="card-action">
-                <button class="button">
-                  <div class="fire-icon"></div>
-                </button>
-                <button class="button">
+                <button js-button-fire class="button fire">
+                  <div class="fire-icon"></div></button
+                ><button js-button-shield class="button shield">
                   <div class="shield-icon"></div>
                 </button>
               </div>
@@ -87,7 +87,7 @@
         </li>
         <li js-card class="grid-item card">
           <div>
-            <div class="content">
+            <div class="content border-t-4 border-red-400">
               <h3 class="title">Erfolge feiern</h3>
               <ul class="body">
                 <li>Lorem, ipsum dolor.</li>
@@ -95,26 +95,31 @@
                 <li>Consectetur adipisicing.</li>
               </ul>
               <div class="card-action">
-                <button class="button">
-                  <div class="fire-icon"></div>
-                </button>
-                <button class="button">
+                <button js-button-fire class="button fire">
+                  <div class="fire-icon"></div></button
+                ><button js-button-shield class="button shield">
                   <div class="shield-icon"></div>
                 </button>
               </div>
             </div>
           </div>
         </li>
-        <li js-card js-deck-card js-stacked class="grid-item deck-card">
+        <li js-card js-deck-card class="grid-item deck-card">
           <div>
             <div class="content bg-green-400">
-              <h3>Umgang</h3>
+              <!-- <h3>Umgang</h3> -->
+              <div>
+                <h3 class="title">Umgang</h3>
+                <p class="text">
+                  #vertrauen #zuverlaessigkeit #fairness #meinungsvielfalt (+3)
+                </p>
+              </div>
             </div>
           </div>
         </li>
         <li js-card class="grid-item card">
           <div>
-            <div class="content">
+            <div class="content border-t-4 border-green-400">
               <h3 class="title">Vertrauen</h3>
               <ul class="body">
                 <li>Lorem, ipsum dolor.</li>
@@ -122,10 +127,9 @@
                 <li>Consectetur adipisicing.</li>
               </ul>
               <div class="card-action">
-                <button class="button">
-                  <div class="fire-icon"></div>
-                </button>
-                <button class="button">
+                <button js-button-fire class="button fire">
+                  <div class="fire-icon"></div></button
+                ><button js-button-shield class="button shield">
                   <div class="shield-icon"></div>
                 </button>
               </div>
@@ -134,7 +138,7 @@
         </li>
         <li js-card class="grid-item card">
           <div>
-            <div class="content">
+            <div class="content border-t-4 border-green-400">
               <h3 class="title">Zuverlässigkeit</h3>
               <ul class="body">
                 <li>Lorem, ipsum dolor.</li>
@@ -142,10 +146,9 @@
                 <li>Consectetur adipisicing.</li>
               </ul>
               <div class="card-action">
-                <button class="button">
-                  <div class="fire-icon"></div>
-                </button>
-                <button class="button">
+                <button js-button-fire class="button fire">
+                  <div class="fire-icon"></div></button
+                ><button js-button-shield class="button shield">
                   <div class="shield-icon"></div>
                 </button>
               </div>
@@ -154,7 +157,7 @@
         </li>
         <li js-card class="grid-item card">
           <div>
-            <div class="content">
+            <div class="content border-t-4 border-green-400">
               <h3 class="title">Fairness</h3>
               <ul class="body">
                 <li>Lorem, ipsum dolor.</li>
@@ -162,10 +165,9 @@
                 <li>Consectetur adipisicing.</li>
               </ul>
               <div class="card-action">
-                <button class="button">
-                  <div class="fire-icon"></div>
-                </button>
-                <button class="button">
+                <button js-button-fire class="button fire">
+                  <div class="fire-icon"></div></button
+                ><button js-button-shield class="button shield">
                   <div class="shield-icon"></div>
                 </button>
               </div>
@@ -174,7 +176,7 @@
         </li>
         <li js-card class="grid-item card">
           <div>
-            <div class="content">
+            <div class="content border-t-4 border-green-400">
               <h3 class="title">Meinungsvielfalt</h3>
               <ul class="body">
                 <li>Lorem, ipsum dolor.</li>
@@ -182,10 +184,9 @@
                 <li>Consectetur adipisicing.</li>
               </ul>
               <div class="card-action">
-                <button class="button">
-                  <div class="fire-icon"></div>
-                </button>
-                <button class="button">
+                <button js-button-fire class="button fire">
+                  <div class="fire-icon"></div></button
+                ><button js-button-shield class="button shield">
                   <div class="shield-icon"></div>
                 </button>
               </div>
@@ -194,7 +195,7 @@
         </li>
         <li js-card class="grid-item card">
           <div>
-            <div class="content">
+            <div class="content border-t-4 border-green-400">
               <h3 class="title">Respektvoller Umgang</h3>
               <ul class="body">
                 <li>Lorem, ipsum dolor.</li>
@@ -202,10 +203,9 @@
                 <li>Consectetur adipisicing.</li>
               </ul>
               <div class="card-action">
-                <button class="button">
-                  <div class="fire-icon"></div>
-                </button>
-                <button class="button">
+                <button js-button-fire class="button fire">
+                  <div class="fire-icon"></div></button
+                ><button js-button-shield class="button shield">
                   <div class="shield-icon"></div>
                 </button>
               </div>
@@ -214,7 +214,7 @@
         </li>
         <li js-card class="grid-item card">
           <div>
-            <div class="content">
+            <div class="content border-t-4 border-green-400">
               <h3 class="title">Konfliktumgang</h3>
               <ul class="body">
                 <li>Lorem, ipsum dolor.</li>
@@ -222,10 +222,9 @@
                 <li>Consectetur adipisicing.</li>
               </ul>
               <div class="card-action">
-                <button class="button">
-                  <div class="fire-icon"></div>
-                </button>
-                <button class="button">
+                <button js-button-fire class="button fire">
+                  <div class="fire-icon"></div></button
+                ><button js-button-shield class="button shield">
                   <div class="shield-icon"></div>
                 </button>
               </div>
@@ -234,7 +233,7 @@
         </li>
         <li js-card class="grid-item card">
           <div>
-            <div class="content">
+            <div class="content border-t-4 border-green-400">
               <h3 class="title">Gegenseitige Unterstützung</h3>
               <ul class="body">
                 <li>Lorem, ipsum dolor.</li>
@@ -242,26 +241,30 @@
                 <li>Consectetur adipisicing.</li>
               </ul>
               <div class="card-action">
-                <button class="button">
-                  <div class="fire-icon"></div>
-                </button>
-                <button class="button">
+                <button js-button-fire class="button fire">
+                  <div class="fire-icon"></div></button
+                ><button js-button-shield class="button shield">
                   <div class="shield-icon"></div>
                 </button>
               </div>
             </div>
           </div>
         </li>
-        <li js-card js-deck-card js-stacked class="grid-item deck-card">
+        <li js-card js-deck-card class="grid-item deck-card">
           <div>
             <div class="content bg-blue-400">
-              <h3>Arbeitsbedingungen</h3>
+              <div>
+                <h3 class="title">Arbeitsbedingungen</h3>
+                <p class="text">
+                  #zeiten #verteilung #sicherheit #freiheit #stress
+                </p>
+              </div>
             </div>
           </div>
         </li>
         <li js-card class="grid-item card">
           <div>
-            <div class="content">
+            <div class="content border-t-4 border-blue-400">
               <h3 class="title">Arbeitszeiten</h3>
               <ul class="body">
                 <li>Lorem, ipsum dolor.</li>
@@ -269,10 +272,9 @@
                 <li>Consectetur adipisicing.</li>
               </ul>
               <div class="card-action">
-                <button class="button">
-                  <div class="fire-icon"></div>
-                </button>
-                <button class="button">
+                <button js-button-fire class="button fire">
+                  <div class="fire-icon"></div></button
+                ><button js-button-shield class="button shield">
                   <div class="shield-icon"></div>
                 </button>
               </div>
@@ -281,7 +283,7 @@
         </li>
         <li js-card class="grid-item card">
           <div>
-            <div class="content">
+            <div class="content border-t-4 border-blue-400">
               <h3 class="title">Arbeitsverteilung</h3>
               <ul class="body">
                 <li>Lorem, ipsum dolor.</li>
@@ -289,10 +291,9 @@
                 <li>Consectetur adipisicing.</li>
               </ul>
               <div class="card-action">
-                <button class="button">
-                  <div class="fire-icon"></div>
-                </button>
-                <button class="button">
+                <button js-button-fire class="button fire">
+                  <div class="fire-icon"></div></button
+                ><button js-button-shield class="button shield">
                   <div class="shield-icon"></div>
                 </button>
               </div>
@@ -301,7 +302,7 @@
         </li>
         <li js-card class="grid-item card">
           <div>
-            <div class="content">
+            <div class="content border-t-4 border-blue-400">
               <h3 class="title">Arbeitssicherheit</h3>
               <ul class="body">
                 <li>Lorem, ipsum dolor.</li>
@@ -309,10 +310,9 @@
                 <li>Consectetur adipisicing.</li>
               </ul>
               <div class="card-action">
-                <button class="button">
-                  <div class="fire-icon"></div>
-                </button>
-                <button class="button">
+                <button js-button-fire class="button fire">
+                  <div class="fire-icon"></div></button
+                ><button js-button-shield class="button shield">
                   <div class="shield-icon"></div>
                 </button>
               </div>
@@ -321,7 +321,7 @@
         </li>
         <li js-card class="grid-item card">
           <div>
-            <div class="content">
+            <div class="content border-t-4 border-blue-400">
               <h3 class="title">Handlungsfreiheit</h3>
               <ul class="body">
                 <li>Lorem, ipsum dolor.</li>
@@ -329,10 +329,9 @@
                 <li>Consectetur adipisicing.</li>
               </ul>
               <div class="card-action">
-                <button class="button">
-                  <div class="fire-icon"></div>
-                </button>
-                <button class="button">
+                <button js-button-fire class="button fire">
+                  <div class="fire-icon"></div></button
+                ><button js-button-shield class="button shield">
                   <div class="shield-icon"></div>
                 </button>
               </div>
@@ -341,7 +340,7 @@
         </li>
         <li js-card class="grid-item card">
           <div>
-            <div class="content">
+            <div class="content border-t-4 border-blue-400">
               <h3 class="title">Stress</h3>
               <ul class="body">
                 <li>Lorem, ipsum dolor.</li>
@@ -349,52 +348,51 @@
                 <li>Consectetur adipisicing.</li>
               </ul>
               <div class="card-action">
-                <button class="button">
-                  <div class="fire-icon"></div>
-                </button>
-                <button class="button">
+                <button js-button-fire class="button fire">
+                  <div class="fire-icon"></div></button
+                ><button js-button-shield class="button shield">
                   <div class="shield-icon"></div>
                 </button>
               </div>
             </div>
           </div>
         </li>
-        <li js-card js-deck-card js-stacked class="grid-item deck-card">
+        <li js-card js-deck-card class="grid-item deck-card">
           <div>
             <div class="content bg-yellow-400">
               <h3>Kommunikation</h3>
             </div>
           </div>
         </li>
-        <li js-card js-deck-card js-stacked class="grid-item deck-card">
+        <li js-card js-deck-card class="grid-item deck-card">
           <div>
             <div class="content bg-indigo-400">
               <h3>Koordination</h3>
             </div>
           </div>
         </li>
-        <li js-card js-deck-card js-stacked class="grid-item deck-card">
+        <li js-card js-deck-card class="grid-item deck-card">
           <div>
             <div class="content bg-pink-400">
               <h3>Ausführung</h3>
             </div>
           </div>
         </li>
-        <li js-card js-deck-card js-stacked class="grid-item deck-card">
+        <li js-card js-deck-card class="grid-item deck-card">
           <div>
             <div class="content bg-purple-400">
               <h3>Weiterentwicklung</h3>
             </div>
           </div>
         </li>
-        <li js-card js-deck-card js-stacked class="grid-item deck-card">
+        <li js-card js-deck-card class="grid-item deck-card">
           <div>
             <div class="content bg-yellow-500">
               <h3>Qualitätsorientierung</h3>
             </div>
           </div>
         </li>
-        <li js-card js-deck-card js-stacked class="grid-item deck-card">
+        <li js-card js-deck-card class="grid-item deck-card">
           <div>
             <div class="content bg-green-500">
               <h3>Schnittstellen</h3>
