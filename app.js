@@ -97,12 +97,19 @@ const initButtons = function (card) {
 
   shieldButton.addEventListener("click", () => {
     shieldButton.classList.toggle("pressed");
-    card.querySelector("[js-content]").classList.toggle("flipped-right");
+    let content = card.querySelector("[js-content]");
+
+    content.classList.add("flipped-right");
+    content.querySelector("[js-flip-card-back]").innerHTML = "Schild";
   });
 
   fireButton.addEventListener("click", () => {
     fireButton.classList.toggle("pressed");
-    card.querySelector("[js-content]").classList.toggle("flipped-left");
+
+    let content = card.querySelector("[js-content]");
+
+    content.classList.add("flipped-left");
+    content.querySelector("[js-flip-card-back]").innerHTML = "Feuer";
   });
 }
 
