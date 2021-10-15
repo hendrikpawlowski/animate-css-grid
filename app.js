@@ -101,10 +101,12 @@ const initButtons = function (card) {
 
   shieldButton.addEventListener("click", () => {
     shieldButton.classList.toggle("pressed");
+    card.querySelector("[js-content]").classList.toggle("flipped-right");
   });
 
   fireButton.addEventListener("click", () => {
     fireButton.classList.toggle("pressed");
+    card.querySelector("[js-content]").classList.toggle("flipped-left");
   });
 }
 
