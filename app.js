@@ -95,10 +95,6 @@ const initButtons = function (card) {
   let shieldButton = card.querySelector("[js-button-shield]");
   let fireButton = card.querySelector("[js-button-fire]");
 
-  // console.log(card);
-
-  // console.log(shieldButton);
-
   shieldButton.addEventListener("click", () => {
     shieldButton.classList.toggle("pressed");
     card.querySelector("[js-content]").classList.toggle("flipped-right");
