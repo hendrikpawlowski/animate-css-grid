@@ -100,7 +100,21 @@ const initButtons = function (card) {
     let content = card.querySelector("[js-content]");
 
     content.classList.add("flipped-right");
-    content.querySelector("[js-flip-card-back]").innerHTML = "Schild";
+    let back = content.querySelector("[js-flip-card-back]");
+
+    back.classList.remove("fire");
+    back.classList.add("shield");
+    back.innerHTML = `<button js-back-button class="back-button">
+                        <img src="./icons/x-circle.svg" alt="" />
+                      </button>
+                      <div class="icon-wrapper">
+                        <img class="icon" src="./icons/shield-pressed.svg" alt="" />
+                      </div>`;
+
+    let backButton = back.querySelector("[js-back-button]");
+    backButton.addEventListener("click", () => {
+      content.classList.remove("flipped-right");
+    })
   });
 
   fireButton.addEventListener("click", () => {
@@ -109,7 +123,31 @@ const initButtons = function (card) {
     let content = card.querySelector("[js-content]");
 
     content.classList.add("flipped-left");
-    content.querySelector("[js-flip-card-back]").innerHTML = "Feuer";
+
+    let back = content.querySelector("[js-flip-card-back]");
+    back.classList.remove("shield");
+    back.classList.add("fire");
+
+    back.innerHTML = `<p class="instruction">Bitte geben Sie einen Kommentar ein</p>
+                      <div class="wrapper">
+                        <textarea
+                          class="comment"
+                          name="comment"
+                          id="comment"
+                          rows="3"
+                        ></textarea>
+                      </div>
+                      <div class="card-action">
+                        <button js-button-save-comment class="button save-comment">Save</button>
+                        <button js-button-abort class="button abort">Abbrechen</button>
+                      </div>`
+
+
+    let abortButton = content.querySelector("[js-button-abort]");
+    abortButton.addEventListener("click", () => {
+      content.classList.remove("flipped-left");
+
+    })
   });
 }
 

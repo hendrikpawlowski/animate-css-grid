@@ -63,17 +63,57 @@
           transform: rotateY(-180deg);
 }
 
-.grid .card .wrapper .flip-card-content.flipped-left .flip-card-back {
-  background: #fecaca;
-}
-
 .grid .card .wrapper .flip-card-content.flipped-right {
   -webkit-transform: rotateY(180deg);
           transform: rotateY(180deg);
 }
 
-.grid .card .wrapper .flip-card-content.flipped-right .flip-card-back {
+.grid .card .wrapper .flip-card-content .flip-card-back {
+  border-radius: 0.25rem;
+}
+
+.grid .card .wrapper .flip-card-content .flip-card-back.fire .instruction {
+  padding: 20px 20px 8px 20px;
+}
+
+.grid .card .wrapper .flip-card-content .flip-card-back.fire .wrapper {
+  padding: 0 4px 8px 4px;
+}
+
+.grid .card .wrapper .flip-card-content .flip-card-back.fire .wrapper .comment {
+  width: 100%;
+  height: 30%;
+  resize: none;
+  border-radius: 0.25rem;
+  border: solid 1px #e5e7eb;
+  padding: 4px;
+}
+
+.grid .card .wrapper .flip-card-content .flip-card-back.fire .button.save-comment {
+  background: #fecaca;
+}
+
+.grid .card .wrapper .flip-card-content .flip-card-back.shield {
   background: #a7f3d0;
+}
+
+.grid .card .wrapper .flip-card-content .flip-card-back.shield .back-button {
+  margin: 8px 0 0 8px;
+}
+
+.grid .card .wrapper .flip-card-content .flip-card-back.shield .icon-wrapper {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.grid .card .wrapper .flip-card-content .flip-card-back.shield .icon-wrapper .icon {
+  width: 100px;
 }
 
 .grid .card .wrapper .flip-card-content .title {
@@ -143,28 +183,12 @@
   height: 100%;
 }
 
-.grid .card .wrapper .flip-card-content .card-action .button.shield.pressed {
-  background: #a7f3d0;
-}
-
-.grid .card .wrapper .flip-card-content .card-action .button.shield.pressed .shield-icon {
-  background-image: url("./icons/shield-pressed.svg");
-}
-
 .grid .card .wrapper .flip-card-content .card-action .button.fire .fire-icon {
   background-color: transparent;
   background-image: url("./icons/fire.svg");
   background-size: 100% 100%;
   width: 100%;
   height: 100%;
-}
-
-.grid .card .wrapper .flip-card-content .card-action .button.fire.pressed {
-  background: #fecaca;
-}
-
-.grid .card .wrapper .flip-card-content .card-action .button.fire.pressed .fire-icon {
-  background-image: url("./icons/fire-pressed.svg");
 }
 
 .grid .card .wrapper .flip-card-content .card-action .button:hover {

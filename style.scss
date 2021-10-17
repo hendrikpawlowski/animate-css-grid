@@ -53,17 +53,59 @@
       .flip-card-content {
         &.flipped-left {
           transform: rotateY(-180deg);
-
-          .flip-card-back {
-            background: #fecaca;
-          }
         }
 
         &.flipped-right {
           transform: rotateY(180deg);
+        }
 
-          .flip-card-back {
+        // Feuer
+        .flip-card-back {
+          border-radius: 0.25rem;
+
+          &.fire {
+            // background: #fecaca;
+
+            .instruction {
+              padding: 20px 20px 8px 20px;
+            }
+
+            .wrapper {
+              padding: 0 4px 8px 4px;
+
+              .comment {
+                width: 100%;
+                height: 30%;
+                resize: none;
+                border-radius: 0.25rem;
+                border: solid 1px #e5e7eb;
+                padding: 4px;
+              }
+            }
+
+            .button {
+              &.save-comment {
+                background: #fecaca;
+              }
+            }
+          }
+
+          &.shield {
             background: #a7f3d0;
+
+            .back-button {
+              margin: 8px 0 0 8px;
+            }
+
+            .icon-wrapper {
+              box-sizing: border-box;
+              display: flex;
+              justify-content: center;
+
+              .icon {
+                width: 100px;
+              }
+            }
           }
         }
 
@@ -128,13 +170,13 @@
                 height: 100%;
               }
 
-              &.pressed {
-                background: #a7f3d0;
+              // &.pressed {
+              //   background: #a7f3d0;
 
-                .shield-icon {
-                  background-image: url("./icons/shield-pressed.svg");
-                }
-              }
+              //   .shield-icon {
+              //     background-image: url("./icons/shield-pressed.svg");
+              //   }
+              // }
               // background: ;
             }
 
@@ -147,13 +189,13 @@
                 height: 100%;
               }
 
-              &.pressed {
-                background: #fecaca;
+              // &.pressed {
+              //   background: #fecaca;
 
-                .fire-icon {
-                  background-image: url("./icons/fire-pressed.svg");
-                }
-              }
+              //   .fire-icon {
+              //     background-image: url("./icons/fire-pressed.svg");
+              //   }
+              // }
               // background: #fecaca;
             }
 

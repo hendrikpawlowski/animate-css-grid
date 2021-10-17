@@ -30,8 +30,8 @@
         </li>
         <li js-card class="grid-item card">
           <div class="wrapper">
-            <div js-content class="flip-card-content border-t-4 border-red-400">
-              <div class="flip-card-front">
+            <div js-content class="flip-card-content">
+              <div class="flip-card-front border-t-4 border-red-400">
                 <h3 class="title">Kollektives Engagement</h3>
                 <ul class="body">
                   <li>Lorem, ipsum dolor.</li>
@@ -47,7 +47,12 @@
                 </div>
               </div>
               <div js-flip-card-back class="flip-card-back">
-                <img src="./icons/shield-pressed.svg" alt="" />
+                <button js-back-button class="back-button">
+                  <img src="./icons/x-circle.svg" alt="" />
+                </button>
+                <div class="icon-wrapper">
+                  <img class="icon" src="./icons/shield-pressed.svg" alt="" />
+                </div>
               </div>
             </div>
           </div>
