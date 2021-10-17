@@ -128,19 +128,23 @@ const initButtons = function (card) {
     back.classList.remove("shield");
     back.classList.add("fire");
 
-    back.innerHTML = `<p class="instruction">Bitte geben Sie einen Kommentar ein</p>
-                      <div class="wrapper">
-                        <textarea
-                          class="comment"
-                          name="comment"
-                          id="comment"
-                          rows="3"
-                        ></textarea>
+    back.innerHTML = `
+                      <p class="instruction">Bitte geben Sie einen Kommentar ein</p>
+                      <div class="input-wrapper">
+                        <div class="textarea-wrapper">
+                          <textarea
+                            class="comment"
+                            name="comment"
+                            id="comment"
+                            rows="3"
+                          ></textarea>
+                        </div>
+                        <div class="back-card-action">
+                          <button js-button-save-comment class="button save-comment">Speichern</button>
+                          <button js-button-abort class="button abort">Abbrechen</button>
+                        </div>
                       </div>
-                      <div class="card-action">
-                        <button js-button-save-comment class="button save-comment">Save</button>
-                        <button js-button-abort class="button abort">Abbrechen</button>
-                      </div>`
+                      `
 
 
     let abortButton = content.querySelector("[js-button-abort]");

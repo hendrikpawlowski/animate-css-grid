@@ -1,6 +1,6 @@
 .grid {
-  -ms-grid-columns: (minmax(16rem, 1fr))[auto-fill];
-      grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+  -ms-grid-columns: (minmax(18rem, 1fr))[auto-fill];
+      grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
 }
 
 .grid .deck-card {
@@ -20,7 +20,7 @@
   -webkit-transition: 300ms;
   transition: 300ms;
   border-radius: 0.25rem;
-  height: 200px;
+  height: 250px;
   padding: 20px;
 }
 
@@ -47,6 +47,7 @@
 }
 
 .grid .card .wrapper .flip-card-content {
+  height: 250px;
   position: relative;
   width: 100%;
   height: 100%;
@@ -72,25 +73,83 @@
   border-radius: 0.25rem;
 }
 
+.grid .card .wrapper .flip-card-content .flip-card-back.fire {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
 .grid .card .wrapper .flip-card-content .flip-card-back.fire .instruction {
   padding: 20px 20px 8px 20px;
 }
 
-.grid .card .wrapper .flip-card-content .flip-card-back.fire .wrapper {
-  padding: 0 4px 8px 4px;
+.grid .card .wrapper .flip-card-content .flip-card-back.fire .input-wrapper .textarea-wrapper {
+  padding: 0 4px;
+  width: 100%;
 }
 
-.grid .card .wrapper .flip-card-content .flip-card-back.fire .wrapper .comment {
+.grid .card .wrapper .flip-card-content .flip-card-back.fire .input-wrapper .textarea-wrapper .comment {
   width: 100%;
-  height: 30%;
+  height: 8rem;
   resize: none;
   border-radius: 0.25rem;
   border: solid 1px #e5e7eb;
   padding: 4px;
 }
 
-.grid .card .wrapper .flip-card-content .flip-card-back.fire .button.save-comment {
-  background: #fecaca;
+.grid .card .wrapper .flip-card-content .flip-card-back.fire .input-wrapper .back-card-action {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 2px;
+}
+
+.grid .card .wrapper .flip-card-content .flip-card-back.fire .input-wrapper .back-card-action .button {
+  height: 3rem;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  margin: 2px;
+  -webkit-transition: 100ms;
+  transition: 100ms;
+}
+
+.grid .card .wrapper .flip-card-content .flip-card-back.fire .input-wrapper .back-card-action .button.save-comment {
+  background: #f87171;
+  color: white;
+}
+
+.grid .card .wrapper .flip-card-content .flip-card-back.fire .input-wrapper .back-card-action .button.save-comment:hover {
+  background: #e96161;
+}
+
+.grid .card .wrapper .flip-card-content .flip-card-back.fire .input-wrapper .back-card-action .button.abort {
+  background: #f3f4f6;
+}
+
+.grid .card .wrapper .flip-card-content .flip-card-back.fire .input-wrapper .back-card-action .button.abort:hover {
+  background: #e5e7eb;
 }
 
 .grid .card .wrapper .flip-card-content .flip-card-back.shield {
@@ -177,7 +236,7 @@
 
 .grid .card .wrapper .flip-card-content .card-action .button.shield .shield-icon {
   background-color: transparent;
-  background-image: url("./icons/shield.svg");
+  background-image: url("./icons/shield-pressed.svg");
   background-size: 100% 100%;
   width: 100%;
   height: 100%;
@@ -185,7 +244,7 @@
 
 .grid .card .wrapper .flip-card-content .card-action .button.fire .fire-icon {
   background-color: transparent;
-  background-image: url("./icons/fire.svg");
+  background-image: url("./icons/fire-pressed.svg");
   background-size: 100% 100%;
   width: 100%;
   height: 100%;
@@ -193,11 +252,6 @@
 
 .grid .card .wrapper .flip-card-content .card-action .button:hover {
   background: #e5e7eb;
-}
-
-.grid .card .wrapper .flip-card-content .card-action .button:hover .shield-icon {
-  -webkit-transform: scale(1);
-          transform: scale(1);
 }
 
 .flip-card-front,
