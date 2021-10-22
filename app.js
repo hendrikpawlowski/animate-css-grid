@@ -105,11 +105,15 @@ const initButtons = function (card) {
     back.classList.remove("fire");
     back.classList.add("shield");
     back.innerHTML = `<button js-back-button class="back-button">
-                        <img src="./icons/x-circle.svg" alt="" />
+                        <img class="icon" src="./icons/corner-up-left.svg" alt="" />
                       </button>
                       <div class="icon-wrapper">
                         <img class="icon" src="./icons/shield-pressed.svg" alt="" />
-                      </div>`;
+                      </div>
+                      <div class="text-wrapper">
+                        <p class="text">Sie haben das Thema positiv bewertet</p>
+                      </div>
+                      `;
 
     let backButton = back.querySelector("[js-back-button]");
     backButton.addEventListener("click", () => {
@@ -129,20 +133,18 @@ const initButtons = function (card) {
     back.classList.add("fire");
 
     back.innerHTML = `
-                      <p class="instruction">Bitte geben Sie einen Kommentar ein</p>
-                      <div class="input-wrapper">
-                        <div class="textarea-wrapper">
-                          <textarea
-                            class="comment"
-                            name="comment"
-                            id="comment"
-                            rows="3"
-                          ></textarea>
-                        </div>
-                        <div class="back-card-action">
-                          <button js-button-save-comment class="button save-comment">Speichern</button>
-                          <button js-button-abort class="button abort">Abbrechen</button>
-                        </div>
+                      <div class="textarea-wrapper">
+                        <textarea
+                          placeholder="Bitte erläutern Sie kurz die Wahl dieses Themengebietes - wo genau liegen aus Ihrer Sicht die Probleme in Ihrem Team?"
+                          class="comment"
+                          name="comment"
+                          id="comment"
+                          rows="10"
+                        ></textarea>
+                      </div>
+                      <div class="back-card-action">
+                        <button js-button-abort class="button abort">Abbrechen</button>
+                        <button js-button-save-comment class="button save-comment">Speichern</button>
                       </div>
                       `
 
