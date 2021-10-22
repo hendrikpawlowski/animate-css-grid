@@ -17,8 +17,8 @@
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: end;
-  -webkit-transition: 300ms;
-  transition: 300ms;
+  -webkit-transition: 3000ms;
+  transition: 3000ms;
   border-radius: 0.25rem;
   height: 200px;
   padding: 20px;
@@ -307,10 +307,6 @@
           perspective: 1000px;
 }
 
-.turn-left {
-  z-index: 5;
-}
-
 .turn-left .wrapper-for-stacked-turn {
   -webkit-transform: rotate(-3deg);
           transform: rotate(-3deg);
@@ -319,5 +315,9 @@
 .turn-right .wrapper-for-stacked-turn {
   -webkit-transform: rotate(-6deg);
           transform: rotate(-6deg);
+}
+
+.higher-z-index {
+  z-index: 5;
 }
 /*# sourceMappingURL=style.css.map */

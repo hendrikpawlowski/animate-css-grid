@@ -82,6 +82,7 @@ const init = function (deckCard) {
 
     if (index === 0) {
       card.classList.add("turn-left");
+      card.classList.add("higher-z-index");
     } else if (index === 1) {
       card.classList.add("turn-right");
     }
@@ -208,7 +209,6 @@ cards.forEach((card) => {
   } else {
 
     // initButtons(card);
-
   }
 });
 
