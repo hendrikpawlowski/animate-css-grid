@@ -73,7 +73,7 @@ const getPosition = function (card) {
   return position;
 }
 
-const init = function (deckCard) {
+const initCardStack = function (deckCard) {
   deckCard.setAttribute("js-stacked", "");
 
   getChilds(deckCard).forEach((card, index) => {
@@ -91,49 +91,20 @@ const init = function (deckCard) {
   // animateCards();
 }
 
-const initButtons = function (card) {
-
-  let shieldButton = card.querySelector("[js-button-shield]");
+const flipToFireBack = function (card) {
   let fireButton = card.querySelector("[js-button-fire]");
 
-  shieldButton.addEventListener("click", () => {
-    shieldButton.classList.toggle("pressed");
-    let content = card.querySelector("[js-content]");
+  fireButton.classList.toggle("pressed");
 
-    content.classList.add("flipped-right");
-    let back = content.querySelector("[js-flip-card-back]");
+  let content = card.querySelector("[js-content]");
 
-    back.classList.remove("fire");
-    back.classList.add("shield");
-    back.innerHTML = `<button js-back-button class="back-button">
-                        <img class="icon" src="./icons/corner-up-left.svg" alt="" />
-                      </button>
-                      <div class="icon-wrapper">
-                        <img class="icon" src="./icons/shield-pressed.svg" alt="" />
-                      </div>
-                      <div class="text-wrapper">
-                        <p class="text">Sie haben das Thema positiv bewertet</p>
-                      </div>
-                      `;
+  content.classList.add("flipped-left");
 
-    let backButton = back.querySelector("[js-back-button]");
-    backButton.addEventListener("click", () => {
-      content.classList.remove("flipped-right");
-    })
-  });
+  let back = content.querySelector("[js-flip-card-back]");
+  back.classList.remove("shield");
+  back.classList.add("fire");
 
-  fireButton.addEventListener("click", () => {
-    fireButton.classList.toggle("pressed");
-
-    let content = card.querySelector("[js-content]");
-
-    content.classList.add("flipped-left");
-
-    let back = content.querySelector("[js-flip-card-back]");
-    back.classList.remove("shield");
-    back.classList.add("fire");
-
-    back.innerHTML = `
+  back.innerHTML = `
                       <div class="textarea-wrapper">
                         <textarea
                           placeholder="Bitte erläutern Sie kurz die Wahl dieses Themengebietes - wo genau liegen aus Ihrer Sicht die Probleme in Ihrem Team?"
@@ -150,24 +121,70 @@ const initButtons = function (card) {
                       `
 
 
-    let abortButton = content.querySelector("[js-button-abort]");
-    abortButton.addEventListener("click", () => {
-      content.classList.remove("flipped-left");
+  let abortButton = content.querySelector("[js-button-abort]");
+  abortButton.addEventListener("click", () => {
+    content.classList.remove("flipped-left");
 
-    })
+  })
+}
+
+const flipToShieldBack = function (card) {
+  let shieldButton = card.querySelector("[js-button-shield]");
+
+  shieldButton.classList.toggle("pressed");
+  let content = card.querySelector("[js-content]");
+
+  content.classList.add("flipped-right");
+  let back = content.querySelector("[js-flip-card-back]");
+
+  back.classList.remove("fire");
+  back.classList.add("shield");
+  back.innerHTML = `<button js-back-button class="back-button">
+                      <img class="icon" src="./icons/corner-up-left.svg" alt="" />
+                    </button>
+                    <div class="icon-wrapper">
+                      <img class="icon" src="./icons/shield-pressed.svg" alt="" />
+                    </div>
+                    <div class="text-wrapper">
+                      <p class="text">Sie haben das Thema positiv bewertet</p>
+                    </div>
+                    `;
+
+  let backButton = back.querySelector("[js-back-button]");
+  backButton.addEventListener("click", () => {
+    content.classList.remove("flipped-right");
+  })
+}
+
+const initFlip = function (card) {
+
+  let shieldButton = card.querySelector("[js-button-shield]");
+  let fireButton = card.querySelector("[js-button-fire]");
+  let content = card.querySelector("[js-content]");
+
+  content.addEventListener("swiped-right", () => {
+    content.classList.add("flipped-right");
+  });
+
+  shieldButton.addEventListener("click", () => {
+    flipToShieldBack(card);
+  });
+
+  fireButton.addEventListener("click", () => {
+    flipToFireBack(card);
   });
 }
 
 cards.forEach((card) => {
 
   if (!card.hasAttribute("js-deck-card")) {
-    initButtons(card);
+    initFlip(card);
   }
 
 
   if (card.hasAttribute("js-deck-card")) {
 
-    init(card);
+    initCardStack(card);
 
     card.addEventListener("click", () => {
 
@@ -208,7 +225,7 @@ cards.forEach((card) => {
     });
   } else {
 
-    // initButtons(card);
+    // initFlip(card);
   }
 });
 
