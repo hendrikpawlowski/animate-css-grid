@@ -130,13 +130,11 @@ const flipToFireBack = function (card) {
 
 const flipToShieldBack = function (card) {
   let shieldButton = card.querySelector("[js-button-shield]");
-
-  shieldButton.classList.toggle("pressed");
   let content = card.querySelector("[js-content]");
-
-  content.classList.add("flipped-right");
   let back = content.querySelector("[js-flip-card-back]");
 
+  shieldButton.classList.toggle("pressed");
+  content.classList.add("flipped-right");
   back.classList.remove("fire");
   back.classList.add("shield");
   back.innerHTML = `<button js-back-button class="back-button">
@@ -153,7 +151,13 @@ const flipToShieldBack = function (card) {
   let backButton = back.querySelector("[js-back-button]");
   backButton.addEventListener("click", () => {
     content.classList.remove("flipped-right");
-  })
+  });
+
+  // content.removeEventListener("swiped-left");
+
+  // content.addEventListener("swiped-left", () => {
+  //   content.classList.remove("flipped-right");
+  // });
 }
 
 const initFlip = function (card) {
@@ -163,11 +167,19 @@ const initFlip = function (card) {
   let content = card.querySelector("[js-content]");
 
   content.addEventListener("swiped-right", () => {
-    flipToShieldBack(card);
+    if (content.classList.contains("flipped-left")) {
+      content.classList.remove("flipped-left");
+    } else {
+      if (!content.classList.contains("flipped-left")) flipToShieldBack(card);
+    }
   });
 
   content.addEventListener("swiped-left", () => {
-    flipToFireBack(card);
+    if (content.classList.contains("flipped-right")) {
+      content.classList.remove("flipped-right");
+    } else {
+      if (!content.classList.contains("flipped-right")) flipToFireBack(card);
+    }
   });
 
   shieldButton.addEventListener("click", () => {
@@ -184,7 +196,6 @@ cards.forEach((card) => {
   if (!card.hasAttribute("js-deck-card")) {
     initFlip(card);
   }
-
 
   if (card.hasAttribute("js-deck-card")) {
 
