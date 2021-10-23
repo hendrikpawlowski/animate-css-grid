@@ -163,7 +163,11 @@ const initFlip = function (card) {
   let content = card.querySelector("[js-content]");
 
   content.addEventListener("swiped-right", () => {
-    content.classList.add("flipped-right");
+    flipToShieldBack(card);
+  });
+
+  content.addEventListener("swiped-left", () => {
+    flipToFireBack(card);
   });
 
   shieldButton.addEventListener("click", () => {
