@@ -17,8 +17,8 @@
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: end;
-  -webkit-transition: 3000ms;
-  transition: 3000ms;
+  -webkit-transition: 300ms;
+  transition: 300ms;
   border-radius: 0.25rem;
   height: 200px;
   padding: 20px;
@@ -40,6 +40,10 @@
   cursor: pointer;
   -webkit-perspective: 1000px;
           perspective: 1000px;
+}
+
+.grid .card.stacked .flip-card-front {
+  border-color: transparent !important;
 }
 
 .grid .card .wrapper {
@@ -208,6 +212,20 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-transition: 300ms;
+  transition: 300ms;
+}
+
+.grid .card .wrapper .flip-card-wrapper .flip-card-front.red {
+  border-top: solid 3px #f87171;
+}
+
+.grid .card .wrapper .flip-card-wrapper .flip-card-front.green {
+  border-top: solid 3px #34d399;
+}
+
+.grid .card .wrapper .flip-card-wrapper .flip-card-front.blue {
+  border-top: solid 3px #60a5fa;
 }
 
 .grid .card .wrapper .flip-card-wrapper .flip-card-front .card-text .title {
