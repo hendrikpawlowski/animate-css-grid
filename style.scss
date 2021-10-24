@@ -120,6 +120,7 @@
                 border-radius: 0.25rem;
                 margin: 2px;
                 transition: 100ms;
+                -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 
                 &.save-comment {
                   color: #e96161;
