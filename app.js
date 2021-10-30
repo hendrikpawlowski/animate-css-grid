@@ -19,8 +19,9 @@ let gridLib = animateCSSGrid.wrapGrid(grid, {
   onEnd: (animatingElementList) => {
 
     animatingElementList.forEach(card => {
-      if (card.hasAttribute("js-stacked") && !card.hasAttribute("js-deck-card")) {
-      }
+      // if (card.hasAttribute("js-stacked") && !card.hasAttribute("js-deck-card")) {
+      // }
+      // card.classList.remove("opacity-0");
     });
   }
 });
@@ -45,17 +46,8 @@ const animateCards = function () {
 
   cards.forEach((card) => {
 
-    let position = getPosition(card);
-    let newRow = Math.ceil(position / (columnCount));
-
-    let newCol = position % columnCount;
-
-    if (newCol === 0) {
-      newCol = columnCount;
-    }
-
-    card.style.gridArea = `${newRow} / ${newCol}`;
-    gridLib.forceGridAnimation();
+    let newPosition = getPosition(card)
+    card.style.gridArea = `${newPosition.newRow} / ${newPosition.newCol}`;
   })
 }
 
@@ -70,13 +62,23 @@ const getPosition = function (card) {
     position++;
   }
 
-  return position;
+  let newRow = Math.ceil(position / (columnCount));
+
+  let newCol = position % columnCount;
+
+  if (newCol === 0) {
+    newCol = columnCount;
+  }
+
+  return { newRow, newCol };
 }
 
 const initCardStack = function (deckCard) {
   deckCard.setAttribute("js-stacked", "");
 
   getChilds(deckCard).forEach((card, index) => {
+    initFlip(card);
+
     card.setAttribute("js-stacked", "");
     card.classList.add("stacked");
 
@@ -87,8 +89,6 @@ const initCardStack = function (deckCard) {
       card.classList.add("turn-right");
     }
   });
-
-  // animateCards();
 }
 
 const flipToFireBack = function (card) {
@@ -191,57 +191,62 @@ const initFlip = function (card) {
   });
 }
 
-cards.forEach((card) => {
+const handleStack = function (deckCard) {
+  if (deckCard.hasAttribute("js-stacked")) {
 
-  if (!card.hasAttribute("js-deck-card")) {
-    initFlip(card);
-  }
+    deckCard.removeAttribute("js-stacked");
 
-  if (card.hasAttribute("js-deck-card")) {
+    getChilds(deckCard).forEach((card, index) => {
+      card.removeAttribute("js-stacked");
+      card.classList.remove("stacked");
 
-    initCardStack(card);
-
-    card.addEventListener("click", () => {
-
-      if (card.hasAttribute("js-stacked")) {
-
-        card.removeAttribute("js-stacked");
-
-        getChilds(card).forEach((card, index) => {
-          card.classList.remove("transparent");
-          card.removeAttribute("js-stacked");
-          card.classList.remove("stacked");
-
-          if (index === 0) {
-            card.classList.remove("turn-left");
-          } else if (index === 1) {
-            card.classList.remove("turn-right");
-          }
-        });
-
-        animateCards();
-
-      } else {
-        card.setAttribute("js-stacked", "");
-
-        getChilds(card).forEach((card, index) => {
-          card.setAttribute("js-stacked", "");
-          card.classList.add("stacked");
-
-          if (index === 0) {
-            card.classList.add("turn-left");
-          } else if (index === 1) {
-            card.classList.add("turn-right");
-          }
-        });
-
-        animateCards();
+      if (index === 0) {
+        card.classList.remove("turn-left");
+      } else if (index === 1) {
+        card.classList.remove("turn-right");
       }
     });
+
+    animateCards();
+
   } else {
+    deckCard.setAttribute("js-stacked", "");
 
-    // initFlip(card);
+    getChilds(deckCard).forEach((card, index) => {
+      card.setAttribute("js-stacked", "");
+      card.classList.add("stacked");
+
+      if (index === 0) {
+        card.classList.add("turn-left");
+      } else if (index === 1) {
+        card.classList.add("turn-right");
+      }
+    });
+
+    animateCards();
   }
-});
+}
 
-animateCards();
+
+const init = function () {
+
+  let lastDeckCardPosition;
+
+  cards.forEach((card) => {
+
+    if (card.hasAttribute("js-deck-card")) {
+
+      initCardStack(card);
+
+      card.addEventListener("click", () => {
+
+        handleStack(card);
+      });
+    }
+  });
+
+  animateCards();
+}
+
+init();
+
