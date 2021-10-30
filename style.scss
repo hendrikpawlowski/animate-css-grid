@@ -40,6 +40,11 @@
     // box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
 
     &.stacked {
+      .flip-card-front,
+      .flip-card-back {
+        box-shadow: none;
+      }
+
       .flip-card-front {
         border-color: transparent !important;
       }
@@ -302,14 +307,26 @@
 .turn-left {
   .wrapper-for-stacked-turn {
     transform: rotate(-3deg);
-    // transform: translateY(2%) scaleX(0.95);
+
+    .flip-card-wrapper {
+      .flip-card-front,
+      .flip-card-back {
+        box-shadow: 0 1px 4px 0 rgba(19, 14, 14, 0.25);
+      }
+    }
   }
 }
 
 .turn-right {
   .wrapper-for-stacked-turn {
     transform: rotate(-6deg);
-    // transform: translateY(4%) scaleX(0.9);
+
+    .flip-card-wrapper {
+      .flip-card-front,
+      .flip-card-back {
+        box-shadow: 0px 1px 4px 0 rgba(19, 14, 14, 0.25);
+      }
+    }
   }
 }
 

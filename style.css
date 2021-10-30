@@ -42,6 +42,12 @@
           perspective: 1000px;
 }
 
+.grid .card.stacked .flip-card-front,
+.grid .card.stacked .flip-card-back {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
 .grid .card.stacked .flip-card-front {
   border-color: transparent !important;
 }
@@ -338,9 +344,21 @@
           transform: rotate(-3deg);
 }
 
+.turn-left .wrapper-for-stacked-turn .flip-card-wrapper .flip-card-front,
+.turn-left .wrapper-for-stacked-turn .flip-card-wrapper .flip-card-back {
+  -webkit-box-shadow: 0 1px 4px 0 rgba(19, 14, 14, 0.25);
+          box-shadow: 0 1px 4px 0 rgba(19, 14, 14, 0.25);
+}
+
 .turn-right .wrapper-for-stacked-turn {
   -webkit-transform: rotate(-6deg);
           transform: rotate(-6deg);
+}
+
+.turn-right .wrapper-for-stacked-turn .flip-card-wrapper .flip-card-front,
+.turn-right .wrapper-for-stacked-turn .flip-card-wrapper .flip-card-back {
+  -webkit-box-shadow: 0px 1px 4px 0 rgba(19, 14, 14, 0.25);
+          box-shadow: 0px 1px 4px 0 rgba(19, 14, 14, 0.25);
 }
 
 .higher-z-index {
