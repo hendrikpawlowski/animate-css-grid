@@ -1,6 +1,7 @@
 let grid = document.querySelector("[js-grid]");
 let cards = Array.from(document.querySelectorAll("[js-card]"));
 let deckCards = Array.from(document.querySelectorAll("[js-deck-card]"));
+let startingCard = document.querySelector("[js-starting-card]");
 let gridLib = animateCSSGrid.wrapGrid(grid, {
   // int: default is 0 ms
   stagger: 0,
@@ -78,9 +79,6 @@ const initCardStack = function (deckCard) {
 
   getChilds(deckCard).forEach((card, index) => {
     initFlip(card);
-
-    card.setAttribute("js-stacked", "");
-    card.classList.add("stacked");
 
     if (index === 0) {
       card.classList.add("turn-left");
@@ -230,8 +228,6 @@ const handleStack = function (deckCard) {
 
 const init = function () {
 
-  let lastDeckCardPosition;
-
   cards.forEach((card) => {
 
     if (card.hasAttribute("js-deck-card")) {
@@ -239,14 +235,35 @@ const init = function () {
       initCardStack(card);
 
       card.addEventListener("click", () => {
-
         handleStack(card);
       });
+    } else {
+      let flipCardFront = card.querySelector(".flip-card-front");
+      console.log(flipCardFront);
+      flipCardFront.classList.add("shadow_");
     }
   });
 
   animateCards();
 }
 
-init();
+const initStartingCard = function () {
+  console.log(startingCard)
+
+  cards.forEach((card, index) => {
+    card.style.zIndex = (cards.length - index) + 1 + "";
+  });
+
+  startingCard.addEventListener("click", () => {
+    init();
+    startingCard.classList.add("opacity-0");
+
+    setTimeout(() => {
+      startingCard.remove();
+    }, 500);
+  })
+}
+
+initStartingCard();
+// init();
 

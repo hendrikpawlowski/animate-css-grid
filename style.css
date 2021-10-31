@@ -1,3 +1,7 @@
+.opening-illustration {
+  width: 12rem;
+}
+
 .grid {
   -ms-grid-columns: (minmax(16rem, 1fr))[auto-fill];
       grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
@@ -7,6 +11,28 @@
   cursor: pointer;
   z-index: 10;
   color: white;
+}
+
+.grid .deck-card.starting {
+  z-index: 100;
+  -webkit-transition: 300ms;
+  transition: 300ms;
+}
+
+.grid .deck-card.starting .content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.grid .deck-card.starting .content .title {
+  font-size: 1.64rem;
 }
 
 .grid .deck-card .content {
@@ -22,8 +48,6 @@
   border-radius: 0.25rem;
   height: 200px;
   padding: 20px;
-  -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
-          box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
 }
 
 .grid .deck-card .content .title {
@@ -318,9 +342,9 @@
   position: absolute;
   width: 100%;
   height: 100%;
-  background: white;
   -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
           box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  background: white;
   border-radius: 0.25rem;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
