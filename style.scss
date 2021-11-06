@@ -351,11 +351,11 @@
 
 .accordion {
   .head {
-    cursor: pointer;
     display: flex;
     align-items: center;
 
     .icon {
+      cursor: pointer;
       margin-left: 1rem;
       width: 2rem;
       transition: 200ms;

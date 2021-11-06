@@ -390,7 +390,6 @@
 }
 
 .accordion .head {
-  cursor: pointer;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -400,6 +399,7 @@
 }
 
 .accordion .head .icon {
+  cursor: pointer;
   margin-left: 1rem;
   width: 2rem;
   -webkit-transition: 200ms;
