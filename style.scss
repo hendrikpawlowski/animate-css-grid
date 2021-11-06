@@ -361,6 +361,10 @@
       transition: 200ms;
       // animation-duration: 200ms;
     }
+
+    .icon:hover {
+      transform: scale(1.1);
+    }
   }
 
   .panel {

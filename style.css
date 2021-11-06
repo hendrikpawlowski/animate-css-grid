@@ -406,6 +406,11 @@
   transition: 200ms;
 }
 
+.accordion .head .icon:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
 .accordion .panel {
   overflow: hidden;
   -webkit-transition: 0.7s;

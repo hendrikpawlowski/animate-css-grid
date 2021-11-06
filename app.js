@@ -241,6 +241,11 @@ const initAccordions = function () {
     setTimeout(() => {
       toggleButton.classList.add("animate__animated");
       toggleButton.classList.add("animate__heartBeat");
+
+      toggleButton.addEventListener("animationend", () => {
+        toggleButton.classList.remove("animate__animated");
+        toggleButton.classList.remove("animate__heartBeat");
+      })
     }, 600)
 
     panel.style.maxHeight = "0px";
