@@ -2,6 +2,7 @@ let grid = document.querySelector("[js-grid]");
 let cards = Array.from(document.querySelectorAll("[js-card]"));
 let deckCards = Array.from(document.querySelectorAll("[js-deck-card]"));
 let startingCard = document.querySelector("[js-starting-card]");
+let accordion = document.querySelector("[js-accordion]");
 let gridLib = animateCSSGrid.wrapGrid(grid, {
   // int: default is 0 ms
   stagger: 0,
@@ -225,6 +226,33 @@ const handleStack = function (deckCard) {
   }
 }
 
+const initAccordions = function () {
+  console.log("initAccordions");
+  let accordion = document.querySelector("[js-accordion]");
+  let button = accordion.querySelector("[js-button]");
+  let icon = button.querySelector("[js-icon]");
+  let panel = accordion.querySelector("[js-panel]");
+
+  panel.style.maxHeight = panel.scrollHeight + "px";
+
+  setTimeout(() => {
+    icon.classList.remove("opacity-0");
+    panel.style.maxHeight = "0px";
+  }, 800);
+
+  button.addEventListener("click", function () {
+    accordion.classList.toggle("active");
+
+    if (panel.style.maxHeight === "") {
+      panel.style.maxHeight = "0px";
+    } else if (panel.style.maxHeight === "0px") {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    } else {
+      panel.style.maxHeight = "0";
+    }
+  });
+}
+
 
 const init = function () {
 
@@ -248,6 +276,7 @@ const init = function () {
 }
 
 const initStartingCard = function () {
+
   console.log(startingCard)
 
   cards.forEach((card, index) => {
@@ -255,6 +284,7 @@ const initStartingCard = function () {
   });
 
   startingCard.addEventListener("click", () => {
+    initAccordions();
     init();
     startingCard.classList.add("opacity-0");
 
@@ -265,5 +295,3 @@ const initStartingCard = function () {
 }
 
 initStartingCard();
-// init();
-

@@ -3,8 +3,6 @@
 }
 
 .grid {
-  // grid-gap: 10px;
-
   grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
 
   .deck-card {
@@ -349,4 +347,31 @@
 
 .higher-z-index {
   z-index: 5;
+}
+
+.accordion {
+  .button {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+
+    .icon {
+      margin-left: 1rem;
+      width: 2.5rem;
+      transition: 200ms;
+    }
+  }
+
+  .panel {
+    overflow: hidden;
+    transition: 0.7s;
+  }
+
+  &.active {
+    .button {
+      .icon {
+        transform: rotate(-180deg);
+      }
+    }
+  }
 }

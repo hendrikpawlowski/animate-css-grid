@@ -165,18 +165,19 @@
 
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12">
     <div class="flex">
-      <div class="">
-        <h1 class="text-3xl font-semibold color-white text-gray-900">Selection Phase</h1>
-        <p class="max-w-2xl pt-4 text-gray-500 font-light">Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-          Dolores
-          saepe
-          consequuntur
-          suscipit
-          minima placeat
-          corrupti! Consectetur sit inventore unde vero, cum aspernatur repudiandae reiciendis. Sed esse a dicta laborum
-          animi.</p>
+      <div js-accordion class="accordion">
+        <div js-button class="button">
+          <h1 class="text-3xl font-semibold color-white text-gray-900">Wählt eure Themen</h1>
+          <img js-icon class="icon opacity-0" src="./icons/arrow-down.svg" alt="">
+        </div>
+        <div js-panel class="panel flex">
+          <p class="max-w-2xl pt-4 text-gray-500 font-light">Jetzt ist deine Meinung gefragt! Wähle aus den 40
+            Themenkarten fünf aus bei denen es in deinem Team besonders gut läuft und weitere fünf, bei denen es aus
+            deiner Sicht brennt. Durch die beschränkte Themenauswahl könnt ihr euch anschließend auf die wichtigsten
+            Themen konzentrieren und diese gezielt verbessern.</p>
+        </div>
       </div>
-      <img class="opening-illustration ml-20" src="./illustrations/choice.svg" alt="">
+      <!-- <img class="opening-illustration" src="./illustrations/choice.svg" alt=""> -->
     </div>
     <ul js-grid class="pt-8 grid gap-8">
       <li js-starting-card class="grid-item deck-card starting" style="grid-area: 1 / 1">
