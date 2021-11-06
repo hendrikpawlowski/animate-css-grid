@@ -350,7 +350,7 @@
 }
 
 .accordion {
-  .button {
+  .head {
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -359,6 +359,7 @@
       margin-left: 1rem;
       width: 2rem;
       transition: 200ms;
+      // animation-duration: 200ms;
     }
   }
 

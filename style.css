@@ -389,7 +389,7 @@
   z-index: 5;
 }
 
-.accordion .button {
+.accordion .head {
   cursor: pointer;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -399,7 +399,7 @@
           align-items: center;
 }
 
-.accordion .button .icon {
+.accordion .head .icon {
   margin-left: 1rem;
   width: 2rem;
   -webkit-transition: 200ms;

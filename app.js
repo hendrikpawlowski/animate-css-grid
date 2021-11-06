@@ -229,18 +229,24 @@ const handleStack = function (deckCard) {
 const initAccordions = function () {
   console.log("initAccordions");
   let accordion = document.querySelector("[js-accordion]");
-  let button = accordion.querySelector("[js-button]");
-  let icon = button.querySelector("[js-icon]");
+  let head = accordion.querySelector("[js-head]");
+  let toggleButton = head.querySelector("[js-toggle]");
   let panel = accordion.querySelector("[js-panel]");
 
   panel.style.maxHeight = panel.scrollHeight + "px";
 
   setTimeout(() => {
-    icon.classList.remove("opacity-0");
-    panel.style.maxHeight = "0px";
-  }, 800);
+    toggleButton.classList.remove("opacity-0");
 
-  button.addEventListener("click", function () {
+    setTimeout(() => {
+      toggleButton.classList.add("animate__animated");
+      toggleButton.classList.add("animate__heartBeat");
+    }, 600)
+
+    panel.style.maxHeight = "0px";
+  }, 400);
+
+  toggleButton.addEventListener("click", function () {
     accordion.classList.toggle("active");
 
     if (panel.style.maxHeight === "") {
