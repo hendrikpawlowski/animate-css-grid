@@ -401,7 +401,7 @@
 
 .accordion .button .icon {
   margin-left: 1rem;
-  width: 2.5rem;
+  width: 2rem;
   -webkit-transition: 200ms;
   transition: 200ms;
 }
@@ -410,10 +410,5 @@
   overflow: hidden;
   -webkit-transition: 0.7s;
   transition: 0.7s;
-}
-
-.accordion.active .button .icon {
-  -webkit-transform: rotate(-180deg);
-          transform: rotate(-180deg);
 }
 /*# sourceMappingURL=style.css.map */

@@ -357,7 +357,7 @@
 
     .icon {
       margin-left: 1rem;
-      width: 2.5rem;
+      width: 2rem;
       transition: 200ms;
     }
   }
@@ -367,11 +367,11 @@
     transition: 0.7s;
   }
 
-  &.active {
-    .button {
-      .icon {
-        transform: rotate(-180deg);
-      }
-    }
-  }
+  // &.active {
+  //   .button {
+  //     .icon {
+  //       transform: rotate(-180deg);
+  //     }
+  //   }
+  // }
 }
