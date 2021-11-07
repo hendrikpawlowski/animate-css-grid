@@ -413,7 +413,7 @@
 
 .accordion .panel {
   overflow: hidden;
-  -webkit-transition: 0.7s;
-  transition: 0.7s;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
 }
 /*# sourceMappingURL=style.css.map */
