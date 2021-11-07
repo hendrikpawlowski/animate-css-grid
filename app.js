@@ -246,7 +246,7 @@ const initAccordions = function () {
         toggleButton.classList.remove("animate__animated");
         toggleButton.classList.remove("animate__heartBeat");
       })
-    }, 600)
+    }, 200)
 
     panel.style.maxHeight = "0px";
   }, 400);
