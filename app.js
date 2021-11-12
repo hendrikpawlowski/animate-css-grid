@@ -238,17 +238,17 @@ const initAccordions = function () {
   setTimeout(() => {
     toggleButton.classList.remove("opacity-0");
 
-    setTimeout(() => {
-      toggleButton.classList.add("animate__animated");
-      toggleButton.classList.add("animate__heartBeat");
+    // setTimeout(() => {
+    //   toggleButton.classList.add("animate__animated");
+    //   toggleButton.classList.add("animate__heartBeat");
 
-      toggleButton.addEventListener("animationend", () => {
-        toggleButton.classList.remove("animate__animated");
-        toggleButton.classList.remove("animate__heartBeat");
-      })
-    }, 200)
+    //   toggleButton.addEventListener("animationend", () => {
+    //     toggleButton.classList.remove("animate__animated");
+    //     toggleButton.classList.remove("animate__heartBeat");
+    //   })
+    // }, 200)
 
-    panel.style.maxHeight = "0px";
+    // panel.style.maxHeight = "0px";
   }, 400);
 
   toggleButton.addEventListener("click", function () {
@@ -295,7 +295,6 @@ const initStartingCard = function () {
   });
 
   startingCard.addEventListener("click", () => {
-    initAccordions();
     init();
     startingCard.classList.add("opacity-0");
 
@@ -305,4 +304,5 @@ const initStartingCard = function () {
   })
 }
 
+initAccordions();
 initStartingCard();
