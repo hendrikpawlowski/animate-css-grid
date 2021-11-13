@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.15/tailwind.min.css"
         integrity="sha512-braXHF1tCeb8MzPktmUHhrjZBSZknHvjmkUdkAbeqtIrWwCchhcpUeAf2Sq3yIq1Q1x5PlroafjceOUbIE3Q5g=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="../../style.css" />
     <title>Animate CSS Grid</title>
 </head>
 
@@ -26,7 +26,7 @@
                     </div>
 
                     <div class="hidden sm:block flex space-x-6 ml-16" aria-label="Tabs">
-                        <a href="./index.html"
+                        <a href="../../index.html"
                             class="text-gray-300 hover:text-white px-4 py-3 font-medium text-sm rounded-md"
                             aria-current="page">
                             Select
@@ -35,7 +35,7 @@
                             aria-current="page">
                             Reflect
                         </a>
-                        <a href="./act.html"
+                        <a href="../act/act.html"
                             class="text-gray-300 hover:text-white px-4 py-3 font-medium text-sm rounded-md">
                             Act
                         </a>
@@ -85,7 +85,7 @@
                 <!-- <div class="max-w-7xl mx-auto md:flex justify-between"> -->
 
                 <li class="relative md:flex-1 md:flex">
-                    <a href="#" class="group flex items-center w-full">
+                    <a href="./step_1.html" class="group flex items-center w-full">
                         <span class="px-6 py-2 flex items-center text-sm font-medium">
                             <span
                                 class="flex-shrink-0 w-6 h-6 flex items-center justify-center bg-blue-600 rounded-full group-hover:bg-blue-800">
@@ -110,10 +110,15 @@
                 </li>
 
                 <li class="relative md:flex-1 md:flex">
-                    <a href="#" class="px-6 py-2 flex items-center text-sm font-medium" aria-current="step">
+                    <a href="./step_2.html" class="px-6 py-2 flex items-center text-sm font-medium" aria-current="step">
                         <span
-                            class="flex-shrink-0 w-6 h-6 flex items-center justify-center border-2 border-blue-600 rounded-full">
-                            <span class="text-blue-600">2</span>
+                            class="flex-shrink-0 w-6 h-6 flex items-center justify-center bg-blue-600 rounded-full group-hover:bg-blue-800">
+                            <svg class="w-5 h-5 text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                                fill="currentColor" aria-hidden="true">
+                                <path fill-rule="evenodd"
+                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                    clip-rule="evenodd" />
+                            </svg>
                         </span>
                         <span class="ml-4 text-sm font-medium text-blue-600">Am besten bewertet</span>
                     </a>
@@ -128,11 +133,16 @@
                 </li>
 
                 <li class="relative md:flex-1 md:flex">
-                    <a href="#" class="group flex items-center">
+                    <a href="./step_3.html" class="group flex items-center">
                         <span class="px-6 py-2 flex items-center text-sm font-medium">
                             <span
-                                class="flex-shrink-0 w-6 h-6 flex items-center justify-center border-2 border-gray-300 rounded-full group-hover:border-gray-400">
-                                <span class="text-gray-500 group-hover:text-gray-900">3</span>
+                                class="flex-shrink-0 w-6 h-6 flex items-center justify-center bg-blue-600 rounded-full group-hover:bg-blue-800">
+                                <svg class="w-5 h-5 text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                                    fill="currentColor" aria-hidden="true">
+                                    <path fill-rule="evenodd"
+                                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                        clip-rule="evenodd" />
+                                </svg>
                             </span>
                             <span class="ml-4 text-sm font-medium text-gray-500 group-hover:text-gray-900">Am
                                 schlechtesten bewertet</span>
@@ -150,11 +160,11 @@
                 </li>
 
                 <li class="relative md:flex-1 md:flex">
-                    <a href="#" class="group flex items-center">
+                    <a href="./step_4.html" class="group flex items-center">
                         <span class="px-6 py-2 flex items-center text-sm font-medium">
                             <span
-                                class="flex-shrink-0 w-6 h-6 flex items-center justify-center border-2 border-gray-300 rounded-full group-hover:border-gray-400">
-                                <span class="text-gray-500 group-hover:text-gray-900">4</span>
+                                class="flex-shrink-0 w-6 h-6 flex items-center justify-center border-2 border-blue-600 rounded-full">
+                                <span class="text-blue-600">4</span>
                             </span>
                             <span
                                 class="ml-4 text-sm font-medium text-gray-500 group-hover:text-gray-900">Maßnahmen</span>
@@ -167,42 +177,55 @@
         </div>
     </nav>
 
+    <a href="../act/act.html"
+        class="z-50 flex items-center fixed right-0 bottom-0 mr-16 mb-16 bg-pink-500 hover:bg-pink-600 cursor-pointer shadow-lg transition hover:shadow-xl text-white text-xl pl-8 pr-4 py-3 rounded-lg">
+        Fertig
+        <img class="ml-2 w-8" src="../../icons/arrow-right.svg" alt="">
+    </a>
+
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12">
         <div class="flex">
             <div js-accordion class="accordion">
                 <div js-head class="head">
-                    <h1 class="text-3xl font-semibold color-white text-gray-900">Besprecht eure Themen</h1>
+                    <h1 class="text-3xl font-semibold color-white text-gray-900">Maßnahmen definieren</h1>
                     <img js-toggle class="icon opacity-0" src="./icons/info.svg" alt="">
                 </div>
                 <div js-panel class="panel flex">
-                    <p class="max-w-2xl pt-4 text-gray-500 font-light">Das Zeitfenster für die Themenauswahl auf der
-                        Seite “Select” ist noch geöffnet. Nachdem euer Teamlead die Themenauswahl geschlossen hat, geht
-                        es hier weiter.</p>
+                    <p class="max-w-2xl pt-4 text-gray-500 font-light">In diesem Schritt definiert ihr Maßnahmen, um
+                        die Themenbereiche zu verbessern, mit denen ihr im Moment noch nicht zufrieden seid.</p>
                 </div>
             </div>
             <!-- <img class="opening-illustration" src="./illustrations/choice.svg" alt=""> -->
         </div>
 
         <ul js-grid class="pt-12 grid gap-8">
-            <li class="cursor-pointer bg-white shadow-md hover:shadow-xl transition-shadow p-8 rounded-md">
-                <h3 class="font-bold">Kollektives Engagement</h3>
-                <ul class="mt-4 text-gray-500">
-                    <li>Lorem, ipsum dolor.</li>
-                    <li>Sit amet.</li>
-                    <li>Consectetur adipisicing.</li>
-                </ul>
-            </li>
-            <li class="cursor-pointer bg-white shadow-md hover:shadow-xl transition-shadow p-8 rounded-md">
-                <h3 class="font-bold">Initiative</h3>
-                <ul class="mt-4 text-gray-500">
-                    <li>Lorem, ipsum dolor.</li>
-                    <li>Sit amet.</li>
-                    <li>Consectetur adipisicing.</li>
-                </ul>
-            </li>
-            <li class="cursor-pointer bg-white shadow-md hover:shadow-xl transition-shadow p-8 rounded-md">
+            <li class="card cursor-pointer bg-white shadow-md hover:shadow-xl transition-shadow p-8 rounded-md">
                 <h3 class="font-bold">Wir-Gefühl</h3>
-                <ul class="mt-4 text-gray-500">
+                <ul class="w-full mt-4 text-gray-500">
+                    <li>Lorem, ipsum dolor.</li>
+                    <li>Sit amet.</li>
+                    <li>Consectetur adipisicing.</li>
+                </ul>
+            </li>
+            <li class="card cursor-pointer bg-white shadow-md hover:shadow-xl transition-shadow p-8 rounded-md">
+                <h3 class="font-bold">Arbeitsverteilung</h3>
+                <ul class="w-full mt-4 text-gray-500">
+                    <li>Lorem, ipsum dolor.</li>
+                    <li>Sit amet.</li>
+                    <li>Consectetur adipisicing.</li>
+                </ul>
+            </li>
+            <li class="card cursor-pointer bg-white shadow-md hover:shadow-xl transition-shadow p-8 rounded-md">
+                <h3 class="font-bold">Handlungsfreiheit</h3>
+                <ul class="w-full mt-4 text-gray-500">
+                    <li>Lorem, ipsum dolor.</li>
+                    <li>Sit amet.</li>
+                    <li>Consectetur adipisicing.</li>
+                </ul>
+            </li>
+            <li class="card cursor-pointer bg-white shadow-md hover:shadow-xl transition-shadow p-8 rounded-md">
+                <h3 class="font-bold">Respektvoller Umgang</h3>
+                <ul class="w-full mt-4 text-gray-500">
                     <li>Lorem, ipsum dolor.</li>
                     <li>Sit amet.</li>
                     <li>Consectetur adipisicing.</li>

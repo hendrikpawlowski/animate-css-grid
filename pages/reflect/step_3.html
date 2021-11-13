@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.15/tailwind.min.css"
+        integrity="sha512-braXHF1tCeb8MzPktmUHhrjZBSZknHvjmkUdkAbeqtIrWwCchhcpUeAf2Sq3yIq1Q1x5PlroafjceOUbIE3Q5g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../../style.css" />
+    <title>Animate CSS Grid</title>
+</head>
+
+<body style="height: 3000px" class="bg-gray-50" data-swipe-threshold="80">
+
+    <!-- Header dark-->
+    <nav class="bg-blue-600 border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+
+                <div class="flex items-center">
+
+                    <div class="flex-shrink-0 text-white flex items-center text-lg font-bold">
+                        Teamfeedback
+                    </div>
+
+                    <div class="hidden sm:block flex space-x-6 ml-16" aria-label="Tabs">
+                        <a href="../../index.html"
+                            class="text-gray-300 hover:text-white px-4 py-3 font-medium text-sm rounded-md"
+                            aria-current="page">
+                            Select
+                        </a>
+                        <a href="./reflect.html" class="bg-blue-700 text-white px-4 py-3 font-medium text-sm rounded-md"
+                            aria-current="page">
+                            Reflect
+                        </a>
+                        <a href="../act/act.html"
+                            class="text-gray-300 hover:text-white px-4 py-3 font-medium text-sm rounded-md">
+                            Act
+                        </a>
+                    </div>
+
+                </div>
+
+                <div class="hidden sm:ml-6 sm:flex sm:items-center">
+                    <button type="button"
+                        class="group mr-4 rounded-md inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                        aria-expanded="false">
+                        <span class="text-gray-300">Mein Profil</span>
+                        <svg class="text-gray-400 ml-2 h-5 w-5 group-hover:text-gray-500"
+                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                            aria-hidden="true">
+                            <path fill-rule="evenodd"
+                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="-mr-2 flex items-center sm:hidden">
+                    <button type="button"
+                        class="bg-white inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                        aria-controls="mobile-menu" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                        <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Steps -->
+    <nav class="" aria-label="Progress">
+        <div class="border-b border-gray-300">
+            <ol role="list" class="max-w-7xl mx-auto divide-y divide-gray-300 md:flex md:divide-y-0">
+                <!-- <div class="max-w-7xl mx-auto md:flex justify-between"> -->
+
+                <li class="relative md:flex-1 md:flex">
+                    <a href="./step_1.html" class="group flex items-center w-full">
+                        <span class="px-6 py-2 flex items-center text-sm font-medium">
+                            <span
+                                class="flex-shrink-0 w-6 h-6 flex items-center justify-center bg-blue-600 rounded-full group-hover:bg-blue-800">
+                                <svg class="w-5 h-5 text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                                    fill="currentColor" aria-hidden="true">
+                                    <path fill-rule="evenodd"
+                                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                            </span>
+                            <span class="ml-4 text-sm font-medium text-gray-900">Ablauf</span>
+                        </span>
+                    </a>
+
+                    <div class="hidden md:block absolute top-0 right-0 h-full w-5" aria-hidden="true">
+                        <svg class="h-full w-full text-gray-300" viewBox="0 0 22 80" fill="none"
+                            preserveAspectRatio="none">
+                            <path d="M0 -2L20 40L0 82" vector-effect="non-scaling-stroke" stroke="currentcolor"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                </li>
+
+                <li class="relative md:flex-1 md:flex">
+                    <a href="./step_2.html" class="px-6 py-2 flex items-center text-sm font-medium" aria-current="step">
+                        <span
+                            class="flex-shrink-0 w-6 h-6 flex items-center justify-center bg-blue-600 rounded-full group-hover:bg-blue-800">
+                            <svg class="w-5 h-5 text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                                fill="currentColor" aria-hidden="true">
+                                <path fill-rule="evenodd"
+                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                        </span>
+                        <span class="ml-4 text-sm font-medium text-blue-600">Am besten bewertet</span>
+                    </a>
+
+                    <div class="hidden md:block absolute top-0 right-0 h-full w-5" aria-hidden="true">
+                        <svg class="h-full w-full text-gray-300" viewBox="0 0 22 80" fill="none"
+                            preserveAspectRatio="none">
+                            <path d="M0 -2L20 40L0 82" vector-effect="non-scaling-stroke" stroke="currentcolor"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                </li>
+
+                <li class="relative md:flex-1 md:flex">
+                    <a href="./step_3.html" class="group flex items-center">
+                        <span class="px-6 py-2 flex items-center text-sm font-medium">
+                            <span
+                                class="flex-shrink-0 w-6 h-6 flex items-center justify-center border-2 border-blue-600 rounded-full">
+                                <span class="text-blue-600">3</span>
+                            </span>
+                            <span class="ml-4 text-sm font-medium text-gray-500 group-hover:text-gray-900">Am
+                                schlechtesten bewertet</span>
+                        </span>
+                    </a>
+
+
+                    <div class="hidden md:block absolute top-0 right-0 h-full w-5" aria-hidden="true">
+                        <svg class="h-full w-full text-gray-300" viewBox="0 0 22 80" fill="none"
+                            preserveAspectRatio="none">
+                            <path d="M0 -2L20 40L0 82" vector-effect="non-scaling-stroke" stroke="currentcolor"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                </li>
+
+                <li class="relative md:flex-1 md:flex">
+                    <a href="./step_4.html" class="group flex items-center">
+                        <span class="px-6 py-2 flex items-center text-sm font-medium">
+                            <span
+                                class="flex-shrink-0 w-6 h-6 flex items-center justify-center border-2 border-gray-300 rounded-full group-hover:border-gray-400">
+                                <span class="text-gray-500 group-hover:text-gray-900">4</span>
+                            </span>
+                            <span
+                                class="ml-4 text-sm font-medium text-gray-500 group-hover:text-gray-900">Maßnahmen</span>
+                        </span>
+                    </a>
+                </li>
+                <!-- </div> -->
+
+            </ol>
+        </div>
+    </nav>
+
+    <a href="step_4.html"
+        class="z-50 flex items-center fixed right-0 bottom-0 mr-16 mb-16 bg-pink-500 hover:bg-pink-600 cursor-pointer shadow-lg transition hover:shadow-xl text-white text-xl pl-8 pr-4 py-3 rounded-lg">
+        Weiter
+        <img class="ml-2 w-8" src="../../icons/arrow-right.svg" alt="">
+    </a>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12">
+        <div class="flex">
+            <div js-accordion class="accordion">
+                <div js-head class="head">
+                    <h1 class="text-3xl font-semibold color-white text-gray-900">Am schlechtesten bewertet</h1>
+                    <img js-toggle class="icon opacity-0" src="./icons/info.svg" alt="">
+                </div>
+                <div js-panel class="panel flex">
+                    <p class="max-w-2xl pt-4 text-gray-500 font-light">Diese Themen wurden von euch negativ bewertet.
+                        Sie sind also noch ausbaufähig. Im nächsten Schritt könnt ihr Maßnahmen ableiten.</p>
+                </div>
+            </div>
+            <!-- <img class="opening-illustration" src="./illustrations/choice.svg" alt=""> -->
+        </div>
+
+        <ul js-grid class="pt-12 grid gap-8">
+            <li class="card cursor-pointer bg-white shadow-md hover:shadow-xl transition-shadow p-8 rounded-md">
+                <h3 class="font-bold">Wir-Gefühl</h3>
+                <ul class="w-full mt-4 text-gray-500">
+                    <li>Lorem, ipsum dolor.</li>
+                    <li>Sit amet.</li>
+                    <li>Consectetur adipisicing.</li>
+                </ul>
+            </li>
+            <li class="card cursor-pointer bg-white shadow-md hover:shadow-xl transition-shadow p-8 rounded-md">
+                <h3 class="font-bold">Arbeitsverteilung</h3>
+                <ul class="w-full mt-4 text-gray-500">
+                    <li>Lorem, ipsum dolor.</li>
+                    <li>Sit amet.</li>
+                    <li>Consectetur adipisicing.</li>
+                </ul>
+            </li>
+            <li class="card cursor-pointer bg-white shadow-md hover:shadow-xl transition-shadow p-8 rounded-md">
+                <h3 class="font-bold">Handlungsfreiheit</h3>
+                <ul class="w-full mt-4 text-gray-500">
+                    <li>Lorem, ipsum dolor.</li>
+                    <li>Sit amet.</li>
+                    <li>Consectetur adipisicing.</li>
+                </ul>
+            </li>
+            <li class="card cursor-pointer bg-white shadow-md hover:shadow-xl transition-shadow p-8 rounded-md">
+                <h3 class="font-bold">Respektvoller Umgang</h3>
+                <ul class="w-full mt-4 text-gray-500">
+                    <li>Lorem, ipsum dolor.</li>
+                    <li>Sit amet.</li>
+                    <li>Consectetur adipisicing.</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://unpkg.com/animate-css-grid@latest"></script>
+    <script src="./swiped-events.js"></script>
+    <script src="./reflect.js"></script>
+</body>
+
+</html>
