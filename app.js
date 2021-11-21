@@ -281,7 +281,7 @@ const init = function () {
     } else {
       let flipCardFront = card.querySelector(".flip-card-front");
       console.log(flipCardFront);
-      flipCardFront.classList.add("shadow-md");
+      flipCardFront.classList.add("shadow-lg");
     }
   });
 
