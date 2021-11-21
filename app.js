@@ -280,8 +280,10 @@ const init = function () {
       });
     } else {
       let flipCardFront = card.querySelector(".flip-card-front");
-      console.log(flipCardFront);
+      let flipCardBack = card.querySelector(".flip-card-back");
       flipCardFront.classList.add("shadow-lg");
+      flipCardBack.classList.add("shadow-lg");
+
     }
   });
 
