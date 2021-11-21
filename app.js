@@ -310,5 +310,5 @@ const initStartingCard = function () {
   })
 }
 
-initAccordions();
+// initAccordions();
 initStartingCard();
