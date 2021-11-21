@@ -381,10 +381,6 @@
           box-shadow: 0px 1px 4px 0 rgba(19, 14, 14, 0.25);
 }
 
-.higher-z-index {
-  z-index: 5;
-}
-
 .accordion .head {
   display: -webkit-box;
   display: -ms-flexbox;

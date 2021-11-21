@@ -295,7 +295,9 @@ const initStartingCard = function () {
   console.log(startingCard)
 
   cards.forEach((card, index) => {
-    card.style.zIndex = (cards.length - index) + 1 + "";
+    if (card.hasAttribute("js-deck-card")) {
+      card.style.zIndex = (cards.length - index) + 10 + "";
+    }
   });
 
   startingCard.addEventListener("click", () => {
