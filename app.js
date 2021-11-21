@@ -271,6 +271,8 @@ const init = function () {
 
     if (card.hasAttribute("js-deck-card")) {
 
+      card.querySelector(".content").classList.add("shadow-md");
+
       initCardStack(card);
 
       card.addEventListener("click", () => {
