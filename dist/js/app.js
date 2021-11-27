@@ -79,6 +79,10 @@ const initCardStack = function (deckCard) {
   deckCard.setAttribute("js-stacked", "");
 
   getChilds(deckCard).forEach((card, index) => {
+    if (index === 0) {
+      card.classList.add("z-10");
+    }
+
     initFlip(card);
 
     if (index === 0) {
