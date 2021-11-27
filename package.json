@@ -21,6 +21,7 @@
   "homepage": "https://github.com/hendrikpawlowski/animate-css-grid#readme",
   "devDependencies": {
     "autoprefixer": "^10.4.0",
+    "gh-pages": "^3.2.3",
     "node-sass": "^6.0.1",
     "postcss": "^8.4.3",
     "tailwindcss": "^2.2.19"
