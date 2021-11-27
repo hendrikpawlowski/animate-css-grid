@@ -1,0 +1,31 @@
+{
+  "name": "animate-css-grid",
+  "version": "1.0.0",
+  "description": "Test für Card Gallery mit Deckkarten",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "css:scss": "node-sass -wo dist/css src/scss",
+    "generate-tailwind": "npx tailwindcss -i ./src/scss/includetailwind.css -o ./dist/css/tailwind.css",
+    "serve": "npm run generate-tailwind & npm run css:scss & live-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hendrikpawlowski/animate-css-grid.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hendrikpawlowski/animate-css-grid/issues"
+  },
+  "homepage": "https://github.com/hendrikpawlowski/animate-css-grid#readme",
+  "devDependencies": {
+    "autoprefixer": "^10.4.0",
+    "node-sass": "^6.0.1",
+    "postcss": "^8.4.3",
+    "tailwindcss": "^2.2.19"
+  },
+  "dependencies": {
+    "live-server": "^1.2.1"
+  }
+}
