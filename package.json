@@ -30,5 +30,13 @@
   },
   "dependencies": {
     "live-server": "^1.2.1"
+  },
+  "gh-pages-deploy": {
+    "staticpath": "dist",
+    "commit": "a custom commit message",
+    "post": [
+      "clean-source"
+    ],
+    "noprompt": false
   }
 }
