@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./css/tailwind.css">
+  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <title>Animate CSS Grid</title>
+</head>
+
+<body data-swipe-threshold="80">
+
+  <!-- Header dark-->
+  <nav class="bg-blue-600 border-gray-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-16">
+
+        <div class="flex items-center">
+
+          <div class="flex-shrink-0 text-white flex items-center text-lg font-bold">
+            Teamfeedback
+          </div>
+
+          <div class="hidden sm:block flex space-x-6 ml-16" aria-label="Tabs">
+            <a href="./index.html" class="bg-blue-700 text-white px-4 py-3 font-medium text-sm rounded-md"
+              aria-current="page">
+              Select
+            </a>
+            <a href="./pages/reflect/step_1.html"
+              class="text-gray-300 hover:text-white px-4 py-3 font-medium text-sm rounded-md" aria-current="page">
+              Reflect
+            </a>
+            <a href="./pages/act/act.html"
+              class="text-gray-300 hover:text-white px-4 py-3 font-medium text-sm rounded-md">
+              Act
+            </a>
+          </div>
+
+        </div>
+
+        <div class="hidden sm:ml-6 sm:flex sm:items-center">
+          <button type="button"
+            class="group mr-4 rounded-md inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+            aria-expanded="false">
+            <span class="text-gray-300">Mein Profil</span>
+            <svg class="text-gray-400 ml-2 h-5 w-5 group-hover:text-gray-500" xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+              <path fill-rule="evenodd"
+                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                clip-rule="evenodd" />
+            </svg>
+          </button>
+        </div>
+        <div class="-mr-2 flex items-center sm:hidden">
+          <button type="button"
+            class="bg-white inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+            aria-controls="mobile-menu" aria-expanded="false">
+            <span class="sr-only">Open main menu</span>
+            <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+            <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12">
+    <div class="flex">
+      <div js-accordion class="accordion">
+        <div js-head class="head">
+          <h1 class="text-3xl font-semibold color-white text-gray-900">Wählt eure Themen</h1>
+        </div>
+        <div js-panel class="panel flex">
+          <p class="max-w-2xl pt-4 text-gray-500 font-light">Jetzt ist deine Meinung gefragt! Wähle aus den 40
+            Themenkarten fünf aus bei denen es in deinem Team besonders gut läuft und weitere fünf, bei denen es aus
+            deiner Sicht brennt. Durch die beschränkte Themenauswahl könnt ihr euch anschließend auf die wichtigsten
+            Themen konzentrieren und diese gezielt verbessern.</p>
+        </div>
+      </div>
+      <img class="ml-20 h-40 opening-illustration" src="./illustrations/choice.svg" alt="">
+    </div>
+    <ul js-grid class="pt-12 grid gap-8">
+      <li js-starting-card class="grid-item deck-card starting" style="grid-area: 1 / 1">
+        <div>
+          <div class="content rounded-md bg-pink-500">
+            <h3 class="title">Los gehts!</h3>
+          </div>
+        </div>
+      </li>
+      <li js-card js-deck-card class="grid-item deck-card" style="grid-area: 1 / 1">
+        <div>
+          <div class="content rounded-md bg-red-400">
+            <div>
+              <h3 class="title">Teamspirit</h3>
+              <p class="text">#engagement #initiative #wirgefuehl #erfolge</p>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li js-card js-stacked class="z-10 grid-item card stacked turn-left" style="grid-area: 1 / 1">
+        <div class="wrapper">
+          <div class="wrapper-for-stacked-turn">
+            <div js-content rounded-md class="flip-card-wrapper">
+              <div class="flip-card-front hover:shadow-xl red">
+                <div class="card-text">
+                  <h3 class="title">Kollektives Engagement</h3>
+                  <ul class="body">
+                    <li>Lorem, ipsum dolor.</li>
+                    <li>Sit amet.</li>
+                    <li>Consectetur adipisicing.</li>
+                  </ul>
+                </div>
+                <div class="card-action">
+                  <button js-button-fire class="button fire bg-gray-100">
+                    <div class="fire-icon"></div>
+                  </button><button js-button-shield class="button shield bg-gray-100">
+                    <div class="shield-icon"></div>
+                  </button>
+                </div>
+              </div>
+              <div js-flip-card-back class="flip-card-back"></div>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li js-card js-stacked class="grid-item card stacked turn-right" style="grid-area: 1 / 1">
+        <div class="wrapper">
+          <div class="wrapper-for-stacked-turn">
+            <div js-content rounded-md class="flip-card-wrapper">
+              <div class="flip-card-front hover:shadow-xl red">
+                <div class="card-text">
+                  <h3 class="title">Initiative</h3>
+                  <ul class="body">
+                    <li>Lorem, ipsum dolor.</li>
+                    <li>Sit amet.</li>
+                    <li>Consectetur adipisicing.</li>
+                  </ul>
+                </div>
+                <div class="card-action">
+                  <button js-button-fire class="button fire bg-gray-100">
+                    <div class="fire-icon"></div>
+                  </button><button js-button-shield class="button shield bg-gray-100">
+                    <div class="shield-icon"></div>
+                  </button>
+                </div>
+              </div>
+              <div js-flip-card-back class="flip-card-back"></div>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li js-card js-stacked class="grid-item card stacked" style="grid-area: 1 / 1">
+        <div class="wrapper">
+          <div class="wrapper-for-stacked-turn">
+            <div js-content rounded-md class="flip-card-wrapper">
+              <div class="flip-card-front hover:shadow-xl red">
+                <div class="card-text">
+                  <h3 class="title">Wir-Gefühl</h3>
+                  <ul class="body">
+                    <li>Lorem, ipsum dolor.</li>
+                    <li>Sit amet.</li>
+                    <li>Consectetur adipisicing.</li>
+                  </ul>
+                </div>
+                <div class="card-action">
+                  <button js-button-fire class="button fire bg-gray-100">
+                    <div class="fire-icon"></div>
+                  </button><button js-button-shield class="button shield bg-gray-100">
+                    <div class="shield-icon"></div>
+                  </button>
+                </div>
+              </div>
+              <div js-flip-card-back class="flip-card-back"></div>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li js-card js-stacked class="grid-item card stacked" style="grid-area: 1 / 1">
+        <div class="wrapper">
+          <div class="wrapper-for-stacked-turn">
+            <div js-content rounded-md class="flip-card-wrapper">
+              <div class="flip-card-front hover:shadow-xl red">
+                <div class="card-text">
+                  <h3 class="title">Erfolge feiern</h3>
+                  <ul class="body">
+                    <li>Lorem, ipsum dolor.</li>
+                    <li>Sit amet.</li>
+                    <li>Consectetur adipisicing.</li>
+                  </ul>
+                </div>
+                <div class="card-action">
+                  <button js-button-fire class="button fire bg-gray-100">
+                    <div class="fire-icon"></div>
+                  </button><button js-button-shield class="button shield bg-gray-100">
+                    <div class="shield-icon"></div>
+                  </button>
+                </div>
+              </div>
+              <div js-flip-card-back class="flip-card-back"></div>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li js-card js-deck-card class="grid-item deck-card" style="grid-area: 1 / 1">
+        <div>
+          <div class="content rounded-md bg-green-400">
+            <!-- <h3>Umgang</h3> -->
+            <div>
+              <h3 class="title">Umgang</h3>
+              <p class="text">
+                #vertrauen #zuverlaessigkeit #fairness #meinungsvielfalt (+3)
+              </p>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li js-card js-stacked class="z-10 grid-item card stacked" style="grid-area: 1 / 1">
+        <div class="wrapper">
+          <div class="wrapper-for-stacked-turn">
+            <div js-content rounded-md class="flip-card-wrapper">
+              <div class="flip-card-front hover:shadow-xl green">
+                <div class="card-text">
+                  <h3 class="title">Vertrauen</h3>
+                  <ul class="body">
+                    <li>Lorem, ipsum dolor.</li>
+                    <li>Sit amet.</li>
+                    <li>Consectetur adipisicing.</li>
+                  </ul>
+                </div>
+                <div class="card-action">
+                  <button js-button-fire class="button fire bg-gray-100">
+                    <div class="fire-icon"></div>
+                  </button><button js-button-shield class="button shield bg-gray-100">
+                    <div class="shield-icon"></div>
+                  </button>
+                </div>
+              </div>
+              <div js-flip-card-back class="flip-card-back"></div>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li js-card js-stacked class="grid-item card stacked" style="grid-area: 1 / 1">
+        <div class="wrapper">
+          <div class="wrapper-for-stacked-turn">
+            <div js-content rounded-md class="flip-card-wrapper">
+              <div class="flip-card-front hover:shadow-xl green">
+                <div class="card-text">
+                  <h3 class="title">Zuverlässigkeit</h3>
+                  <ul class="body">
+                    <li>Lorem, ipsum dolor.</li>
+                    <li>Sit amet.</li>
+                    <li>Consectetur adipisicing.</li>
+                  </ul>
+                </div>
+                <div class="card-action">
+                  <button js-button-fire class="button fire bg-gray-100">
+                    <div class="fire-icon"></div>
+                  </button><button js-button-shield class="button shield bg-gray-100">
+                    <div class="shield-icon"></div>
+                  </button>
+                </div>
+              </div>
+              <div js-flip-card-back class="flip-card-back"></div>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li js-card js-stacked class="grid-item card stacked" style="grid-area: 1 / 1">
+        <div class="wrapper">
+          <div class="wrapper-for-stacked-turn">
+            <div js-content rounded-md class="flip-card-wrapper">
+              <div class="flip-card-front hover:shadow-xl green">
+                <div class="card-text">
+                  <h3 class="title">Fairness</h3>
+                  <ul class="body">
+                    <li>Lorem, ipsum dolor.</li>
+                    <li>Sit amet.</li>
+                    <li>Consectetur adipisicing.</li>
+                  </ul>
+                </div>
+                <div class="card-action">
+                  <button js-button-fire class="button fire bg-gray-100">
+                    <div class="fire-icon"></div>
+                  </button><button js-button-shield class="button shield bg-gray-100">
+                    <div class="shield-icon"></div>
+                  </button>
+                </div>
+              </div>
+              <div js-flip-card-back class="flip-card-back"></div>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li js-card js-stacked class="grid-item card stacked" style="grid-area: 1 / 1">
+        <div class="wrapper">
+          <div class="wrapper-for-stacked-turn">
+            <div js-content rounded-md class="flip-card-wrapper">
+              <div class="flip-card-front hover:shadow-xl green">
+                <div class="card-text">
+                  <h3 class="title">Meinungsvielfalt</h3>
+                  <ul class="body">
+                    <li>Lorem, ipsum dolor.</li>
+                    <li>Sit amet.</li>
+                    <li>Consectetur adipisicing.</li>
+                  </ul>
+                </div>
+                <div class="card-action">
+                  <button js-button-fire class="button fire bg-gray-100">
+                    <div class="fire-icon"></div>
+                  </button><button js-button-shield class="button shield bg-gray-100">
+                    <div class="shield-icon"></div>
+                  </button>
+                </div>
+              </div>
+              <div js-flip-card-back class="flip-card-back"></div>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li js-card js-stacked class="grid-item card stacked" style="grid-area: 1 / 1">
+        <div class="wrapper">
+          <div class="wrapper-for-stacked-turn">
+            <div js-content rounded-md class="flip-card-wrapper">
+              <div class="flip-card-front hover:shadow-xl green">
+                <div class="card-text">
+                  <h3 class="title">Respektvoller Umgang</h3>
+                  <ul class="body">
+                    <li>Lorem, ipsum dolor.</li>
+                    <li>Sit amet.</li>
+                    <li>Consectetur adipisicing.</li>
+                  </ul>
+                </div>
+                <div class="card-action">
+                  <button js-button-fire class="button fire bg-gray-100">
+                    <div class="fire-icon"></div>
+                  </button><button js-button-shield class="button shield bg-gray-100">
+                    <div class="shield-icon"></div>
+                  </button>
+                </div>
+              </div>
+              <div js-flip-card-back class="flip-card-back"></div>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li js-card js-stacked class="grid-item card stacked" style="grid-area: 1 / 1">
+        <div class="wrapper">
+          <div class="wrapper-for-stacked-turn">
+            <div js-content rounded-md class="flip-card-wrapper">
+              <div class="flip-card-front hover:shadow-xl green">
+                <div class="card-text">
+                  <h3 class="title">Konfliktumgang</h3>
+                  <ul class="body">
+                    <li>Lorem, ipsum dolor.</li>
+                    <li>Sit amet.</li>
+                    <li>Consectetur adipisicing.</li>
+                  </ul>
+                </div>
+                <div class="card-action">
+                  <button js-button-fire class="button fire bg-gray-100">
+                    <div class="fire-icon"></div>
+                  </button><button js-button-shield class="button shield bg-gray-100">
+                    <div class="shield-icon"></div>
+                  </button>
+                </div>
+              </div>
+              <div js-flip-card-back class="flip-card-back"></div>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li js-card js-stacked class="grid-item card stacked" style="grid-area: 1 / 1">
+        <div class="wrapper">
+          <div class="wrapper-for-stacked-turn">
+            <div js-content rounded-md class="flip-card-wrapper">
+              <div class="flip-card-front hover:shadow-xl green">
+                <div class="card-text">
+                  <h3 class="title">Gegenseitige Unterstützung</h3>
+                  <ul class="body">
+                    <li>Lorem, ipsum dolor.</li>
+                    <li>Sit amet.</li>
+                    <li>Consectetur adipisicing.</li>
+                  </ul>
+                </div>
+                <div class="card-action">
+                  <button js-button-fire class="button fire bg-gray-100">
+                    <div class="fire-icon"></div>
+                  </button><button js-button-shield class="button shield bg-gray-100">
+                    <div class="shield-icon"></div>
+                  </button>
+                </div>
+              </div>
+              <div js-flip-card-back class="flip-card-back"></div>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li js-card js-deck-card class="grid-item deck-card" style="grid-area: 1 / 1">
+        <div>
+          <div class="content rounded-md bg-blue-400">
+            <div>
+              <h3 class="title">Arbeitsbedingungen</h3>
+              <p class="text">
+                #zeiten #verteilung #sicherheit #freiheit #stress
+              </p>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li js-card js-stacked class="z-10 grid-item card stacked" style="grid-area: 1 / 1">
+        <div class="wrapper">
+          <div class="wrapper-for-stacked-turn">
+            <div js-content rounded-md class="flip-card-wrapper">
+              <div class="flip-card-front hover:shadow-xl blue">
+                <div class="card-text">
+                  <h3 class="title">Arbeitszeiten</h3>
+                  <ul class="body">
+                    <li>Lorem, ipsum dolor.</li>
+                    <li>Sit amet.</li>
+                    <li>Consectetur adipisicing.</li>
+                  </ul>
+                </div>
+                <div class="card-action">
+                  <button js-button-fire class="button fire bg-gray-100">
+                    <div class="fire-icon"></div>
+                  </button><button js-button-shield class="button shield bg-gray-100">
+                    <div class="shield-icon"></div>
+                  </button>
+                </div>
+              </div>
+              <div js-flip-card-back class="flip-card-back"></div>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li js-card js-stacked class="grid-item card stacked" style="grid-area: 1 / 1">
+        <div class="wrapper">
+          <div class="wrapper-for-stacked-turn">
+            <div js-content rounded-md class="flip-card-wrapper">
+              <div class="flip-card-front hover:shadow-xl blue">
+                <div class="card-text">
+                  <h3 class="title">Arbeitsverteilung</h3>
+                  <ul class="body">
+                    <li>Lorem, ipsum dolor.</li>
+                    <li>Sit amet.</li>
+                    <li>Consectetur adipisicing.</li>
+                  </ul>
+                </div>
+                <div class="card-action">
+                  <button js-button-fire class="button fire bg-gray-100">
+                    <div class="fire-icon"></div>
+                  </button><button js-button-shield class="button shield bg-gray-100">
+                    <div class="shield-icon"></div>
+                  </button>
+                </div>
+              </div>
+              <div js-flip-card-back class="flip-card-back"></div>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li js-card js-stacked class="grid-item card stacked" style="grid-area: 1 / 1">
+        <div class="wrapper">
+          <div class="wrapper-for-stacked-turn">
+            <div js-content rounded-md class="flip-card-wrapper">
+              <div class="flip-card-front hover:shadow-xl blue">
+                <div class="card-text">
+                  <h3 class="title">Arbeitssicherheit</h3>
+                  <ul class="body">
+                    <li>Lorem, ipsum dolor.</li>
+                    <li>Sit amet.</li>
+                    <li>Consectetur adipisicing.</li>
+                  </ul>
+                </div>
+                <div class="card-action">
+                  <button js-button-fire class="button fire bg-gray-100">
+                    <div class="fire-icon"></div>
+                  </button><button js-button-shield class="button shield bg-gray-100">
+                    <div class="shield-icon"></div>
+                  </button>
+                </div>
+              </div>
+              <div js-flip-card-back class="flip-card-back"></div>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li js-card js-stacked class="grid-item card stacked" style="grid-area: 1 / 1">
+        <div class="wrapper">
+          <div class="wrapper-for-stacked-turn">
+            <div js-content rounded-md class="flip-card-wrapper">
+              <div class="flip-card-front hover:shadow-xl blue">
+                <div class="card-text">
+                  <h3 class="title">Handlungsfreiheit</h3>
+                  <ul class="body">
+                    <li>Lorem, ipsum dolor.</li>
+                    <li>Sit amet.</li>
+                    <li>Consectetur adipisicing.</li>
+                  </ul>
+                </div>
+                <div class="card-action">
+                  <button js-button-fire class="button fire bg-gray-100">
+                    <div class="fire-icon"></div>
+                  </button><button js-button-shield class="button shield bg-gray-100">
+                    <div class="shield-icon"></div>
+                  </button>
+                </div>
+              </div>
+              <div js-flip-card-back class="flip-card-back"></div>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li js-card js-stacked class="grid-item card stacked" style="grid-area: 1 / 1">
+        <div class="wrapper">
+          <div class="wrapper-for-stacked-turn">
+            <div js-content rounded-md class="flip-card-wrapper">
+              <div class="flip-card-front hover:shadow-xl blue">
+                <div class="card-text">
+                  <h3 class="title">Stress</h3>
+                  <ul class="body">
+                    <li>Lorem, ipsum dolor.</li>
+                    <li>Sit amet.</li>
+                    <li>Consectetur adipisicing.</li>
+                  </ul>
+                </div>
+                <div class="card-action">
+                  <button js-button-fire class="button fire bg-gray-100">
+                    <div class="fire-icon"></div>
+                  </button><button js-button-shield class="button shield bg-gray-100">
+                    <div class="shield-icon"></div>
+                  </button>
+                </div>
+              </div>
+              <div js-flip-card-back class="flip-card-back"></div>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li js-card js-deck-card class="grid-item deck-card" style="grid-area: 1 / 1">
+        <div>
+          <div class="content rounded-md bg-yellow-400">
+            <h3>Kommunikation</h3>
+          </div>
+        </div>
+      </li>
+      <li js-card js-stacked class="z-10 grid-item card stacked" style="grid-area: 1 / 1">
+        <div class="wrapper">
+          <div class="wrapper-for-stacked-turn">
+            <div js-content rounded-md class="flip-card-wrapper">
+              <div class="flip-card-front hover:shadow-xl green">
+                <div class="card-text">
+                  <h3 class="title">Thementitel</h3>
+                  <ul class="body">
+                    <li>Lorem, ipsum dolor.</li>
+                    <li>Sit amet.</li>
+                    <li>Consectetur adipisicing.</li>
+                  </ul>
+                </div>
+                <div class="card-action">
+                  <button js-button-fire class="button fire bg-gray-100">
+                    <div class="fire-icon"></div>
+                  </button><button js-button-shield class="button shield bg-gray-100">
+                    <div class="shield-icon"></div>
+                  </button>
+                </div>
+              </div>
+              <div js-flip-card-back class="flip-card-back"></div>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li js-card js-stacked class="z-10 grid-item card stacked" style="grid-area: 1 / 1">
+        <div class="wrapper">
+          <div class="wrapper-for-stacked-turn">
+            <div js-content rounded-md class="flip-card-wrapper">
+              <div class="flip-card-front hover:shadow-xl green">
+                <div class="card-text">
+                  <h3 class="title">Thementitel</h3>
+                  <ul class="body">
+                    <li>Lorem, ipsum dolor.</li>
+                    <li>Sit amet.</li>
+                    <li>Consectetur adipisicing.</li>
+                  </ul>
+                </div>
+                <div class="card-action">
+                  <button js-button-fire class="button fire bg-gray-100">
+                    <div class="fire-icon"></div>
+                  </button><button js-button-shield class="button shield bg-gray-100">
+                    <div class="shield-icon"></div>
+                  </button>
+                </div>
+              </div>
+              <div js-flip-card-back class="flip-card-back"></div>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li js-card js-deck-card class="grid-item deck-card" style="grid-area: 1 / 1">
+        <div>
+          <div class="content rounded-md bg-pink-400">
+            <h3>Koordination</h3>
+          </div>
+        </div>
+      </li>
+      <li js-card js-deck-card class="grid-item deck-card" style="grid-area: 1 / 1">
+        <div>
+          <div class="content rounded-md bg-gray-500">
+            <h3>Ausführung</h3>
+          </div>
+        </div>
+      </li>
+      <li js-card js-deck-card class="grid-item deck-card" style="grid-area: 1 / 1">
+        <div>
+          <div class="content rounded-md bg-purple-400">
+            <h3>Weiterentwicklung</h3>
+          </div>
+        </div>
+      </li>
+      <li js-card js-deck-card class="grid-item deck-card" style="grid-area: 1 / 1">
+        <div>
+          <div class="content rounded-md bg-yellow-500">
+            <h3>Qualitätsorientierung</h3>
+          </div>
+        </div>
+      </li>
+      <li js-card js-deck-card class="grid-item deck-card" style="grid-area: 1 / 1">
+        <div>
+          <div class="content rounded-md bg-indigo-400">
+            <h3>Schnittstellen</h3>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://unpkg.com/animate-css-grid@latest"></script>
+  <script src="./js/app.js"></script>
+  <script src="./js/swiped-events.js"></script>
+</body>
+
+</html>
