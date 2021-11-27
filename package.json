@@ -8,7 +8,8 @@
     "css:scss": "node-sass -wo dist/css src/scss",
     "generate-tailwind": "npx tailwindcss -i ./src/scss/includetailwind.css -o ./dist/css/tailwind.css",
     "serve": "npm run generate-tailwind & npm run css:scss & live-server",
-    "build": "node-sass -o dist/css src/scss && npx tailwindcss -i ./src/scss/includetailwind.css -o ./dist/css/tailwind.css"
+    "build": "node-sass -o dist/css src/scss && npx tailwindcss -i ./src/scss/includetailwind.css -o ./dist/css/tailwind.css",
+    "deploy": "npm run build && gh-pages -d dist"
   },
   "repository": {
     "type": "git",
