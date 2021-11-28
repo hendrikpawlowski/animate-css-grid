@@ -4,6 +4,10 @@ Test für Card Gallery mit Deckkarten
 
 https://hendrikpawlowski.github.io/animate-css-grid/
 
+### als aller erstes
+
+npm init
+
 ### development live server
 
 npm run serve
