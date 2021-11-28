@@ -1,4 +1,5 @@
 const colors = require('tailwindcss/colors')
+const forms = require('@tailwindcss/forms');
 
 module.exports = {
   purge: [],
@@ -27,5 +28,7 @@ module.exports = {
   variants: {
     extend: {},
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/forms')
+  ],
 }
