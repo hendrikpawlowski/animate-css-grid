@@ -1,5 +1,0 @@
-const init = function () {
-
-}
-
-init();
