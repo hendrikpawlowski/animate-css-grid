@@ -98,11 +98,6 @@
                   background: #f3f4f6; }
           .grid .card .wrapper .flip-card-wrapper .flip-card-back.shield {
             background: #a7f3d0; }
-            .grid .card .wrapper .flip-card-wrapper .flip-card-back.shield .back-button {
-              position: absolute;
-              margin: 8px 0 0 8px; }
-              .grid .card .wrapper .flip-card-wrapper .flip-card-back.shield .back-button .icon {
-                width: 26px; }
             .grid .card .wrapper .flip-card-wrapper .flip-card-back.shield .icon-wrapper {
               margin-top: 30px;
               box-sizing: border-box;

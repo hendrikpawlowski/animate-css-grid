@@ -139,15 +139,19 @@ const flipToShieldBack = function (card) {
   shieldButton.classList.toggle("pressed");
   content.classList.add("flipped-right");
   back.classList.remove("fire");
-  back.classList.add("shield");
-  back.innerHTML = `<button js-back-button class="back-button">
-                      <img class="icon" src="./icons/corner-up-left.svg" alt="" />
-                    </button>
-                    <div class="icon-wrapper">
-                      <img class="icon" src="./icons/shield-pressed.svg" alt="" />
-                    </div>
-                    <div class="text-wrapper">
-                      <p class="text">Sie haben das Thema positiv bewertet</p>
+  // back.classList.add("shield");
+  back.innerHTML = `
+                    <div class="bg-emerald-300 flex flex-col justify-between h-full rounded">
+                      <p class="mt-5 mx-5 text-emerald-900 text-base font-bold">Kollektives Engagement</p>
+                      <div class="ml-2 mr-5 flex items-center h-full">
+                        <div class="icon-wrapper">
+                          <img class="w-40" src="./icons/shield-pressed.svg" alt="" />
+                        </div>
+                        <p class="text-emerald-900 ml-2">Sie haben 1 von 5 Themen positiv bewertet</p>
+                      </div>
+                      <button js-back-button class="h-14 rounded-b w-full flex items-center justify-center text-white font-sm bg-emerald-600">
+                        Rückgängig
+                      </button>
                     </div>
                     `;
 
