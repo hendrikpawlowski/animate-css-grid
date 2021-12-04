@@ -3,10 +3,16 @@ const init = function () {
     const fireworks = new Fireworks(container, { /* options */ });
 
     fireworks.setOptions({
-        delay: { min: 0, max: 5 },
-        speed: 8,
+        delay: { min: 3, max: 5 },
+        speed: 1,
+        rocketsPoint: 50,
         // mouse: { click: true, move: false, max: 0 },
-        explosion: 5,
+        explosion: 3,
+        particles: 300,
+        acceleration: 1.04,
+        friction: 0.99,
+        gravity: 2,
+        opacity: 0.5,
     });
 
     let rocketAnimationIsRunning = false;
@@ -32,7 +38,7 @@ const init = function () {
                     fireworks.stop();
                     rocketAnimationIsRunning = false;
                 }, 1000);
-            }, 1000);
+            }, 5000);
         }
     })
 }
