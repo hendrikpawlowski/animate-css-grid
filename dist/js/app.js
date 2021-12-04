@@ -132,7 +132,7 @@ const flipToFireBack = function (card) {
 
     <div class="mySlides h-full flex flex-col justify-between">
       <div class="w-full h-full overflow-hidden p-1 px-1">
-        <textarea placeholder="Bitte erläutern Sie kurz die Wahl dieses Themengebietes - wo genau liegen aus Ihrer Sicht die Probleme in Ihrem Team?" class="overflow-hidden w-full h-full resize-none rounded border-blue-gray-300 focus:outline-none focus:border-red-400 outline-none focus:ring-red-400" name="comment" id="comment" rows="10"></textarea>
+        <textarea placeholder="Bitte erläutere kurz die Wahl dieses Themengebietes - wo genau liegen aus deiner Sicht die Probleme im Team?" class="overflow-hidden w-full h-full resize-none rounded border-blue-gray-300 focus:outline-none focus:border-red-400 outline-none focus:ring-red-400" name="comment" id="comment" rows="10"></textarea>
       </div>
       <div class="flex -mt-1">
         <button js-back-button class="w-full bg-blue-gray-200 hover:bg-blue-gray-300 rounded h-12 m-1 mr-0.5">Zurück</button>
@@ -142,7 +142,7 @@ const flipToFireBack = function (card) {
     
     <div class="mySlides h-full flex flex-col justify-between">
       <div class="w-full h-full overflow-hidden p-1 px-1">
-        <textarea placeholder="Haben Sie schon eine Idee, wie das Problem gelöst werden könnte?" class="overflow-hidden w-full h-full resize-none rounded border-blue-gray-300 focus:outline-none focus:border-red-400 outline-none focus:ring-red-400" name="comment" id="comment" rows="10"></textarea>
+        <textarea placeholder="Hast du schon eine Idee, wie das Problem gelöst werden könnte?" class="overflow-hidden w-full h-full resize-none rounded border-blue-gray-300 focus:outline-none focus:border-red-400 outline-none focus:ring-red-400" name="comment" id="comment" rows="10"></textarea>
       </div>
       <div class="flex -mt-1">
         <button class="w-full bg-blue-gray-200 hover:bg-blue-gray-300 rounded h-12 m-1 mr-0.5" onclick="plusSlides(-1)">Zurück</button>
