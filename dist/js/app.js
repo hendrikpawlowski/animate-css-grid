@@ -116,9 +116,8 @@ function showSlides(n) {
 var slideIndex = 1;
 
 const flipToFireBack = function (card) {
-  // let fireButton = card.querySelector("[js-button-fire]");
 
-  // fireButton.classList.toggle("pressed");
+  let title = card.querySelector("[js-title]");
 
   let content = card.querySelector("[js-content]");
   content.classList.add("flipped-left");
@@ -151,7 +150,7 @@ const flipToFireBack = function (card) {
     </div>
     
     <div class="mySlides bg-red-300 flex flex-col justify-between h-full rounded" >
-      <p class="mt-5 mx-5 text-red-900 text-base font-bold">Kollektives Engagement</p>
+      <p class="mt-5 mx-5 text-red-900 text-base font-bold">${title.innerHTML}</p>
       <div class="ml-2 mr-5 flex items-center h-full">
         <div class="icon-wrapper">
           <img class="w-40" src="./icons/fire-pressed.svg" alt="" />
@@ -178,6 +177,7 @@ const flipToFireBack = function (card) {
 }
 
 const flipToShieldBack = function (card) {
+  let title = card.querySelector("[js-title]");
   let shieldButton = card.querySelector("[js-button-shield]");
   let content = card.querySelector("[js-content]");
   let back = content.querySelector("[js-flip-card-back]");
@@ -188,7 +188,7 @@ const flipToShieldBack = function (card) {
   // back.classList.add("shield");
   back.innerHTML = `
     <div class="bg-emerald-300 flex flex-col justify-between h-full rounded" >
-                      <p class="mt-5 mx-5 text-emerald-900 text-base font-bold">Kollektives Engagement</p>
+                      <p class="mt-5 mx-5 text-emerald-900 text-base font-bold">${title.innerHTML}</p>
                       <div class="ml-2 mr-5 flex items-center h-full">
                         <div class="icon-wrapper">
                           <img class="w-40" src="./icons/shield-pressed.svg" alt="" />
