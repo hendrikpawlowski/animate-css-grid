@@ -30,6 +30,7 @@
   },
   "dependencies": {
     "@tailwindcss/forms": "^0.3.4",
+    "animate.css": "^4.1.1",
     "live-server": "^1.1.0",
     "node-sass": "^6.0.1",
     "party-js": "^2.1.2"
