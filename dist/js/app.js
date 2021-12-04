@@ -94,6 +94,27 @@ const initCardStack = function (deckCard) {
   });
 }
 
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  if (n > slides.length) { slideIndex = 1 }
+  if (n < 1) { slideIndex = slides.length }
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slides[slideIndex - 1].style.display = "block";
+}
+
+var slideIndex = 1;
+
 const flipToFireBack = function (card) {
   let fireButton = card.querySelector("[js-button-fire]");
 
@@ -108,27 +129,29 @@ const flipToFireBack = function (card) {
   back.classList.add("fire");
 
   back.innerHTML = `
-                      <div class="textarea-wrapper">
-                        <textarea
-                          placeholder="Bitte erläutern Sie kurz die Wahl dieses Themengebietes - wo genau liegen aus Ihrer Sicht die Probleme in Ihrem Team?"
-                          class="comment"
-                          name="comment"
-                          id="comment"
-                          rows="10"
-                        ></textarea>
-                      </div>
-                      <div class="back-card-action">
-                        <button js-button-abort class="button abort">Abbrechen</button>
-                        <button js-button-save-comment class="button save-comment">Speichern</button>
-                      </div>
-                      `
+  <div class="slideshow-container h-full">
 
+  <div class="mySlides fade h-full">
+    <div class="textarea-wrapper w-full h-full p-4 overflow-hidden">
+      <textarea placeholder="Bitte erläutern Sie kurz die Wahl dieses Themengebietes - wo genau liegen aus Ihrer Sicht die Probleme in Ihrem Team?" class="comment" name="comment" id="comment" rows="10"></textarea>
+    </div>
+  </div>
+  
+  <div class="mySlides fade">
+    <div class="text">Caption Two</div>
+  </div>
+  
+  <div class="mySlides fade">
+    <div class="text">Caption Three</div>
+  </div>
+  
+  <a class="prev h-14" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next h-20" onclick="plusSlides(1)">&#10095;</a>
+  
+  </div>
+  `
 
-  let abortButton = content.querySelector("[js-button-abort]");
-  abortButton.addEventListener("click", () => {
-    content.classList.remove("flipped-left");
-
-  })
+  showSlides(slideIndex);
 }
 
 const flipToShieldBack = function (card) {
@@ -141,7 +164,7 @@ const flipToShieldBack = function (card) {
   back.classList.remove("fire");
   // back.classList.add("shield");
   back.innerHTML = `
-                    <div class="bg-emerald-300 flex flex-col justify-between h-full rounded">
+    < div div class="bg-emerald-300 flex flex-col justify-between h-full rounded" >
                       <p class="mt-5 mx-5 text-emerald-900 text-base font-bold">Kollektives Engagement</p>
                       <div class="ml-2 mr-5 flex items-center h-full">
                         <div class="icon-wrapper">
@@ -152,8 +175,8 @@ const flipToShieldBack = function (card) {
                       <button js-back-button class="h-14 rounded-b w-full flex items-center justify-center text-white font-sm bg-emerald-600">
                         Rückgängig
                       </button>
-                    </div>
-                    `;
+                    </ >
+  `;
 
   let backButton = back.querySelector("[js-back-button]");
   backButton.addEventListener("click", () => {

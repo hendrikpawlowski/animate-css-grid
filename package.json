@@ -25,12 +25,13 @@
   "devDependencies": {
     "autoprefixer": "^10.4.0",
     "gh-pages": "^3.2.3",
-    "node-sass": "^6.0.1",
     "postcss": "^8.4.3",
     "tailwindcss": "^2.2.19"
   },
   "dependencies": {
-    "live-server": "^1.2.1",
+    "@tailwindcss/forms": "^0.3.4",
+    "live-server": "^1.1.0",
+    "node-sass": "^6.0.1",
     "party-js": "^2.1.2"
   }
 }

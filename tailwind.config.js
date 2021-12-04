@@ -10,7 +10,7 @@ module.exports = {
         current: "currentColor",
         black: colors.black,
         white: colors.white,
-        "blue-gray": colors.blue - gray,
+        "blue-gray": colors.blueGray,
         "cool-gray": colors.coolGray,
         // gray: colors.gray,
         "true-gray": colors.trueGray,
@@ -37,7 +37,7 @@ module.exports = {
     },
   },
   variants: {
-    extend: {},
+    variants: ["responsive", "group-hover", "hover", "focus"]
   },
   plugins: [
     require('@tailwindcss/forms')
