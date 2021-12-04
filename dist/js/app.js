@@ -108,20 +108,19 @@ function showSlides(n) {
   if (n > slides.length) { slideIndex = 1 }
   if (n < 1) { slideIndex = slides.length }
   for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
+    slides[i].classList.add("hidden");
   }
-  slides[slideIndex - 1].style.display = "block";
+  slides[slideIndex - 1].classList.remove("hidden");
 }
 
 var slideIndex = 1;
 
 const flipToFireBack = function (card) {
-  let fireButton = card.querySelector("[js-button-fire]");
+  // let fireButton = card.querySelector("[js-button-fire]");
 
-  fireButton.classList.toggle("pressed");
+  // fireButton.classList.toggle("pressed");
 
   let content = card.querySelector("[js-content]");
-
   content.classList.add("flipped-left");
 
   let back = content.querySelector("[js-flip-card-back]");
@@ -131,25 +130,49 @@ const flipToFireBack = function (card) {
   back.innerHTML = `
   <div class="slideshow-container h-full">
 
-  <div class="mySlides fade h-full">
-    <div class="textarea-wrapper w-full h-full p-4 overflow-hidden">
-      <textarea placeholder="Bitte erläutern Sie kurz die Wahl dieses Themengebietes - wo genau liegen aus Ihrer Sicht die Probleme in Ihrem Team?" class="comment" name="comment" id="comment" rows="10"></textarea>
+    <div class="mySlides h-full flex flex-col justify-between">
+      <div class="w-full h-full overflow-hidden p-1 px-1">
+        <textarea placeholder="Bitte erläutern Sie kurz die Wahl dieses Themengebietes - wo genau liegen aus Ihrer Sicht die Probleme in Ihrem Team?" class="overflow-hidden w-full h-full resize-none rounded focus:outline-none focus:border-red-400 outline-none focus:ring-red-400" name="comment" id="comment" rows="10"></textarea>
+      </div>
+      <div class="flex -mt-1">
+        <button js-back-button class="w-full bg-blue-gray-200 hover:bg-blue-gray-300 rounded h-12 m-1 mr-0.5">Zurück</button>
+        <button class="w-full bg-blue-gray-200 hover:bg-blue-gray-300 rounded h-12 m-1 ml-0.5" onclick="plusSlides(1)">Weiter</button>
+      </div>
     </div>
-  </div>
-  
-  <div class="mySlides fade">
-    <div class="text">Caption Two</div>
-  </div>
-  
-  <div class="mySlides fade">
-    <div class="text">Caption Three</div>
-  </div>
-  
-  <a class="prev h-14" onclick="plusSlides(-1)">&#10094;</a>
-  <a class="next h-20" onclick="plusSlides(1)">&#10095;</a>
+    
+    <div class="mySlides h-full flex flex-col justify-between">
+      <div class="w-full h-full overflow-hidden p-1 px-1">
+        <textarea placeholder="Haben Sie schon eine Idee, wie das Problem gelöst werden könnte?" class="overflow-hidden w-full h-full resize-none rounded focus:outline-none focus:border-red-400 outline-none focus:ring-red-400" name="comment" id="comment" rows="10"></textarea>
+      </div>
+      <div class="flex -mt-1">
+        <button class="w-full bg-blue-gray-200 hover:bg-blue-gray-300 rounded h-12 m-1 mr-0.5" onclick="plusSlides(-1)">Zurück</button>
+        <button class="w-full bg-blue-gray-200 hover:bg-blue-gray-300 rounded h-12 m-1 ml-0.5" onclick="plusSlides(1)">Weiter</button>
+      </div>
+    </div>
+    
+    <div class="mySlides bg-red-300 flex flex-col justify-between h-full rounded" >
+      <p class="mt-5 mx-5 text-red-900 text-base font-bold">Kollektives Engagement</p>
+      <div class="ml-2 mr-5 flex items-center h-full">
+        <div class="icon-wrapper">
+          <img class="w-40" src="./icons/fire-pressed.svg" alt="" />
+        </div>
+        <p class="text-red-900 ml-2">Du hast 1 von 5 Themen negativ bewertet</p>
+      </div>
+      <button js-back-button class="h-14 rounded-b w-full flex items-center justify-center text-white font-sm bg-red-500">
+        Rückgängig
+      </button>
+    </div>
   
   </div>
   `
+  let backButtons = content.querySelectorAll("[js-back-button]");
+  backButtons.forEach(backButton => {
+    backButton.addEventListener("click", () => {
+      content.classList.remove("flipped-left");
+      slideIndex = 1;
+    });
+  })
+
 
   showSlides(slideIndex);
 }
@@ -164,18 +187,18 @@ const flipToShieldBack = function (card) {
   back.classList.remove("fire");
   // back.classList.add("shield");
   back.innerHTML = `
-    < div div class="bg-emerald-300 flex flex-col justify-between h-full rounded" >
+    <div class="bg-emerald-300 flex flex-col justify-between h-full rounded" >
                       <p class="mt-5 mx-5 text-emerald-900 text-base font-bold">Kollektives Engagement</p>
                       <div class="ml-2 mr-5 flex items-center h-full">
                         <div class="icon-wrapper">
                           <img class="w-40" src="./icons/shield-pressed.svg" alt="" />
                         </div>
-                        <p class="text-emerald-900 ml-2">Sie haben 1 von 5 Themen positiv bewertet</p>
+                        <p class="text-emerald-900 ml-2">Du hast 1 von 5 Themen positiv bewertet</p>
                       </div>
                       <button js-back-button class="h-14 rounded-b w-full flex items-center justify-center text-white font-sm bg-emerald-600">
                         Rückgängig
                       </button>
-                    </ >
+                    </>
   `;
 
   let backButton = back.querySelector("[js-back-button]");
