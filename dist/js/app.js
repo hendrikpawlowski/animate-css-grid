@@ -94,26 +94,51 @@ const initCardStack = function (deckCard) {
   });
 }
 
-function plusSlides(n) {
-  showSlides(slideIndex += n);
-}
+class Carousel {
 
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
+  constructor(card) {
+    this.slideIndex = 1;
+    this.card = card;
+    this.slides = this.card.getElementsByClassName("mySlides");
 
-function showSlides(n) {
-  var i;
-  var slides = document.getElementsByClassName("mySlides");
-  if (n > slides.length) { slideIndex = 1 }
-  if (n < 1) { slideIndex = slides.length }
-  for (i = 0; i < slides.length; i++) {
-    slides[i].classList.add("hidden");
+    this.initNextButtons();
+    this.initBackButtons();
   }
-  slides[slideIndex - 1].classList.remove("hidden");
-}
 
-var slideIndex = 1;
+  initNextButtons() {
+    let nextButtons = this.card.querySelectorAll("[js-next-button]");
+
+    nextButtons.forEach(nextButton => {
+      nextButton.addEventListener("click", () => {
+        this.plusSlides(1);
+      })
+    });
+  }
+
+  initBackButtons() {
+    let backButtons = this.card.querySelectorAll("[js-back-button]");
+
+    backButtons.forEach(backButton => {
+      backButton.addEventListener("click", () => {
+        this.plusSlides(-1);
+      })
+    });
+  }
+
+  plusSlides(n) {
+    this.showSlides(this.slideIndex += n);
+  }
+
+  showSlides(n) {
+    var i;
+    if (n > this.slides.length) { this.slideIndex = 1 }
+    if (n < 1) { this.slideIndex = this.slides.length }
+    for (i = 0; i < this.slides.length; i++) {
+      this.slides[i].classList.add("hidden");
+    }
+    this.slides[this.slideIndex - 1].classList.remove("hidden");
+  }
+}
 
 const flipToFireBack = function (card) {
 
@@ -134,8 +159,8 @@ const flipToFireBack = function (card) {
         <textarea placeholder="Bitte erläutere kurz die Wahl dieses Themengebietes - wo genau liegen aus deiner Sicht die Probleme im Team?" class="overflow-hidden w-full h-full resize-none rounded border-blue-gray-300 focus:outline-none focus:border-red-400 outline-none focus:ring-red-400" name="comment" id="comment" rows="10"></textarea>
       </div>
       <div class="flex -mt-1">
-        <button js-back-button class="w-full bg-blue-gray-200 hover:bg-blue-gray-300 rounded h-12 m-1 mr-0.5">Zurück</button>
-        <button class="w-full bg-blue-gray-200 hover:bg-blue-gray-300 rounded h-12 m-1 ml-0.5" onclick="plusSlides(1)">Weiter</button>
+        <button js-undone-button class="w-full bg-blue-gray-200 hover:bg-blue-gray-300 rounded h-12 m-1 mr-0.5">Zurück</button>
+        <button js-next-button class="w-full bg-blue-gray-200 hover:bg-blue-gray-300 rounded h-12 m-1 ml-0.5">Weiter</button>
       </div>
     </div>
     
@@ -144,8 +169,8 @@ const flipToFireBack = function (card) {
         <textarea placeholder="Hast du schon eine Idee, wie das Problem gelöst werden könnte?" class="overflow-hidden w-full h-full resize-none rounded border-blue-gray-300 focus:outline-none focus:border-red-400 outline-none focus:ring-red-400" name="comment" id="comment" rows="10"></textarea>
       </div>
       <div class="flex -mt-1">
-        <button class="w-full bg-blue-gray-200 hover:bg-blue-gray-300 rounded h-12 m-1 mr-0.5" onclick="plusSlides(-1)">Zurück</button>
-        <button class="w-full bg-blue-gray-200 hover:bg-blue-gray-300 rounded h-12 m-1 ml-0.5" onclick="plusSlides(1)">Weiter</button>
+        <button js-back-button class="w-full bg-blue-gray-200 hover:bg-blue-gray-300 rounded h-12 m-1 mr-0.5">Zurück</button>
+        <button js-next-button class="w-full bg-blue-gray-200 hover:bg-blue-gray-300 rounded h-12 m-1 ml-0.5">Weiter</button>
       </div>
     </div>
     
@@ -157,23 +182,24 @@ const flipToFireBack = function (card) {
         </div>
         <p class="text-red-900 ml-2">Du hast 1 von 5 Themen negativ bewertet</p>
       </div>
-      <button js-back-button class="h-14 rounded-b w-full flex items-center justify-center text-white font-sm bg-red-500">
+      <button js-undone-button class="h-14 rounded-b w-full flex items-center justify-center text-white font-sm bg-red-500">
         Rückgängig
       </button>
     </div>
   
   </div>
   `
-  let backButtons = content.querySelectorAll("[js-back-button]");
-  backButtons.forEach(backButton => {
-    backButton.addEventListener("click", () => {
+
+  let carousel = new Carousel(card);
+
+  let undoneButtons = content.querySelectorAll("[js-undone-button]");
+  undoneButtons.forEach(undoneButton => {
+    undoneButton.addEventListener("click", () => {
       content.classList.remove("flipped-left");
-      slideIndex = 1;
     });
   })
 
-
-  showSlides(slideIndex);
+  carousel.showSlides(1);
 }
 
 const flipToShieldBack = function (card) {
