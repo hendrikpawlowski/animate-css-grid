@@ -29,6 +29,10 @@
         font-size: 12px;
         opacity: 0.7;
         height: 3rem; }
+    .grid .deck-card:hover + [js-stacked] .flip-card-front {
+      transform: rotate(-2deg); }
+    .grid .deck-card:hover + [js-stacked] + [js-stacked] .flip-card-front {
+      transform: rotate(-4deg); }
   .grid .card {
     cursor: pointer;
     perspective: 1000px; }
