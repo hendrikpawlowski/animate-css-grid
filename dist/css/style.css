@@ -222,3 +222,6 @@
 .accordion .panel {
   overflow: hidden;
   transition: 0.5s; }
+
+.shadow-extreme {
+  box-shadow: 2px 5px 15px rgba(0, 0, 0, 0.2); }
