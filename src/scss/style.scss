@@ -48,7 +48,6 @@
 
     &:hover + [js-stacked] {
       .flip-card-front {
-        // background: burlywood;
         transform: rotate(-2deg);
       }
     }
@@ -56,7 +55,6 @@
     &:hover + [js-stacked] + [js-stacked] {
       .flip-card-front {
         transform: rotate(-4deg);
-        // background: burlywood;
       }
     }
   }
