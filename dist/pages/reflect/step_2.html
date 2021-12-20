@@ -13,6 +13,95 @@
 <body class="bg-blue-gray-50" data-swipe-threshold="80">
     <div class="opacity-0 transition-all duration-1000"
         style="position: absolute; top: 0; height: 100%; width: 100%; z-index: -1" js-rocket-container></div>
+
+    <!-- Overlay Container -->
+    <div js-overlay-container class="hidden fixed w-full h-full z-50 justify-center items-center">
+        <div class="w-full h-full bg-blue-gray-900 opacity-50"></div>
+        <div js-content class="h-5/6 bg-blue-gray-50 fixed shadow-extreme rounded">
+            <div class="h-1/5 p-8 flex items-center justify-between">
+                <h1 class=" text-3xl font-semibold color-white text-blue-gray-900">Titel des Themas</h1>
+                <button js-close-overlay>
+                    <svg class="h-8 w-8" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" class="feather feather-x-circle">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="15" y1="9" x2="9" y2="15"></line>
+                        <line x1="9" y1="9" x2="15" y2="15"></line>
+                    </svg>
+                </button>
+            </div>
+            <div class="flex h-4/5">
+                <ul class="px-4 pt-2">
+                    <li class="mb-4">
+                        <a href="#bewertung"
+                            class=" hover:bg-blue-gray-200 inline-block px-4 py-2 rounded cursor-pointer">Bewertung
+                        </a>
+                    </li>
+                    <li class="mb-4">
+                        <a href="#beispiele"
+                            class=" hover:bg-blue-gray-200 inline-block px-4 py-2 rounded cursor-pointer">Beispiele
+                        </a>
+                    </li>
+                </ul>
+                <ul style="scroll-behavior: smooth;" class="overflow-scroll px-8 pb-64 max-w-3xl">
+                    <li id="bewertung" class="mb-8 p-8 bg-white rounded shadow-lg">
+                        <h2 class="text-xl font-semibold color-white text-blue-gray-900 mb-4">Bewertung</h2>
+                        <div>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                            invidunt ut
+                        </div>
+                        <div class="flex mt-8">
+                            <div class="flex items-center mr-4">
+                                <div class="text-red-900">4x</div>
+                                <img class="ml-1 h-8" src="../../icons/fire-pressed.svg" alt="">
+                            </div>
+                            <div class="flex items-center ml-4">
+                                <div class="text-green-900">2x</div>
+                                <img class="ml-1 h-8" src="../../icons/shield-pressed.svg" alt="">
+                            </div>
+                        </div>
+                        <div class="mt-4 flex flex-wrap -mx-2">
+                            <div class="bg-blue-gray-100 p-4 rounded w-2/5 cursor-pointer hover:bg-blue-gray-200 m-2">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id, laboriosam!
+                            </div>
+                            <div class="bg-blue-gray-100 p-4 rounded w-2/5 cursor-pointer hover:bg-blue-gray-200 m-2">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam temporibus similique
+                                esse officia.
+                            </div>
+                            <div class="bg-blue-gray-100 p-4 rounded w-2/5 cursor-pointer hover:bg-blue-gray-200 m-2">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt sint necessitatibus
+                                amet asperiores odio ipsum delectus cum!
+                            </div>
+                        </div>
+                    </li>
+                    <li id="beispiele" class="mb-8 p-8 bg-white rounded shadow-lg">
+                        <h2 class="text-xl font-semibold color-white text-blue-gray-900 mb-4">Beispiele</h2>
+                        <div>
+                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                            invidunt ut
+                        </div>
+                        <ul class="mt-4 list-disc list-outside p-4">
+                            <li>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque excepturi qui quibusdam
+                                nihil maxime cumque totam nam mollitia et soluta!
+                            </li>
+                            <li class="mt-4">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto est cumque eaque
+                                dolore! Soluta, tenetur. Magni amet quis quidem sapiente iure quam natus cupiditate,
+                                eaque neque molestias vero labore earum!
+                            </li>
+                            <li class="mt-4">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, vel!
+                            </li>
+                            <li class="mt-4">
+                                Lorem ipsum dolor sit amet.
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
     <!-- Header dark-->
     <nav class="bg-gradient-to-r from-cyan-700 to-sky-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -183,7 +272,7 @@
         </div>
 
         <ul js-grid class="pt-12 grid gap-8">
-            <li
+            <li js-card
                 class="h-52 card cursor-pointer bg-white shadow-lg hover:shadow-2xl transition-shadow pt-5 rounded-md min-w-min">
                 <div class="flex flex-col justify-between h-full">
                     <div class="mx-5">
@@ -206,7 +295,7 @@
                     </button>
                 </div>
             </li>
-            <li
+            <li js-card
                 class="h-52 card cursor-pointer bg-white shadow-lg hover:shadow-2xl transition-shadow pt-5 rounded-md min-w-min">
                 <div class="flex flex-col justify-between h-full">
                     <div class="mx-5">
@@ -246,6 +335,7 @@
     <script src="https://cdn.jsdelivr.net/npm/party-js@latest/bundle/party.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/fireworks-js@latest/dist/fireworks.js"></script>
     <script src="../../js/party.js"></script>
+    <script src="../../js/overlayCard.js"></script>
 </body>
 
 </html>
