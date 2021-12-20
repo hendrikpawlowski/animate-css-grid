@@ -12,6 +12,158 @@
 
 <body class="bg-blue-gray-50" data-swipe-threshold="80">
 
+    <!-- Overlay Container -->
+    <div js-overlay-container class="hidden fixed w-full h-full z-50 justify-center items-center">
+        <div class="w-full h-full bg-blue-gray-900 opacity-50"></div>
+        <div js-content class="h-5/6 bg-blue-gray-50 fixed shadow-extreme rounded">
+            <div class="h-1/5 p-8 flex items-center justify-between">
+                <h1 class=" text-3xl font-semibold color-white text-blue-gray-900">Titel des Themas</h1>
+                <button js-close-overlay>
+                    <svg class="h-8 w-8" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" class="feather feather-x-circle">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="15" y1="9" x2="9" y2="15"></line>
+                        <line x1="9" y1="9" x2="15" y2="15"></line>
+                    </svg>
+                </button>
+            </div>
+            <div class="flex h-4/5">
+                <ul class="px-4 pt-2">
+                    <li class="mb-4">
+                        <a href="#themaBearbeiten"
+                            class=" hover:bg-blue-gray-200 inline-block px-4 py-2 rounded cursor-pointer">Thema
+                            bearbeiten
+                        </a>
+                    </li>
+                    <li class="mb-4">
+                        <a href="#bewertung"
+                            class=" hover:bg-blue-gray-200 inline-block px-4 py-2 rounded cursor-pointer">Bewertung
+                        </a>
+                    </li>
+                    <li class="mb-4">
+                        <a href="#beispiele"
+                            class=" hover:bg-blue-gray-200 inline-block px-4 py-2 rounded cursor-pointer">Beispiele
+                        </a>
+                    </li>
+                </ul>
+                <ul style="scroll-behavior: smooth;" class="overflow-scroll px-8 pb-64 max-w-3xl">
+                    <li id="themaBearbeiten" class="mb-8 p-8 bg-white rounded shadow-lg">
+                        <h2 class="text-xl font-semibold color-white text-blue-gray-900 mb-2">Thema bearbeiten</h2>
+                        <div>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                            invidunt ut
+                            labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo
+                            dolores et</div>
+                        <div class="mt-8">
+                            <div class="font-semibold">Diskussion</div>
+                            <div class="mt-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates
+                                fugit sapiente
+                            </div>
+                        </div>
+                        <div class="mt-8">
+                            <div class="font-semibold">Maßnahme ableiten</div>
+                            <div class="mt-4 bg-blue-gray-100 px-4 py-4 rounded">
+
+                                <div class="flex items-start space-x-4">
+                                    <div class="min-w-0 flex-1">
+                                        <form action="#" class="relative">
+                                            <div
+                                                class="border border-gray-300 rounded-lg shadow-sm overflow-hidden focus:ring-blue-gray-700 focus:border-blue-gray-700">
+                                                <label for="comment" class="sr-only">Beschreiben Sie die
+                                                    Maßnahme</label>
+                                                <textarea rows="3" name="comment" id="comment"
+                                                    class="block w-full py-3 border-0 resize-none focus:ring-0 sm:text-sm focus:ring-blue-gray-700 focus:border-blue-gray-700"
+                                                    placeholder="Beschreiben Sie die Maßnahme..."></textarea>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+
+                                <div class="max-w-xs mt-8">
+                                    <label for="verantwortlich"
+                                        class="block font-semibold text-blue-gray-700">Verantwortliche:r</label>
+                                    <div class="mt-1">
+                                        <input type="text" name="verantwortlich" id="verantwortlich"
+                                            autocomplete="organization"
+                                            class="py-2 px-4 block w-full shadow-sm focus:ring-blue-gray-700 focus:border-blue-gray-700 border-gray-300 rounded-md">
+                                    </div>
+                                </div>
+                                <div class="max-w-xs mt-4">
+                                    <label for="verantwortlich"
+                                        class="block font-semibold text-blue-gray-700">Umfang</label>
+                                    <div class="mt-1">
+                                        <input type="text" name="verantwortlich" id="verantwortlich"
+                                            autocomplete="organization"
+                                            class="py-2 px-4 block w-full shadow-sm focus:ring-blue-gray-700 focus:border-blue-gray-700 border-gray-300 rounded-md">
+                                    </div>
+                                </div>
+                                <div class="mt-8">
+                                    <div class="font-semibold text-blue-gray-700">Checkliste</div>
+                                    <button
+                                        class="mt-4 p-4 py-2 bg-blue-gray-200 hover:bg-blue-gray-300 rounded">Element
+                                        hinzufügen</button>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li id="bewertung" class="mb-8 p-8 bg-white rounded shadow-lg">
+                        <h2 class="text-xl font-semibold color-white text-blue-gray-900 mb-4">Bewertung</h2>
+                        <div>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                            invidunt ut
+                        </div>
+                        <div class="flex mt-8">
+                            <div class="flex items-center mr-4">
+                                <div class="text-red-900">4x</div>
+                                <img class="ml-1 h-8" src="../../icons/fire-pressed.svg" alt="">
+                            </div>
+                            <div class="flex items-center ml-4">
+                                <div class="text-green-900">2x</div>
+                                <img class="ml-1 h-8" src="../../icons/shield-pressed.svg" alt="">
+                            </div>
+                        </div>
+                        <div class="mt-4 flex flex-wrap -mx-2">
+                            <div class="bg-blue-gray-100 p-4 rounded w-2/5 cursor-pointer hover:bg-blue-gray-200 m-2">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id, laboriosam!
+                            </div>
+                            <div class="bg-blue-gray-100 p-4 rounded w-2/5 cursor-pointer hover:bg-blue-gray-200 m-2">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam temporibus similique
+                                esse officia.
+                            </div>
+                            <div class="bg-blue-gray-100 p-4 rounded w-2/5 cursor-pointer hover:bg-blue-gray-200 m-2">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt sint necessitatibus
+                                amet asperiores odio ipsum delectus cum!
+                            </div>
+                        </div>
+                    </li>
+                    <li id="beispiele" class="mb-8 p-8 bg-white rounded shadow-lg">
+                        <h2 class="text-xl font-semibold color-white text-blue-gray-900 mb-4">Beispiele</h2>
+                        <div>
+                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                            invidunt ut
+                        </div>
+                        <ul class="mt-4 list-disc list-outside p-4">
+                            <li>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque excepturi qui quibusdam
+                                nihil maxime cumque totam nam mollitia et soluta!
+                            </li>
+                            <li class="mt-4">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto est cumque eaque
+                                dolore! Soluta, tenetur. Magni amet quis quidem sapiente iure quam natus cupiditate,
+                                eaque neque molestias vero labore earum!
+                            </li>
+                            <li class="mt-4">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, vel!
+                            </li>
+                            <li class="mt-4">
+                                Lorem ipsum dolor sit amet.
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
     <!-- Header dark-->
     <nav class="bg-gradient-to-r from-cyan-700 to-sky-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -169,7 +321,8 @@
                     <img js-toggle class="icon opacity-0" src="./icons/info.svg" alt="">
                 </div>
                 <div js-panel class="panel flex">
-                    <p class="max-w-4xl pt-4 text-blue-gray-600 font-medium">In diesem Schritt definiert ihr Maßnahmen, um
+                    <p class="max-w-4xl pt-4 text-blue-gray-600 font-medium">In diesem Schritt definiert ihr Maßnahmen,
+                        um
                         die Themenbereiche zu verbessern, mit denen ihr im Moment noch nicht zufrieden seid.</p>
                 </div>
             </div>
@@ -179,7 +332,7 @@
         </div>
 
         <ul js-grid class="pt-12 grid gap-8">
-            <li
+            <li js-card
                 class="h-52 card cursor-pointer bg-white shadow-lg hover:shadow-2xl transition-shadow pt-5 rounded-md min-w-min">
                 <div class="flex flex-col justify-between h-full">
                     <div class="mx-5">
@@ -202,7 +355,7 @@
                     </button>
                 </div>
             </li>
-            <li
+            <li js-card
                 class="h-52 card cursor-pointer bg-white shadow-lg hover:shadow-2xl transition-shadow pt-5 rounded-md min-w-min">
                 <div class="flex flex-col justify-between h-full">
                     <div class="mx-5">
@@ -239,8 +392,7 @@
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://unpkg.com/animate-css-grid@latest"></script>
-    <script src="./swiped-events.js"></script>
-    <script src="./reflect.js"></script>
+    <script src="../../js/overlayCard.js"></script>
 </body>
 
 </html>
