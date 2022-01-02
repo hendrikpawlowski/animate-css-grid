@@ -15,7 +15,8 @@
     <!-- Overlay Container -->
     <div js-overlay-container class="hidden fixed w-full h-full z-50 justify-center items-center">
         <div class="w-full h-full bg-blue-gray-900 opacity-50"></div>
-        <div js-content class="h-5/6 bg-blue-gray-50 fixed shadow-extreme rounded">
+        <div js-content
+            class="h-full md:h-5/6 w-full md:w-5/6 lg:w-auto bg-blue-gray-50 fixed shadow-extreme md:rounded">
             <div class="h-1/5 p-8 flex items-center justify-between">
                 <h1 class=" text-3xl font-semibold color-white text-blue-gray-900">Titel des Themas</h1>
                 <button js-close-overlay>
@@ -29,7 +30,7 @@
                 </button>
             </div>
             <div class="flex h-4/5">
-                <ul class="px-4 pt-2">
+                <ul class="px-4 pt-2 md:block hidden">
                     <li class="mb-4 relative">
                         <a href="#fortschritt"
                             class=" hover:bg-blue-gray-200 inline-block px-4 py-2 rounded cursor-pointer">
@@ -38,10 +39,9 @@
                         <div class="absolute w-2.5 h-2.5 bg-green-400 rounded-full top-0 bottom-0 my-auto -left-1">
                         </div>
                     </li>
-                    <li class="mb-4">
+                    <li class="relative mb-4">
                         <a href="#maßnahme"
-                            class=" hover:bg-blue-gray-200 inline-block px-4 py-2 rounded cursor-pointer">
-                            Maßnahme
+                            class=" hover:bg-blue-gray-200 inline-block px-4 py-2 rounded cursor-pointer">Maßnahme
                         </a>
                     </li>
                     <li class="mb-4">
@@ -55,7 +55,7 @@
                         </a>
                     </li>
                 </ul>
-                <ul style="scroll-behavior: smooth;" class="overflow-scroll px-8 pb-64 max-w-3xl">
+                <ul style="scroll-behavior: smooth;" class="overflow-scroll px-4 md:px-8 max-w-3xl">
                     <li id="fortschritt" class="mb-8 p-8 bg-white rounded shadow-lg">
                         <h2 class="text-xl font-semibold color-white text-blue-gray-900 mb-4">Fortschritt</h2>
                         <div class="">
@@ -80,97 +80,67 @@
                                 </div>
                             </div>
                         </div>
-
                     </li>
                     <li id="maßnahme" class="mb-8 p-8 bg-white rounded shadow-lg">
-                        <h2 class="text-xl font-semibold color-white text-blue-gray-900 mb-2">Maßnahme
-                        </h2>
-                        <div>
-                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                        <h2 class="text-xl font-semibold color-white text-blue-gray-900 mb-2">Maßnahme</h2>
+                        <div>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
                             invidunt ut
                             labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo
-                            dolores et
-                            ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-                            Lorem ipsum
-                            dolor sit amet
-                        </div>
-                        <div class="max-w-sm mt-8">
-                            <div>
-                                <div class="font-semibold">Verantwortliche:r</div>
-                                <div
-                                    class="bg-blue-gray-100 cursor-pointer group hover:bg-blue-gray-200 px-4 py-2 inline-flex items-center rounded mt-2">
-                                    Max Mustermann <img
-                                        class="group-hover:ml-2 -ml-2 transition-all opacity-0 group-hover:opacity-100 h-5 w-5"
-                                        src="../../icons/pen.svg" alt="">
-                                </div>
-                            </div>
-                            <div class="mt-8">
-                                <div class="font-semibold">Umfang</div>
-                                <div
-                                    class="bg-blue-gray-100 inline-flex group items-center cursor-pointer hover:bg-blue-gray-200 px-4 py-2 rounded mt-2">
-                                    3 Wochen <img
-                                        class="group-hover:ml-2 -ml-2 transition-all opacity-0 group-hover:opacity-100 h-5 w-5"
-                                        src="../../icons/pen.svg" alt="">
-                                </div>
+                            dolores et</div>
+                        <div class="mt-8">
+                            <div class="font-semibold">Diskussion</div>
+                            <div class="mt-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates
+                                fugit sapiente
                             </div>
                         </div>
                         <div class="mt-8">
-                            <div class="font-semibold">Checkliste</div>
-                            <ul class="mt-4">
-                                <li class="">
-                                    <div class="relative flex items-center">
-                                        <div class="flex items-center h-5">
-                                            <input id="item1" aria-describedby="comments-description" name="item1"
-                                                type="checkbox"
-                                                class="focus:ring-offset-0 focus:outline-none focus:ring-0 h-6 w-6 text-cyan-700 border-1 border-gray-400 bg-transparent rounded-full"
-                                                data-np-checked="1">
-                                        </div>
-                                        <div class="ml-3 text-sm">
-                                            <label for="item1" class="text-base">Lorem ipsum</label>
-                                        </div>
+                            <div class="font-semibold">Maßnahme ableiten</div>
+                            <div class="mt-4 bg-blue-gray-100 px-4 py-4 rounded">
+
+                                <div class="flex items-start space-x-4">
+                                    <div class="min-w-0 flex-1">
+                                        <form action="#" class="relative">
+                                            <div
+                                                class="border border-gray-300 rounded-lg shadow-sm overflow-hidden focus:ring-blue-gray-700 focus:border-blue-gray-700">
+                                                <label for="comment" class="sr-only">Beschreiben Sie die
+                                                    Maßnahme</label>
+                                                <textarea rows="3" name="comment" id="comment"
+                                                    class="block w-full py-3 border-0 resize-none focus:ring-0 sm:text-sm focus:ring-blue-gray-700 focus:border-blue-gray-700"
+                                                    placeholder="Beschreiben Sie die Maßnahme..."></textarea>
+                                            </div>
+                                        </form>
                                     </div>
-                                </li>
-                                <li class="mt-3">
-                                    <div class="relative flex items-center">
-                                        <div class="flex items-center h-5">
-                                            <input id="item2" aria-describedby="comments-description" name="item2"
-                                                type="checkbox"
-                                                class="focus:ring-offset-0 focus:outline-none focus:ring-0 h-6 w-6 text-cyan-700 border-1 border-gray-400 bg-transparent rounded-full"
-                                                data-np-checked="1">
-                                        </div>
-                                        <div class="ml-3 text-sm">
-                                            <label for="item2" class="text-base">Perspiciatis, est</label>
-                                        </div>
+                                </div>
+
+                                <div class="max-w-xs mt-8">
+                                    <label for="verantwortlich"
+                                        class="block font-semibold text-blue-gray-700">Verantwortliche:r</label>
+                                    <div class="mt-1">
+                                        <input type="text" name="verantwortlich" id="verantwortlich"
+                                            autocomplete="organization"
+                                            class="py-2 px-4 block w-full shadow-sm focus:ring-blue-gray-700 focus:border-blue-gray-700 border-gray-300 rounded-md">
                                     </div>
-                                </li>
-                                <li class="mt-3">
-                                    <div class="relative flex items-center">
-                                        <div class="flex items-center h-5">
-                                            <input id="item3" aria-describedby="comments-description" name="item3"
-                                                type="checkbox"
-                                                class="focus:ring-offset-0 focus:outline-none focus:ring-0 h-6 w-6 text-cyan-700 border-1 border-gray-400 bg-transparent rounded-full"
-                                                data-np-checked="1">
-                                        </div>
-                                        <div class="ml-3 text-sm">
-                                            <label for="item3" class="text-base">Amet consectetur
-                                            </label>
-                                        </div>
+                                </div>
+                                <div class="max-w-xs mt-4">
+                                    <label for="verantwortlich"
+                                        class="block font-semibold text-blue-gray-700">Umfang</label>
+                                    <div class="mt-1">
+                                        <input type="text" name="verantwortlich" id="verantwortlich"
+                                            autocomplete="organization"
+                                            class="py-2 px-4 block w-full shadow-sm focus:ring-blue-gray-700 focus:border-blue-gray-700 border-gray-300 rounded-md">
                                     </div>
-                                </li>
-                                <li class="mt-3">
-                                    <div class="relative flex items-center">
-                                        <div class="flex items-center h-5">
-                                            <input id="item4" aria-describedby="comments-description" name="item4"
-                                                type="checkbox"
-                                                class="focus:ring-offset-0 focus:outline-none focus:ring-0 h-6 w-6 text-cyan-700 border-1 border-gray-400 bg-transparent rounded-full"
-                                                data-np-checked="1">
-                                        </div>
-                                        <div class="ml-3 text-sm">
-                                            <label for="item4" class=" text-base">Dolor sit</label>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
+                                </div>
+                                <div class="mt-8">
+                                    <div class="font-semibold text-blue-gray-700">Checkliste</div>
+                                    <button
+                                        class="mt-4 p-4 py-2 bg-blue-gray-200 hover:bg-blue-gray-300 rounded">Element
+                                        hinzufügen</button>
+                                </div>
+                                <div class="mt-8 w-full flex justify-end">
+                                    <button
+                                        class="mt-4 p-4 py-2 bg-primary-400 hover:bg-primary-500 text-white rounded">Speichern</button>
+                                </div>
+                            </div>
                         </div>
                     </li>
                     <li id="bewertung" class="mb-8 p-8 bg-white rounded shadow-lg">
@@ -202,7 +172,7 @@
                             </div>
                         </div>
                     </li>
-                    <li id="beispiele" class="mb-8 p-8 bg-white rounded shadow-lg">
+                    <li id="beispiele" class="mb-4 md:mb-8 p-8 bg-white rounded shadow-lg">
                         <h2 class="text-xl font-semibold color-white text-blue-gray-900 mb-4">Beispiele</h2>
                         <div>
                             Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
