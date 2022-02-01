@@ -4,6 +4,7 @@
   "description": "Test für Card Gallery mit Deckkarten",
   "main": "app.js",
   "scripts": {
+    "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "css:scss": "node-sass -wo dist/css src/scss",
     "generate-tailwind": "npx tailwindcss -i ./src/scss/includetailwind.css -o ./dist/css/tailwind.css",
@@ -31,6 +32,7 @@
   "dependencies": {
     "@tailwindcss/forms": "^0.3.4",
     "animate.css": "^4.1.1",
+    "express": "^4.17.2",
     "live-server": "^1.1.0",
     "node-sass": "^6.0.1",
     "party-js": "^2.1.2"
