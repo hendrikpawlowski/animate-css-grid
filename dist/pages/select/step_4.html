@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../css/tailwind.css">
+    <link rel="stylesheet" href="../../css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <title>Animate CSS Grid</title>
+</head>
+
+<body class="bg-blue-gray-50" data-swipe-threshold="80">
+
+    <!-- Overlay Container -->
+    <div js-overlay-container class="hidden fixed w-full h-full z-50 justify-center items-center">
+        <div class="w-full h-full bg-blue-gray-900 opacity-50"></div>
+        <div js-content
+            class="h-full md:h-5/6 w-full md:w-5/6 lg:w-auto bg-blue-gray-50 fixed shadow-extreme md:rounded">
+            <div class="h-1/5 p-8 flex items-center justify-between">
+                <h1 class=" text-3xl font-semibold color-white text-blue-gray-900">Titel des Themas</h1>
+                <button js-close-overlay>
+                    <svg class="h-8 w-8" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" class="feather feather-x-circle">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="15" y1="9" x2="9" y2="15"></line>
+                        <line x1="9" y1="9" x2="15" y2="15"></line>
+                    </svg>
+                </button>
+            </div>
+            <div class="flex h-4/5">
+                <ul class="px-4 pt-2 md:block hidden">
+                    <li class="mb-4">
+                        <a href="#bewertung"
+                            class=" hover:bg-blue-gray-200 inline-block px-4 py-2 rounded cursor-pointer">Bewertung
+                        </a>
+                    </li>
+                    <li class="mb-4">
+                        <a href="#beispiele"
+                            class=" hover:bg-blue-gray-200 inline-block px-4 py-2 rounded cursor-pointer">Beispiele
+                        </a>
+                    </li>
+                    <li class="mb-4">
+                        <a href="#historie"
+                            class=" hover:bg-blue-gray-200 inline-block px-4 py-2 rounded cursor-pointer">Historie
+                        </a>
+                    </li>
+                </ul>
+                <ul style="scroll-behavior: smooth;" class="overflow-scroll px-4 md:px-8 max-w-3xl">
+                    <li id="bewertung" class="mb-8 p-8 bg-white rounded shadow-lg">
+                        <h2 class="text-xl font-semibold color-white text-blue-gray-900 mb-4">Bewertung</h2>
+                        <div>
+                            Bitte wähle auf der Karte das <img class="inline" src="./icons/shield-pressed.svg" /> wenn
+                            du dein Team
+                            bei diesem Thema besonder gut aufgestellt siehst.
+                            Bitte Wähle auf der Karte das <img class="inline" src="./icons/fire-pressed.svg" /> wenn
+                            dein Team hier
+                            besonderen Verbesserungsbedarf hat. Insgesamt kannst
+                            du 5 Karten als besonders gut und 5 Karten als problematisch bewerten. Alle anderen Karten
+                            bleiben
+                            neutral.
+                        </div>
+                    </li>
+                    <li id="beispiele" class="mb-4 md:mb-8 p-8 bg-white rounded shadow-lg">
+                        <h2 class="text-xl font-semibold color-white text-blue-gray-900 mb-4">Beispiele</h2>
+                        <div>
+                            Unter dieses Thema fallen zum Beispiel:
+                        </div>
+                        <ul class="mt-4 list-disc list-outside p-4">
+                            <li>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque excepturi qui quibusdam
+                                nihil maxime cumque totam nam mollitia et soluta!
+                            </li>
+                            <li class="mt-4">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto est cumque eaque
+                                dolore! Soluta, tenetur. Magni amet quis quidem sapiente iure quam natus cupiditate,
+                                eaque neque molestias vero labore earum!
+                            </li>
+                            <li class="mt-4">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, vel!
+                            </li>
+                            <li class="mt-4">
+                                Lorem ipsum dolor sit amet.
+                            </li>
+                        </ul>
+                    </li>
+                    <li id="historie" class="mb-4 md:mb-8 p-8 bg-white rounded shadow-lg">
+                        <h2 class="text-xl font-semibold color-white text-blue-gray-900 mb-4">Historie</h2>
+                        <div>
+                            Es ist noch keine Historie vorhanden
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <nav class="bg-gradient-to-r from-cyan-700 to-sky-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+
+                <div class="flex items-center">
+
+                    <div class="flex-shrink-0 text-white flex items-center text-lg font-bold">
+                        Teamfeedback
+                    </div>
+
+                    <div class="hidden sm:block flex space-x-6 ml-16" aria-label="Tabs">
+                        <a href="./index.html"
+                            class="bg-white bg-opacity-20 text-white px-4 py-3 font-medium text-sm rounded-md"
+                            aria-current="page">
+                            Select
+                        </a>
+                        <a href="./pages/reflect/step_1.html"
+                            class="text-white px-4 py-3 font-medium text-sm rounded-md" aria-current="page">
+                            Reflect
+                        </a>
+                        <a href="./pages/act/act.html" class="text-white px-4 py-3 font-medium text-sm rounded-md">
+                            Act
+                        </a>
+                    </div>
+
+                </div>
+
+                <div class="hidden sm:ml-6 sm:flex sm:items-center">
+                    <button type="button"
+                        class="group mr-4 rounded-md inline-flex items-center text-base font-medium focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                        aria-expanded="false">
+                        <span class="text-white">Mein Profil</span>
+                        <svg class="text-white ml-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                            fill="currentColor" aria-hidden="true">
+                            <path fill-rule="evenodd"
+                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="-mr-2 flex items-center sm:hidden">
+                    <button type="button"
+                        class="bg-white inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                        aria-controls="mobile-menu" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                        <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Steps -->
+    <nav class="" aria-label="Progress">
+        <div class="border-b border-gray-300 bg-white">
+            <ol role="list" class="max-w-7xl mx-auto divide-y divide-gray-300 md:flex md:divide-y-0">
+
+                <li class="relative md:flex-1 md:flex">
+                    <a href="./step_1.html" class="group flex items-center w-full">
+                        <span class="px-6 py-2 flex items-center text-sm font-medium">
+                            <span
+                                class="flex-shrink-0 w-6 h-6 flex items-center justify-center border-2 border-gray-300 rounded-full group-hover:border-gray-400">
+                                <span class="text-gray-500 group-hover:text-gray-900">1</span>
+                            </span>
+                            <span
+                                class="ml-4 text-sm font-medium text-gray-500 group-hover:text-gray-900">Evaluation</span>
+                        </span>
+                    </a>
+
+                    <div class="hidden md:block absolute top-0 right-0 h-full w-5" aria-hidden="true">
+                        <svg class="h-full w-full text-gray-300" viewBox="0 0 22 80" fill="none"
+                            preserveAspectRatio="none">
+                            <path d="M0 -2L20 40L0 82" vector-effect="non-scaling-stroke" stroke="currentcolor"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                </li>
+
+                <li class="relative md:flex-1 md:flex">
+                    <a href="../../index.html" class="group flex items-center w-full">
+                        <span class="px-6 py-2 flex items-center text-sm font-medium">
+                            <span
+                                class="flex-shrink-0 w-6 h-6 flex items-center justify-center border-2 border-gray-300 rounded-full group-hover:border-gray-400">
+                                <span class="text-gray-500 group-hover:text-gray-900">2</span>
+                            </span>
+                            <span
+                                class="ml-4 text-sm font-medium text-gray-500 group-hover:text-gray-900">Themenwahl</span>
+                        </span>
+                    </a>
+
+
+                    <div class="hidden md:block absolute top-0 right-0 h-full w-5" aria-hidden="true">
+                        <svg class="h-full w-full text-gray-300" viewBox="0 0 22 80" fill="none"
+                            preserveAspectRatio="none">
+                            <path d="M0 -2L20 40L0 82" vector-effect="non-scaling-stroke" stroke="currentcolor"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                </li>
+
+                <li class="relative md:flex-1 md:flex">
+                    <a href="./step_3.html" class="group flex items-center w-full">
+                        <span class="px-6 py-2 flex items-center text-sm font-medium">
+                            <span
+                                class="flex-shrink-0 w-6 h-6 flex items-center justify-center border-2 border-gray-300 rounded-full group-hover:border-gray-400">
+                                <span class="text-gray-500 group-hover:text-gray-900">3</span>
+                            </span>
+                            <span
+                                class="ml-4 text-sm font-medium text-gray-500 group-hover:text-gray-900">Feedbackbereitschaft</span>
+                        </span>
+                    </a>
+
+
+                    <div class="hidden md:block absolute top-0 right-0 h-full w-5" aria-hidden="true">
+                        <svg class="h-full w-full text-gray-300" viewBox="0 0 22 80" fill="none"
+                            preserveAspectRatio="none">
+                            <path d="M0 -2L20 40L0 82" vector-effect="non-scaling-stroke" stroke="currentcolor"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                </li>
+
+                <li class="relative md:flex-1 md:flex">
+                    <a href="./step_4.html" class="group flex items-center w-full">
+                        <span class="px-6 py-2 flex items-center text-sm font-medium">
+                            <span
+                                class="bg-cyan-700 flex-shrink-0 w-6 h-6 flex items-center justify-center rounded-full">
+                                <span class="text-white">4</span>
+                            </span>
+                            <span class="ml-4 text-sm font-medium text-cyan-700">Abschluss</span>
+                        </span>
+                    </a>
+                </li>
+            </ol>
+        </div>
+    </nav>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-24">
+        <div class="flex">
+            <div js-accordion class="accordion">
+                <div js-head class="head">
+                    <h1 class="text-3xl font-semibold color-white text-blue-gray-900">Abschluss</h1>
+                </div>
+                <div js-panel class="mt-8 panel flex">
+                    <p class="max-w-4xl pt-4 text-blue-gray-600 font-medium">Ich bin bereit gemeinsam mit meinem Team
+                        die Verbesserung unserer Zusammenarbeit voranzubringen?</p>
+                </div>
+                <span class="mt-4 relative z-0 inline-flex shadow-sm rounded-md">
+                    <button type="button"
+                        class="w-28 justify-center relative inline-flex items-center px-4 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:z-10 focus:outline-none  focus:bg-primary-400 focus:text-white">
+                        nein
+                    </button>
+                    <button type="button"
+                        class="w-28 justify-center -ml-px relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:z-10 focus:outline-none focus:bg-primary-400 focus:text-white">
+                        eher nein
+                    </button>
+                    <button type="button"
+                        class="w-28 justify-center -ml-px relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:z-10 focus:outline-none  focus:bg-primary-400 focus:text-white">
+                        joa
+                    </button>
+                    <button type="button"
+                        class="w-28 justify-center -ml-px relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:z-10 focus:outline-none  focus:bg-primary-400 focus:text-white">
+                        eher ja
+                    </button>
+                    <button type="button"
+                        class="w-28 justify-center -ml-px relative inline-flex items-center px-4 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:z-10 focus:outline-none  focus:bg-primary-400 focus:text-white">
+                        ja
+                    </button>
+                </span>
+
+                <div js-panel class="mt-8 panel flex">
+                    <p class="max-w-4xl pt-4 text-blue-gray-600 font-medium">Ich glaube, dass alle anderen
+                        Teammitglieder bereit sind, die Verbesserung unserer Zusammenarbeit voranzubringen.</p>
+                </div>
+                <span class="mt-4 relative z-0 inline-flex shadow-sm rounded-md">
+                    <button type="button"
+                        class="w-28 justify-center relative inline-flex items-center px-4 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:z-10 focus:outline-none  focus:bg-primary-400 focus:text-white">
+                        nein
+                    </button>
+                    <button type="button"
+                        class="w-28 justify-center -ml-px relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:z-10 focus:outline-none focus:bg-primary-400 focus:text-white">
+                        eher nein
+                    </button>
+                    <button type="button"
+                        class="w-28 justify-center -ml-px relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:z-10 focus:outline-none  focus:bg-primary-400 focus:text-white">
+                        joa
+                    </button>
+                    <button type="button"
+                        class="w-28 justify-center -ml-px relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:z-10 focus:outline-none  focus:bg-primary-400 focus:text-white">
+                        eher ja
+                    </button>
+                    <button type="button"
+                        class="w-28 justify-center -ml-px relative inline-flex items-center px-4 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:z-10 focus:outline-none  focus:bg-primary-400 focus:text-white">
+                        ja
+                    </button>
+                </span>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://unpkg.com/animate-css-grid@latest"></script>
+    <script src="./js/app.js"></script>
+    <script src="./js/overlayCard.js"></script>
+    <script src="./js/swiped-events.js"></script>
+</body>
+
+</html>
