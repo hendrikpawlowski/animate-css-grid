@@ -6,7 +6,7 @@ https://hendrikpawlowski.github.io/animate-css-grid/
 
 ### als aller erstes
 
-npm init
+npm install
 
 ### development live server
 
