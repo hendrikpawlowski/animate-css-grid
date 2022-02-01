@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/tailwind.css">
+    <link rel="stylesheet" href="../../css/style.css" />
+    <title>Animate CSS Grid</title>
+</head>
+
+<body class="bg-blue-gray-50" data-swipe-threshold="80">
+    <div class="opacity-0 transition-all duration-1000"
+        style="position: absolute; top: 0; height: 100%; width: 100%; z-index: -1" js-rocket-container></div>
+
+    <!-- Overlay Container -->
+    <div js-overlay-container class="hidden fixed w-full h-full z-50 justify-center items-center">
+        <div class="w-full h-full bg-blue-gray-900 opacity-50"></div>
+        <div js-content
+            class="h-full md:h-5/6 w-full md:w-5/6 lg:w-auto bg-blue-gray-50 fixed shadow-extreme md:rounded">
+            <div class="h-1/5 p-8 flex items-center justify-between">
+                <h1 class=" text-3xl font-semibold color-white text-blue-gray-900">Titel des Themas</h1>
+                <button js-close-overlay>
+                    <svg class="h-8 w-8" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" class="feather feather-x-circle">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="15" y1="9" x2="9" y2="15"></line>
+                        <line x1="9" y1="9" x2="15" y2="15"></line>
+                    </svg>
+                </button>
+            </div>
+            <div class="flex h-4/5">
+                <ul class="px-4 pt-2 md:block hidden">
+                    <li class="mb-4">
+                        <a href="#bewertung"
+                            class=" hover:bg-blue-gray-200 inline-block px-4 py-2 rounded cursor-pointer">Bewertung
+                        </a>
+                    </li>
+                    <li class="mb-4">
+                        <a href="#beispiele"
+                            class=" hover:bg-blue-gray-200 inline-block px-4 py-2 rounded cursor-pointer">Beispiele
+                        </a>
+                    </li>
+                    <li class="mb-4">
+                        <a href="#historie"
+                            class=" hover:bg-blue-gray-200 inline-block px-4 py-2 rounded cursor-pointer">Historie
+                        </a>
+                    </li>
+                </ul>
+                <ul style="scroll-behavior: smooth;" class="overflow-scroll px-4 md:px-8 max-w-3xl">
+                    <li id="bewertung" class="mb-8 p-8 bg-white rounded shadow-lg">
+                        <h2 class="text-xl font-semibold color-white text-blue-gray-900 mb-4">Bewertung</h2>
+                        <div>Hier seht ihr, wie oft dieses Thema als positiv oder problematisch eingeschätzt wurde. Für
+                            alle problematischen Stimmen wurden außerdem Kommentare erfasst, die hier ebenfalls
+                            angezeigt werden.
+                        </div>
+                        <div class="flex mt-8">
+                            <div class="flex items-center mr-4">
+                                <div class="text-red-900">4x</div>
+                                <img class="ml-1 h-8" src="../../icons/fire-pressed.svg" alt="">
+                            </div>
+                            <div class="flex items-center ml-4">
+                                <div class="text-green-900">2x</div>
+                                <img class="ml-1 h-8" src="../../icons/shield-pressed.svg" alt="">
+                            </div>
+                        </div>
+                        <div class="mt-4 flex flex-wrap -mx-2">
+                            <div class="bg-blue-gray-100 p-4 rounded w-2/5 cursor-pointer hover:bg-blue-gray-200 m-2">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id, laboriosam!
+                            </div>
+                            <div class="bg-blue-gray-100 p-4 rounded w-2/5 cursor-pointer hover:bg-blue-gray-200 m-2">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam temporibus similique
+                                esse officia.
+                            </div>
+                            <div class="bg-blue-gray-100 p-4 rounded w-2/5 cursor-pointer hover:bg-blue-gray-200 m-2">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt sint necessitatibus
+                                amet asperiores odio ipsum delectus cum!
+                            </div>
+                        </div>
+                    </li>
+                    <li id="beispiele" class="mb-4 md:mb-8 p-8 bg-white rounded shadow-lg">
+                        <h2 class="text-xl font-semibold color-white text-blue-gray-900 mb-4">Beispiele</h2>
+                        <div>
+                            Unter dieses Thema fallen zum Beispiel:
+                        </div>
+                        <ul class="mt-4 list-disc list-outside p-4">
+                            <li>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque excepturi qui quibusdam
+                                nihil maxime cumque totam nam mollitia et soluta!
+                            </li>
+                            <li class="mt-4">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto est cumque eaque
+                                dolore! Soluta, tenetur. Magni amet quis quidem sapiente iure quam natus cupiditate,
+                                eaque neque molestias vero labore earum!
+                            </li>
+                            <li class="mt-4">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, vel!
+                            </li>
+                            <li class="mt-4">
+                                Lorem ipsum dolor sit amet.
+                            </li>
+                        </ul>
+                    </li>
+                    <li id="historie" class="mb-4 md:mb-8 p-8 bg-white rounded shadow-lg">
+                        <h2 class="text-xl font-semibold color-white text-blue-gray-900 mb-4">Historie</h2>
+                        <div>
+                            Es ist noch keine Historie vorhanden
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header dark-->
+    <nav class="bg-gradient-to-r from-cyan-700 to-sky-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+
+                <div class="flex items-center">
+
+                    <div class="flex-shrink-0 text-white flex items-center text-lg font-bold">
+                        Teamfeedback
+                    </div>
+
+                    <div class="hidden sm:block flex space-x-6 ml-16" aria-label="Tabs">
+                        <a href="../../index.html" class="text-white px-4 py-3 font-medium text-sm rounded-md"
+                            aria-current="page">
+                            Select
+                        </a>
+                        <a href="../reflect/step_2.html"
+                            class="bg-white bg-opacity-20 text-white px-4 py-3 font-medium text-sm rounded-md"
+                            aria-current="page">
+                            Reflect
+                        </a>
+                        <a href="../act/act.html" class="text-white px-4 py-3 font-medium text-sm rounded-md">
+                            Act
+                        </a>
+                    </div>
+
+                </div>
+
+                <div class="hidden sm:ml-6 sm:flex sm:items-center">
+                    <button type="button"
+                        class="group mr-4 rounded-md inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                        aria-expanded="false">
+                        <span class="text-white">Mein Profil</span>
+                        <svg class="text-white ml-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                            fill="currentColor" aria-hidden="true">
+                            <path fill-rule="evenodd"
+                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="-mr-2 flex items-center sm:hidden">
+                    <button type="button"
+                        class="bg-white inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                        aria-controls="mobile-menu" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                        <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Steps -->
+    <nav class="" aria-label="Progress">
+        <div class="border-b border-gray-300 bg-white">
+            <ol role="list" class="max-w-7xl mx-auto divide-y divide-gray-300 md:flex md:divide-y-0">
+                <!-- <div class="max-w-7xl mx-auto md:flex justify-between"> -->
+
+                <li class="relative md:flex-1 md:flex">
+                    <a href="./step_1.html" class="group flex items-center w-full">
+                        <span class="px-6 py-2 flex items-center text-sm font-medium">
+                            <span
+                                class="flex-shrink-0 w-6 h-6 flex items-center justify-center border-2 border-gray-300 rounded-full group-hover:border-gray-400">
+                                <span class="text-gray-500 group-hover:text-gray-900">1</span>
+                            </span>
+                            <span class="ml-4 text-sm font-medium text-gray-500 group-hover:text-gray-900">Ablauf</span>
+                        </span>
+                    </a>
+
+                    <div class="hidden md:block absolute top-0 right-0 h-full w-5" aria-hidden="true">
+                        <svg class="h-full w-full text-gray-300" viewBox="0 0 22 80" fill="none"
+                            preserveAspectRatio="none">
+                            <path d="M0 -2L20 40L0 82" vector-effect="non-scaling-stroke" stroke="currentcolor"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                </li>
+
+                <li class="relative md:flex-1 md:flex">
+                    <a href="./step_2.html" class="group flex items-center w-full" aria-current="step">
+                        <span class="px-6 py-2 flex items-center text-sm font-medium">
+                            <span
+                                class="bg-cyan-700 flex-shrink-0 w-6 h-6 flex items-center justify-center rounded-full">
+                                <span class="text-white">2</span>
+                            </span>
+                            <span class="ml-4 text-sm font-medium text-cyan-700">Erfolge</span>
+                        </span>
+
+                    </a>
+
+                    <div class="hidden md:block absolute top-0 right-0 h-full w-5" aria-hidden="true">
+                        <svg class="h-full w-full text-gray-300" viewBox="0 0 22 80" fill="none"
+                            preserveAspectRatio="none">
+                            <path d="M0 -2L20 40L0 82" vector-effect="non-scaling-stroke" stroke="currentcolor"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                </li>
+
+                <li class="relative md:flex-1 md:flex">
+                    <a href="./step_3.html" class="group flex items-center w-full">
+                        <span class="px-6 py-2 flex items-center text-sm font-medium">
+                            <span
+                                class="flex-shrink-0 w-6 h-6 flex items-center justify-center border-2 border-gray-300 rounded-full group-hover:border-gray-400">
+                                <span class="text-gray-500 group-hover:text-gray-900">3</span>
+                            </span>
+                            <span
+                                class="ml-4 text-sm font-medium text-gray-500 group-hover:text-gray-900">Verbesserungspotenzial</span>
+
+                        </span>
+                    </a>
+
+
+                    <div class="hidden md:block absolute top-0 right-0 h-full w-5" aria-hidden="true">
+                        <svg class="h-full w-full text-gray-300" viewBox="0 0 22 80" fill="none"
+                            preserveAspectRatio="none">
+                            <path d="M0 -2L20 40L0 82" vector-effect="non-scaling-stroke" stroke="currentcolor"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                </li>
+
+                <li class="relative md:flex-1 md:flex">
+                    <a href="./step_4.html" class="group flex items-center w-full">
+                        <span class="px-6 py-2 flex items-center text-sm font-medium">
+                            <span
+                                class="flex-shrink-0 w-6 h-6 flex items-center justify-center border-2 border-gray-300 rounded-full group-hover:border-gray-400">
+                                <span class="text-gray-500 group-hover:text-gray-900">4</span>
+                            </span>
+                            <span
+                                class="ml-4 text-sm font-medium text-gray-500 group-hover:text-gray-900">Maßnahmen</span>
+                        </span>
+                    </a>
+                </li>
+                <!-- </div> -->
+
+            </ol>
+        </div>
+    </nav>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12">
+        <div class="flex">
+            <div js-accordion class="accordion">
+                <div js-head class="head">
+                    <h1 class="text-3xl font-semibold color-white text-blue-gray-900">Erfolge</h1>
+                    <img js-toggle class="icon opacity-0" src="./icons/info.svg" alt="">
+                </div>
+                <div js-panel class="panel flex">
+                    <p class="max-w-4xl pt-4 text-blue-gray-600 font-medium">Auf dieser Seite seht ihr die Themenkarten,
+                        die
+                        bei euch besonders positiv bewertet wurden! Nutzt die Chance euch anzuschauen was gut läuft und
+                        wo ihr richtig gute Arbeit leistet! Dafür solltet ihr ca. 10-15 Minuten einplanen.</p>
+                </div>
+            </div>
+            <!-- <img class="ml-8 h-32" src="../../illustrations/thinking.svg" alt=""> -->
+
+            <!-- <img class="opening-illustration" src="./illustrations/choice.svg" alt=""> -->
+        </div>
+
+        <ul js-grid class="pt-12 grid gap-8">
+            <li js-card
+                class="h-52 card cursor-pointer bg-white shadow-lg hover:shadow-2xl transition-shadow pt-5 rounded-md min-w-min">
+                <div class="flex flex-col justify-between h-full">
+                    <div class="mx-5">
+                        <h3 class="mb-2 font-bold">Kollektives Engagement</h3>
+                    </div>
+                    <div class="flex h-14 p-0.5 justify-center items-center">
+                        <div class="flex justify-center items-center mr-4 opacity-50">
+                            <div class="text-red-900">1x</div>
+                            <img class="ml-1 h-8" src="../../icons/fire-pressed.svg" alt="">
+                        </div>
+                        <div class="flex justify-center items-center ml-4">
+                            <div class="text-green-900">2x</div>
+                            <img class="ml-1 h-12" src="../../icons/shield-pressed.svg" alt="">
+                        </div>
+                    </div>
+                    <button js-confetti-button
+                        class="card-action flex justify-center bg-blue-gray-100 hover:bg-blue-gray-200 active:bg-blue-gray-300 h-14 m-1 items-center transition duration-100 rounded">
+                        <div class="text-2xl">🎉</div>
+                        <div class="text-base font-medium ml-3">Feiern</div>
+                    </button>
+                </div>
+            </li>
+            <li js-card
+                class="h-52 card cursor-pointer bg-white shadow-lg hover:shadow-2xl transition-shadow pt-5 rounded-md min-w-min">
+                <div class="flex flex-col justify-between h-full">
+                    <div class="mx-5">
+                        <h3 class="mb-2 font-bold">Initiative</h3>
+                    </div>
+                    <div class="flex h-14 p-0.5 justify-center items-center">
+                        <div class="flex justify-center items-center mr-4 opacity-50">
+                            <div class="text-red-900">0x</div>
+                            <img class="ml-1 h-8" src="../../icons/fire-pressed.svg" alt="">
+                        </div>
+                        <div class="flex justify-center items-center ml-4">
+                            <div class="text-green-900">1x</div>
+                            <img class="ml-1 h-12" src="../../icons/shield-pressed.svg" alt="">
+                        </div>
+                    </div>
+                    <button js-rocket-button
+                        class="card-action flex justify-center bg-blue-gray-100 hover:bg-blue-gray-200 active:bg-blue-gray-300 h-14 m-1 items-center transition duration-100 rounded">
+                        <div class="text-2xl">🚀</div>
+                        <div class="text-base font-medium ml-3">Feiern</div>
+                    </button>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <div
+        class="max-w-7xl flex justify-end w-full bottom-0 pb-16 mx-auto fixed right-0 left-0 px-4 sm:px-6 lg:px-8 mt-12">
+        <a href="step_3.html"
+            class="w-max z-50 flex items-center right-0 bottom-0 bg-primary-400 hover:bg-primary-500 cursor-pointer shadow-lg transition hover:shadow-xl text-white text-xl pl-4 pr-2 py-2 rounded-md">
+            Weiter
+            <img class="ml-2 w-6" src="../../icons/arrow-right.svg" alt="">
+        </a>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://unpkg.com/animate-css-grid@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/party-js@latest/bundle/party.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/fireworks-js@latest/dist/fireworks.js"></script>
+    <script src="../../js/party.js"></script>
+    <script src="../../js/overlayCard.js"></script>
+</body>
+
+</html>

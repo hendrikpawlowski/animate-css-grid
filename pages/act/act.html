@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/tailwind.css">
+    <link rel="stylesheet" href="../../css/style.css" />
+    <title>Animate CSS Grid</title>
+</head>
+
+<body class="bg-blue-gray-50 scroll-smooth" data-swipe-threshold="80">
+
+    <!-- Overlay Container -->
+    <div js-overlay-container class="hidden fixed w-full h-full z-50 justify-center items-center">
+        <div class="w-full h-full bg-blue-gray-900 opacity-50"></div>
+        <div js-content
+            class="h-full md:h-5/6 w-full md:w-5/6 lg:w-auto bg-blue-gray-50 fixed shadow-extreme md:rounded">
+            <div class="h-1/5 p-8 flex items-center justify-between">
+                <h1 class=" text-3xl font-semibold color-white text-blue-gray-900">Titel des Themas</h1>
+                <button js-close-overlay>
+                    <svg class="h-8 w-8" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" class="feather feather-x-circle">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="15" y1="9" x2="9" y2="15"></line>
+                        <line x1="9" y1="9" x2="15" y2="15"></line>
+                    </svg>
+                </button>
+            </div>
+            <div class="flex h-4/5">
+                <ul class="px-4 pt-2 md:block hidden">
+                    <li class="mb-4 relative">
+                        <a href="#fortschritt"
+                            class=" hover:bg-blue-gray-200 inline-block px-4 py-2 rounded cursor-pointer">
+                            Fortschritt
+                        </a>
+                        <div class="absolute w-2.5 h-2.5 bg-green-400 rounded-full top-0 bottom-0 my-auto -left-1">
+                        </div>
+                    </li>
+                    <li class="relative mb-4">
+                        <a href="#maßnahme"
+                            class=" hover:bg-blue-gray-200 inline-block px-4 py-2 rounded cursor-pointer">Maßnahme
+                        </a>
+                    </li>
+                    <li class="mb-4">
+                        <a href="#bewertung"
+                            class=" hover:bg-blue-gray-200 inline-block px-4 py-2 rounded cursor-pointer">Bewertung
+                        </a>
+                    </li>
+                    <li class="mb-4">
+                        <a href="#beispiele"
+                            class=" hover:bg-blue-gray-200 inline-block px-4 py-2 rounded cursor-pointer">Beispiele
+                        </a>
+                    </li>
+                    <li class="mb-4">
+                        <a href="#historie"
+                            class=" hover:bg-blue-gray-200 inline-block px-4 py-2 rounded cursor-pointer">Historie
+                        </a>
+                    </li>
+                </ul>
+                <ul style="scroll-behavior: smooth;" class="overflow-scroll px-4 md:px-8 max-w-3xl">
+                    <li id="fortschritt" class="mb-8 p-8 bg-white rounded shadow-lg">
+                        <h2 class="text-xl font-semibold color-white text-blue-gray-900 mb-4">Fortschritt</h2>
+                        <div class="">
+                            <h4 class="sr-only">Status</h4>
+                            <div class="mt-6" aria-hidden="true">
+                                <div class="bg-gray-200 rounded-full overflow-hidden">
+                                    <div class="h-2 bg-green-400 rounded-full" style="width: 35%;"></div>
+                                </div>
+                                <div class="flex w-full justify-between text-sm font-medium text-gray-600 mt-2">
+                                    <div
+                                        class="cursor-pointer rounded flex justify-center items-center text-green-400 hover:bg-blue-gray-200 h-8 w-12">
+                                        25%</div>
+                                    <div
+                                        class="cursor-pointer rounded flex justify-center items-center text-center text-green-400 hover:bg-blue-gray-200 h-8 w-12">
+                                        50%</div>
+                                    <div
+                                        class="cursor-pointer rounded flex justify-center items-center text-center hover:bg-blue-gray-200 h-8 w-12">
+                                        75%</div>
+                                    <div
+                                        class="cursor-pointer rounded flex justify-center items-center text-right hover:bg-blue-gray-200 h-8 w-12">
+                                        100%</div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li id="maßnahme" class="mb-8 p-8 bg-white rounded shadow-lg">
+                        <h2 class="text-xl font-semibold color-white text-blue-gray-900 mb-2">Maßnahme</h2>
+                        <div>In diesem Schritt sollt ihr für jedes der von euch ausgewählten Themen eine
+                            Verbesserungsmaßnahme erstellen.</div>
+                        <div class="mt-8">
+                            <div class="font-semibold">Diskussion</div>
+                            <div class="mt-2">Ihr solltet zunächst mit einer Diskussion des Problems sowie möglicher
+                                Lösungsansätze beginnen. Folgende Fragen können euch dabei leiten: Wie lösst sich das
+                                Problem in einem Satz zusammenfassen? • Was kann euer Team selber tun, um dieses Problem
+                                zu lösen? • An welchen Stellen braucht euer Team externe Unterstüzung, um das Problem zu
+                                lösen? • Was könnten die größten Hürden für eine erfolgreiche Umsetzung sein?
+                            </div>
+                        </div>
+                        <div class="mt-8">
+                            <div class="font-semibold">Maßnahme ableiten</div>
+                            <div class="mt-4 bg-blue-gray-100 px-4 py-4 rounded">
+
+                                <div class="flex items-start space-x-4">
+                                    <div class="min-w-0 flex-1">
+                                        <form action="#" class="relative">
+                                            <div
+                                                class="border border-gray-300 rounded-lg shadow-sm overflow-hidden focus:ring-blue-gray-700 focus:border-blue-gray-700">
+                                                <label for="comment" class="sr-only">Beschreiben Sie die
+                                                    Maßnahme</label>
+                                                <textarea rows="3" name="comment" id="comment"
+                                                    class="block w-full py-3 border-0 resize-none focus:ring-0 sm:text-sm focus:ring-blue-gray-700 focus:border-blue-gray-700"
+                                                    placeholder="Beschreiben Sie die Maßnahme..."></textarea>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+
+                                <div class="max-w-xs mt-8">
+                                    <label for="verantwortlich"
+                                        class="block font-semibold text-blue-gray-700">Verantwortliche:r</label>
+                                    <div class="mt-1">
+                                        <input type="text" name="verantwortlich" id="verantwortlich"
+                                            autocomplete="organization"
+                                            class="py-2 px-4 block w-full shadow-sm focus:ring-blue-gray-700 focus:border-blue-gray-700 border-gray-300 rounded-md">
+                                    </div>
+                                </div>
+                                <div class="max-w-xs mt-4">
+                                    <label for="verantwortlich"
+                                        class="block font-semibold text-blue-gray-700">Umfang</label>
+                                    <div class="mt-1">
+                                        <input type="text" name="verantwortlich" id="verantwortlich"
+                                            autocomplete="organization"
+                                            class="py-2 px-4 block w-full shadow-sm focus:ring-blue-gray-700 focus:border-blue-gray-700 border-gray-300 rounded-md">
+                                    </div>
+                                </div>
+                                <div class="mt-8">
+                                    <div class="font-semibold text-blue-gray-700">Checkliste</div>
+                                    <button
+                                        class="mt-4 p-4 py-2 bg-blue-gray-200 hover:bg-blue-gray-300 rounded">Element
+                                        hinzufügen</button>
+                                </div>
+                                <div class="mt-8 w-full flex justify-end">
+                                    <button
+                                        class="mt-4 p-4 py-2 bg-primary-400 hover:bg-primary-500 text-white rounded">Speichern</button>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li id="bewertung" class="mb-8 p-8 bg-white rounded shadow-lg">
+                        <h2 class="text-xl font-semibold color-white text-blue-gray-900 mb-4">Bewertung</h2>
+                        <div>Hier seht ihr, wie oft dieses Thema als positiv oder problematisch eingeschätzt wurde. Für
+                            alle problematischen Stimmen wurden außerdem Kommentare erfasst, die hier ebenfalls
+                            angezeigt werden.
+                        </div>
+                        <div class="flex mt-8">
+                            <div class="flex items-center mr-4">
+                                <div class="text-red-900">4x</div>
+                                <img class="ml-1 h-8" src="../../icons/fire-pressed.svg" alt="">
+                            </div>
+                            <div class="flex items-center ml-4">
+                                <div class="text-green-900">2x</div>
+                                <img class="ml-1 h-8" src="../../icons/shield-pressed.svg" alt="">
+                            </div>
+                        </div>
+                        <div class="mt-4 flex flex-wrap -mx-2">
+                            <div class="bg-blue-gray-100 p-4 rounded w-2/5 cursor-pointer hover:bg-blue-gray-200 m-2">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id, laboriosam!
+                            </div>
+                            <div class="bg-blue-gray-100 p-4 rounded w-2/5 cursor-pointer hover:bg-blue-gray-200 m-2">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam temporibus similique
+                                esse officia.
+                            </div>
+                            <div class="bg-blue-gray-100 p-4 rounded w-2/5 cursor-pointer hover:bg-blue-gray-200 m-2">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt sint necessitatibus
+                                amet asperiores odio ipsum delectus cum!
+                            </div>
+                        </div>
+                    </li>
+                    <li id="beispiele" class="mb-4 md:mb-8 p-8 bg-white rounded shadow-lg">
+                        <h2 class="text-xl font-semibold color-white text-blue-gray-900 mb-4">Beispiele</h2>
+                        <div>
+                            Unter dieses Thema fallen zum Beispiel:
+                        </div>
+                        <ul class="mt-4 list-disc list-outside p-4">
+                            <li>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque excepturi qui quibusdam
+                                nihil maxime cumque totam nam mollitia et soluta!
+                            </li>
+                            <li class="mt-4">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto est cumque eaque
+                                dolore! Soluta, tenetur. Magni amet quis quidem sapiente iure quam natus cupiditate,
+                                eaque neque molestias vero labore earum!
+                            </li>
+                            <li class="mt-4">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, vel!
+                            </li>
+                            <li class="mt-4">
+                                Lorem ipsum dolor sit amet.
+                            </li>
+                        </ul>
+                    </li>
+                    <li id="historie" class="mb-4 md:mb-8 p-8 bg-white rounded shadow-lg">
+                        <h2 class="text-xl font-semibold color-white text-blue-gray-900 mb-4">Historie</h2>
+                        <div>
+                            Es ist noch keine Historie vorhanden
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header dark-->
+    <nav class="bg-gradient-to-r from-cyan-700 to-sky-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+
+                <div class="flex items-center">
+
+                    <div class="flex-shrink-0 text-white flex items-center text-lg font-bold">
+                        Teamfeedback
+                    </div>
+
+                    <div class="hidden sm:block flex space-x-6 ml-16" aria-label="Tabs">
+                        <a href="../../index.html" class="text-white px-4 py-3 font-medium text-sm rounded-md"
+                            aria-current="page">
+                            Select
+                        </a>
+                        <a href="../reflect/step_1.html" class="text-white px-4 py-3 font-medium text-sm rounded-md"
+                            aria-current="page">
+                            Reflect
+                        </a>
+                        <a href="./act.html"
+                            class="text-white bg-white bg-opacity-20 px-4 py-3 font-medium text-sm rounded-md">
+                            Act
+                        </a>
+                    </div>
+
+                </div>
+
+                <div class="hidden sm:ml-6 sm:flex sm:items-center">
+                    <button type="button"
+                        class="group mr-4 rounded-md inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                        aria-expanded="false">
+                        <span class="text-white">Mein Profil</span>
+                        <svg class="text-white ml-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                            fill="currentColor" aria-hidden="true">
+                            <path fill-rule="evenodd"
+                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="-mr-2 flex items-center sm:hidden">
+                    <button type="button"
+                        class="bg-white inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                        aria-controls="mobile-menu" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                        <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12">
+        <div class="flex items-center">
+            <div js-accordion class="accordion">
+                <div js-head class="head">
+                    <h1 class="text-3xl font-semibold color-white text-blue-gray-900">Jetzt wird gehandelt</h1>
+                    <img js-toggle class="icon opacity-0" src="./icons/info.svg" alt="">
+                </div>
+                <div js-panel class="panel flex">
+                    <p class="max-w-4xl pt-4 text-blue-gray-600 font-medium">Jetzt wird gehandelt
+                        Ihr habt euch gemeinsam auf Themen und Maßnahmen geeinigt, die ihr als Team angehen wollt und
+                        für jedes Thema Verantwortliche und eine Deadline benannt. Als Themenverantwortliche liegt es
+                        jetzt bei euch die Umsetzung zum Erfolg zu machen. Bitte dokumentiert den erzielten Fortschritt
+                        immer auf den Themenkarten um für euer Team den Überblick zu behalten.
+                        Nach vier bis sechs Wochen besprecht ihr in einem gemeinsamen Workshop den Fortschritt der
+                        Maßnahmen, was schon gut geklappt hat und an welchen Stellen es noch harkt.</p>
+                </div>
+            </div>
+            <img class="ml-8 h-40" src="../../illustrations/in_progress.svg" alt="">
+        </div>
+
+        <ul js-grid class="pt-12 grid gap-8">
+            <li js-card
+                class="h-52 card cursor-pointer bg-white shadow-lg hover:shadow-2xl transition-shadow pt-5 rounded-md min-w-min">
+                <div class="flex flex-col justify-between h-full">
+                    <div class="mx-5">
+                        <h3 class="mb-2 font-bold">Wir-Gefühl</h3>
+                    </div>
+                    <div class="flex h-14 p-0.5 justify-center items-center">
+                        <div class="w-full mx-5">
+                            <h4 class="sr-only">Status</h4>
+                            <div class="w-full mt-6" aria-hidden="true">
+                                <div class="bg-gray-200 rounded-full overflow-hidden">
+                                    <div class="h-2 bg-green-400 rounded-full" style="width: 35%;"></div>
+                                </div>
+                                <div class="flex w-full justify-between text-sm font-medium text-gray-600 mt-2">
+                                    <div
+                                        class="cursor-pointer rounded flex justify-center items-center text-green-400 hover:bg-blue-gray-200 h-8 w-12">
+                                        25%</div>
+                                    <div
+                                        class="cursor-pointer rounded flex justify-center items-center text-center text-green-400 hover:bg-blue-gray-200 h-8 w-12">
+                                        50%</div>
+                                    <div
+                                        class="cursor-pointer rounded flex justify-center items-center text-center hover:bg-blue-gray-200 h-8 w-12">
+                                        75%</div>
+                                    <div
+                                        class="cursor-pointer rounded flex justify-center items-center text-right hover:bg-blue-gray-200 h-8 w-12">
+                                        100%</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button
+                        class="flex justify-center bg-blue-gray-100 hover:bg-blue-gray-200 h-14 m-1 items-center transition duration-100 rounded">
+                        <div class="text-base font-medium ml-3">Ansehen</div>
+                    </button>
+                </div>
+            </li>
+            <li js-card
+                class="h-52 card cursor-pointer bg-white shadow-lg hover:shadow-2xl transition-shadow pt-5 rounded-md min-w-min">
+                <div class="flex flex-col justify-between h-full">
+                    <div class="mx-5">
+                        <h3 class="mb-2 font-bold">Arbeitsverteilung</h3>
+                    </div>
+                    <div class="flex h-14 p-0.5 justify-center items-center">
+                        <div class="w-full mx-5">
+                            <h4 class="sr-only">Status</h4>
+                            <div class="w-full mt-6" aria-hidden="true">
+                                <div class="bg-gray-200 rounded-full overflow-hidden">
+                                    <div class="h-2 bg-green-400 rounded-full" style="width: 35%;"></div>
+                                </div>
+                                <div class="flex w-full justify-between text-sm font-medium text-gray-600 mt-2">
+                                    <div
+                                        class="cursor-pointer rounded flex justify-center items-center text-green-400 hover:bg-blue-gray-200 h-8 w-12">
+                                        25%</div>
+                                    <div
+                                        class="cursor-pointer rounded flex justify-center items-center text-center text-green-400 hover:bg-blue-gray-200 h-8 w-12">
+                                        50%</div>
+                                    <div
+                                        class="cursor-pointer rounded flex justify-center items-center text-center hover:bg-blue-gray-200 h-8 w-12">
+                                        75%</div>
+                                    <div
+                                        class="cursor-pointer rounded flex justify-center items-center text-right hover:bg-blue-gray-200 h-8 w-12">
+                                        100%</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button
+                        class="flex justify-center bg-blue-gray-100 hover:bg-blue-gray-200 h-14 m-1 items-center transition duration-100 rounded">
+                        <div class="text-base font-medium ml-3">Ansehen</div>
+                    </button>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://unpkg.com/animate-css-grid@latest"></script>
+    <script src="../../js/overlayCard.js"></script>
+    <!-- <script src="./swiped-events.js"></script> -->
+</body>
+
+</html>
