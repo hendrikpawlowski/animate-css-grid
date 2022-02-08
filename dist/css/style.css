@@ -1,185 +1,313 @@
 html {
-  scroll-behavior: smooth; }
+  scroll-behavior: smooth;
+}
 
 .opening-illustration {
-  width: 12rem; }
+  width: 12rem;
+}
 
 .grid {
-  grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr)); }
-  .grid .deck-card {
-    cursor: pointer;
-    z-index: 10;
-    color: white; }
-    .grid .deck-card.starting {
-      z-index: 100;
-      transition: 300ms; }
-      .grid .deck-card.starting .content {
-        display: flex;
-        align-items: center;
-        justify-content: center; }
-        .grid .deck-card.starting .content .title {
-          font-size: 1.64rem; }
-    .grid .deck-card .content {
-      font-weight: 500;
-      display: flex;
-      align-items: end;
-      transition: 300ms;
-      height: 200px;
-      padding: 20px; }
-      .grid .deck-card .content .title {
-        font-size: 1rem; }
-      .grid .deck-card .content .text {
-        font-size: 12px;
-        opacity: 0.7;
-        height: 3rem; }
-    .grid .deck-card:hover + [js-stacked] .flip-card-front {
-      transform: rotate(-2deg); }
-    .grid .deck-card:hover + [js-stacked] + [js-stacked] .flip-card-front {
-      transform: rotate(-4deg); }
-  .grid .card {
-    cursor: pointer;
-    perspective: 1000px; }
-    .grid .card.stacked .flip-card-front,
-    .grid .card.stacked .flip-card-back {
-      box-shadow: none; }
-    .grid .card.stacked .flip-card-front {
-      border-color: transparent !important; }
-    .grid .card .wrapper {
-      width: 100%;
-      height: 100%; }
-      .grid .card .wrapper .flip-card-wrapper {
-        height: 200px;
-        width: 100%;
-        perspective: 1000px;
-        transition: transform 0.5s;
-        transform-style: preserve-3d;
-        border-radius: 0.25rem; }
-        .grid .card .wrapper .flip-card-wrapper.flipped-left {
-          transform: rotateY(-180deg); }
-        .grid .card .wrapper .flip-card-wrapper.flipped-right {
-          transform: rotateY(180deg); }
-        .grid .card .wrapper .flip-card-wrapper .flip-card-back {
-          border-radius: 0.25rem; }
-          .grid .card .wrapper .flip-card-wrapper .flip-card-back.fire {
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-            justify-content: space-between; }
-            .grid .card .wrapper .flip-card-wrapper .flip-card-back.fire .textarea-wrapper {
-              padding: 4px 4px 0 4px;
-              width: 100%;
-              overflow: hidden; }
-              .grid .card .wrapper .flip-card-wrapper .flip-card-back.fire .textarea-wrapper .comment {
-                width: 100%;
-                height: 100%;
-                overflow: hidden;
-                resize: none;
-                border-radius: 0.25rem;
-                border: solid 1px #e5e7eb;
-                padding: 8px; }
-                .grid .card .wrapper .flip-card-wrapper .flip-card-back.fire .textarea-wrapper .comment:focus {
-                  outline: 0;
-                  border: solid 1px #e96161; }
-            .grid .card .wrapper .flip-card-wrapper .flip-card-back.fire .back-card-action {
-              width: 100%;
-              display: flex;
-              align-items: center;
-              padding: 2px; }
-              .grid .card .wrapper .flip-card-wrapper .flip-card-back.fire .back-card-action .button {
-                height: 3rem;
-                width: 100%;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                padding: 0.5rem;
-                border-radius: 0.25rem;
-                margin: 2px;
-                transition: 100ms;
-                -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
-                .grid .card .wrapper .flip-card-wrapper .flip-card-back.fire .back-card-action .button.save-comment {
-                  color: #e96161;
-                  font-weight: 500; }
-                  .grid .card .wrapper .flip-card-wrapper .flip-card-back.fire .back-card-action .button.save-comment:hover {
-                    background: #f3f4f6; }
-                .grid .card .wrapper .flip-card-wrapper .flip-card-back.fire .back-card-action .button.abort:hover {
-                  background: #f3f4f6; }
-          .grid .card .wrapper .flip-card-wrapper .flip-card-back.shield {
-            background: #a7f3d0; }
-            .grid .card .wrapper .flip-card-wrapper .flip-card-back.shield .icon-wrapper {
-              margin-top: 30px;
-              box-sizing: border-box;
-              display: flex;
-              justify-content: center; }
-              .grid .card .wrapper .flip-card-wrapper .flip-card-back.shield .icon-wrapper .icon {
-                width: 100px; }
-            .grid .card .wrapper .flip-card-wrapper .flip-card-back.shield .text-wrapper {
-              display: flex;
-              justify-content: center; }
-              .grid .card .wrapper .flip-card-wrapper .flip-card-back.shield .text-wrapper .text {
-                max-width: 12rem;
-                text-align: center; }
-        .grid .card .wrapper .flip-card-wrapper .flip-card-front {
-          display: flex;
-          flex-direction: column;
-          height: 100%;
-          justify-content: space-between;
-          transition: 300ms; }
-          .grid .card .wrapper .flip-card-wrapper .flip-card-front.red {
-            border-top: solid 3px #f87171; }
-          .grid .card .wrapper .flip-card-wrapper .flip-card-front.green {
-            border-top: solid 3px #34d399; }
-          .grid .card .wrapper .flip-card-wrapper .flip-card-front.blue {
-            border-top: solid 3px #60a5fa; }
-          .grid .card .wrapper .flip-card-wrapper .flip-card-front .card-text .title {
-            overflow: hidden;
-            text-overflow: ellipsis;
-            padding: 20px 20px 8px 20px;
-            font-size: 1rem;
-            font-weight: 500; }
-          .grid .card .wrapper .flip-card-wrapper .flip-card-front .card-text .body {
-            color: #6b7280;
-            font-weight: 300;
-            font-size: 1rem;
-            padding: 0 20px; }
-            .grid .card .wrapper .flip-card-wrapper .flip-card-front .card-text .body li:before {
-              display: inline-block;
-              content: "";
-              width: 5px;
-              height: 5px;
-              border-radius: 50%;
-              margin-bottom: 3px;
-              background: #6b7280;
-              margin-right: 8px; }
-          .grid .card .wrapper .flip-card-wrapper .flip-card-front .card-action {
-            width: 100%;
-            display: flex;
-            align-items: center;
-            padding: 2px; }
-            .grid .card .wrapper .flip-card-wrapper .flip-card-front .card-action .button {
-              height: 3rem;
-              width: 100%;
-              display: flex;
-              justify-content: center;
-              align-items: center;
-              padding: 0.5rem;
-              border-radius: 0.25rem;
-              margin: 2px;
-              transition: 100ms;
-              -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
-              .grid .card .wrapper .flip-card-wrapper .flip-card-front .card-action .button.shield .shield-icon {
-                background-color: transparent;
-                background-image: url("../icons/shield-pressed.svg");
-                background-size: 100% 100%;
-                width: 100%;
-                height: 100%; }
-              .grid .card .wrapper .flip-card-wrapper .flip-card-front .card-action .button.fire .fire-icon {
-                background-color: transparent;
-                background-image: url("../icons/fire-pressed.svg");
-                background-size: 100% 100%;
-                width: 100%;
-                height: 100%; }
-              .grid .card .wrapper .flip-card-wrapper .flip-card-front .card-action .button:hover {
-                background: #e5e7eb; }
+  grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+}
+.grid .deck-card {
+  cursor: pointer;
+  z-index: 10;
+  color: white;
+}
+.grid .deck-card.starting {
+  z-index: 100;
+  transition: 300ms;
+}
+.grid .deck-card.starting .content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.grid .deck-card.starting .content .title {
+  font-size: 1.64rem;
+}
+.grid .deck-card .content {
+  font-weight: 500;
+  display: flex;
+  align-items: end;
+  transition: 300ms;
+  height: 200px;
+  padding: 20px;
+}
+.grid .deck-card .content .title {
+  font-size: 1rem;
+}
+.grid .deck-card .content .text {
+  font-size: 12px;
+  opacity: 0.7;
+  height: 3rem;
+}
+
+.grid .deck-card:hover[js-stacked] + [js-card] .wrapper-for-stacked-turn {
+  transform: rotate(-5deg);
+}
+
+.grid
+  .deck-card:hover[js-stacked]
+  + [js-card]
+  + [js-card]
+  .wrapper-for-stacked-turn {
+  transform: rotate(-10deg);
+}
+
+.grid .card {
+  cursor: pointer;
+  perspective: 1000px;
+}
+.grid .card.stacked .flip-card-front,
+.grid .card.stacked .flip-card-back {
+  box-shadow: none;
+}
+.grid .card.stacked .flip-card-front {
+  border-color: transparent !important;
+}
+.grid .card .wrapper {
+  width: 100%;
+  height: 100%;
+}
+.grid .card .wrapper .flip-card-wrapper {
+  height: 200px;
+  width: 100%;
+  perspective: 1000px;
+  transition: transform 0.5s;
+  transform-style: preserve-3d;
+  border-radius: 0.25rem;
+}
+.grid .card .wrapper .flip-card-wrapper.flipped-left {
+  transform: rotateY(-180deg);
+}
+.grid .card .wrapper .flip-card-wrapper.flipped-right {
+  transform: rotateY(180deg);
+}
+.grid .card .wrapper .flip-card-wrapper .flip-card-back {
+  border-radius: 0.25rem;
+}
+.grid .card .wrapper .flip-card-wrapper .flip-card-back.fire {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+}
+.grid .card .wrapper .flip-card-wrapper .flip-card-back.fire .textarea-wrapper {
+  padding: 4px 4px 0 4px;
+  width: 100%;
+  overflow: hidden;
+}
+.grid
+  .card
+  .wrapper
+  .flip-card-wrapper
+  .flip-card-back.fire
+  .textarea-wrapper
+  .comment {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  resize: none;
+  border-radius: 0.25rem;
+  border: solid 1px #e5e7eb;
+  padding: 8px;
+}
+.grid
+  .card
+  .wrapper
+  .flip-card-wrapper
+  .flip-card-back.fire
+  .textarea-wrapper
+  .comment:focus {
+  outline: 0;
+  border: solid 1px #e96161;
+}
+.grid .card .wrapper .flip-card-wrapper .flip-card-back.fire .back-card-action {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 2px;
+}
+.grid
+  .card
+  .wrapper
+  .flip-card-wrapper
+  .flip-card-back.fire
+  .back-card-action
+  .button {
+  height: 3rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  margin: 2px;
+  transition: 100ms;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+.grid
+  .card
+  .wrapper
+  .flip-card-wrapper
+  .flip-card-back.fire
+  .back-card-action
+  .button.save-comment {
+  color: #e96161;
+  font-weight: 500;
+}
+.grid
+  .card
+  .wrapper
+  .flip-card-wrapper
+  .flip-card-back.fire
+  .back-card-action
+  .button.save-comment:hover {
+  background: #f3f4f6;
+}
+.grid
+  .card
+  .wrapper
+  .flip-card-wrapper
+  .flip-card-back.fire
+  .back-card-action
+  .button.abort:hover {
+  background: #f3f4f6;
+}
+.grid .card .wrapper .flip-card-wrapper .flip-card-back.shield {
+  background: #a7f3d0;
+}
+.grid .card .wrapper .flip-card-wrapper .flip-card-back.shield .icon-wrapper {
+  margin-top: 30px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+}
+.grid
+  .card
+  .wrapper
+  .flip-card-wrapper
+  .flip-card-back.shield
+  .icon-wrapper
+  .icon {
+  width: 100px;
+}
+.grid .card .wrapper .flip-card-wrapper .flip-card-back.shield .text-wrapper {
+  display: flex;
+  justify-content: center;
+}
+.grid
+  .card
+  .wrapper
+  .flip-card-wrapper
+  .flip-card-back.shield
+  .text-wrapper
+  .text {
+  max-width: 12rem;
+  text-align: center;
+}
+.grid .card .wrapper .flip-card-wrapper .flip-card-front {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+  transition: 300ms;
+}
+.grid .card .wrapper .flip-card-wrapper .flip-card-front.red {
+  border-top: solid 3px #f87171;
+}
+.grid .card .wrapper .flip-card-wrapper .flip-card-front.green {
+  border-top: solid 3px #34d399;
+}
+.grid .card .wrapper .flip-card-wrapper .flip-card-front.blue {
+  border-top: solid 3px #60a5fa;
+}
+.grid .card .wrapper .flip-card-wrapper .flip-card-front .card-text .title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 20px 20px 8px 20px;
+  font-size: 1rem;
+  font-weight: 500;
+}
+.grid .card .wrapper .flip-card-wrapper .flip-card-front .card-text .body {
+  color: #6b7280;
+  font-weight: 300;
+  font-size: 1rem;
+  padding: 0 20px;
+}
+.grid
+  .card
+  .wrapper
+  .flip-card-wrapper
+  .flip-card-front
+  .card-text
+  .body
+  li:before {
+  display: inline-block;
+  content: "";
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  margin-bottom: 3px;
+  background: #6b7280;
+  margin-right: 8px;
+}
+.grid .card .wrapper .flip-card-wrapper .flip-card-front .card-action {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 2px;
+}
+.grid .card .wrapper .flip-card-wrapper .flip-card-front .card-action .button {
+  height: 3rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  margin: 2px;
+  transition: 100ms;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+.grid
+  .card
+  .wrapper
+  .flip-card-wrapper
+  .flip-card-front
+  .card-action
+  .button.shield
+  .shield-icon {
+  background-color: transparent;
+  background-image: url("../icons/shield-pressed.svg");
+  background-size: 100% 100%;
+  width: 100%;
+  height: 100%;
+}
+.grid
+  .card
+  .wrapper
+  .flip-card-wrapper
+  .flip-card-front
+  .card-action
+  .button.fire
+  .fire-icon {
+  background-color: transparent;
+  background-image: url("../icons/fire-pressed.svg");
+  background-size: 100% 100%;
+  width: 100%;
+  height: 100%;
+}
+.grid
+  .card
+  .wrapper
+  .flip-card-wrapper
+  .flip-card-front
+  .card-action
+  .button:hover {
+  background: #e5e7eb;
+}
 
 .flip-card-front,
 .flip-card-back {
@@ -189,42 +317,54 @@ html {
   background: white;
   border-radius: 0.25rem;
   -webkit-backface-visibility: hidden;
-  backface-visibility: hidden; }
+  backface-visibility: hidden;
+}
 
 .flip-card-back {
-  transform: rotateY(180deg); }
+  transform: rotateY(180deg);
+}
 
 .wrapper-for-stacked-turn {
   transition: 400ms;
   height: 100%;
-  perspective: 1000px; }
+  perspective: 1000px;
+}
 
 .turn-left .wrapper-for-stacked-turn {
-  transform: rotate(-3deg); }
-  .turn-left .wrapper-for-stacked-turn .flip-card-wrapper .flip-card-front,
-  .turn-left .wrapper-for-stacked-turn .flip-card-wrapper .flip-card-back {
-    box-shadow: 0 1px 4px 0 rgba(19, 14, 14, 0.25); }
+  transform: rotate(-3deg);
+}
+.turn-left .wrapper-for-stacked-turn .flip-card-wrapper .flip-card-front,
+.turn-left .wrapper-for-stacked-turn .flip-card-wrapper .flip-card-back {
+  box-shadow: 0 1px 4px 0 rgba(19, 14, 14, 0.25);
+}
 
 .turn-right .wrapper-for-stacked-turn {
-  transform: rotate(-6deg); }
-  .turn-right .wrapper-for-stacked-turn .flip-card-wrapper .flip-card-front,
-  .turn-right .wrapper-for-stacked-turn .flip-card-wrapper .flip-card-back {
-    box-shadow: 0px 1px 4px 0 rgba(19, 14, 14, 0.25); }
+  transform: rotate(-6deg);
+}
+.turn-right .wrapper-for-stacked-turn .flip-card-wrapper .flip-card-front,
+.turn-right .wrapper-for-stacked-turn .flip-card-wrapper .flip-card-back {
+  box-shadow: 0px 1px 4px 0 rgba(19, 14, 14, 0.25);
+}
 
 .accordion .head {
   display: flex;
-  align-items: center; }
-  .accordion .head .icon {
-    cursor: pointer;
-    margin-left: 1rem;
-    width: 2rem;
-    transition: 200ms; }
-  .accordion .head .icon:hover {
-    transform: scale(1.1); }
+  align-items: center;
+}
+.accordion .head .icon {
+  cursor: pointer;
+  margin-left: 1rem;
+  width: 2rem;
+  transition: 200ms;
+}
+.accordion .head .icon:hover {
+  transform: scale(1.1);
+}
 
 .accordion .panel {
   overflow: hidden;
-  transition: 0.5s; }
+  transition: 0.5s;
+}
 
 .shadow-extreme {
-  box-shadow: 2px 5px 15px rgba(0, 0, 0, 0.2); }
+  box-shadow: 2px 5px 15px rgba(0, 0, 0, 0.2);
+}
