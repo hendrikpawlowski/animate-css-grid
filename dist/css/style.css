@@ -126,10 +126,16 @@ html {
           transition: 300ms; }
           .grid .card .wrapper .flip-card-wrapper .flip-card-front.red {
             border-top: solid 3px #f87171; }
+          .grid .card .wrapper .flip-card-wrapper .flip-card-front.teal {
+              border-top: solid 3px #2dd4bf; }
+          .grid .card .wrapper .flip-card-wrapper .flip-card-front.rose {
+                border-top: solid 3px #fb7185; }              
           .grid .card .wrapper .flip-card-wrapper .flip-card-front.green {
             border-top: solid 3px #34d399; }
           .grid .card .wrapper .flip-card-wrapper .flip-card-front.blue {
             border-top: solid 3px #60a5fa; }
+          .grid .card .wrapper .flip-card-wrapper .flip-card-front.yellow {
+              border-top: solid 3px #fbbf24; }            
           .grid .card .wrapper .flip-card-wrapper .flip-card-front .card-text .title {
             overflow: hidden;
             text-overflow: ellipsis;
