@@ -178,7 +178,7 @@ const flipToFireBack = function (card) {
       <p class="mt-5 mx-5 text-red-900 text-base font-bold">${title.innerHTML}</p>
       <div class="ml-2 mr-5 flex items-center h-full">
         <div class="icon-wrapper">
-          <img class="w-40" src="./icons/fire-pressed.svg" alt="" />
+          <img class="w-40" src="./dist/icons/fire-pressed.svg" alt="" />
         </div>
         <p class="text-red-900 ml-2">Du hast 1 von 5 Themen negativ bewertet</p>
       </div>
@@ -217,7 +217,7 @@ const flipToShieldBack = function (card) {
                       <p class="mt-5 mx-5 text-emerald-900 text-base font-bold">${title.innerHTML}</p>
                       <div class="ml-2 mr-5 flex items-center h-full">
                         <div class="icon-wrapper">
-                          <img class="w-40" src="./icons/shield-pressed.svg" alt="" />
+                          <img class="w-40" src="./dist/icons/shield-pressed.svg" alt="" />
                         </div>
                         <p class="text-emerald-900 ml-2">Du hast 1 von 5 Themen positiv bewertet</p>
                       </div>
